@@ -1,0 +1,126 @@
+html{
+    background: grey;
+    color: white;
+}
+img{
+    max-width: 100%;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+
+}
+.container-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+.container {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+}
+.about {
+    font-size: 25px;
+    width: 30%;
+    padding: 30px;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+.lesson{
+    font-size: 24px;
+    width: 20%;
+    padding: 20px;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+.name{
+    color: white;
+    justify-content: center;
+    width: 20%;
+    height: 30%;
+}
+.mgn-text,.oblast-text{
+    text-align: center;
+    padding: 30px;
+}
+.mgn-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    gap: 20px;
+    color: white;
+}
+
+.mgn-photo1,.mgn-photo2,.mgn-photo3,.mgn-photo4{
+    padding: 40px ;
+    background-color: dimgray;
+}
+.tyl,.palatka,.hram,.arena {
+    text-align: center;
+}
+.oblast-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+}
+.oblast-photo1,.oblast-photo2,.oblast-photo3,.oblast-photo4{
+    padding: 30px;
+    background-color: dimgray;
+    text-align: center;
+}
+.theme1,.theme2,.theme3{
+    font-size: 24px;
+}
+@media screen and (max-width:800px){
+    .main{
+        display: flex;
+        flex-direction: row;
+        width: 800px;
+    }
+    .oblast-text{
+        font-size: 10px;
+    }
+    .mgn-text{
+        font-size: 10px;
+    }
+    .oblast-container{
+        font-size: 10px;
+        grid-template-columns:1fr;
+        width: 800px;
+    }
+    .mgn-container{
+        font-size: 10px;
+        width: 800px;
+        display: flex;
+        flex-direction: column;
+    }
+    .about,.lesson{
+        font-size: 12px;
+    }
+    .name{
+        font-size: 6px;
+    }
+    .theme1,.theme2,.theme3{
+        font-size: 8px;
+    }
+}
+@media  screen and (max-width: 1200px){
+    .about,.lesson{
+        font-size: 20px;
+    }
+    .name{
+        font-size: 9px;
+    }
+    .theme1,.theme2,.theme3{
+        font-size: 15px;
+    }
+}
