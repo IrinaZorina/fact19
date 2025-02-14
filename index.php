@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+<!-- head -->
+<?php include_once('templates/head.php'); ?>
 
 <!-- Верхнее меню -->
-<div class="top-menu">
-    <a href="#">Тема 1</a>
-    <a href="#">Тема 2</a>
-    <a href="#">Тема 3</a>
-    <a href="#">Тема 4</a>
-</div>
+<?php include_once('templates/top-menu.php'); ?>
 
 <!-- Блок с фото, именем и текстом -->
 <div class="header-section">
@@ -47,31 +35,6 @@
 </div>
 
 <!-- Блок с изображениями и описаниями -->
-<div class="gallery">
-    <h2>Галерея</h2>
-    <div class="gallery-container">
-        <div class="gallery-item">
-            <img src="assets/img/image1.jpg" alt="Описание 1">
-            <p>Описание 1</p>
-        </div>
-        <div class="gallery-item">
-            <img src="assets/img/image2.jpg" alt="Описание 2">
-            <p>Описание 2</p>
-        </div>
-        <div class="gallery-item">
-            <img src="assets/img/image3.jpg" alt="Описание 3">
-            <p>Описание 3</p>
-        </div>
-        <div class="gallery-item">
-            <img src="assets/img/image4.jpg" alt="Описание 4">
-            <p>Описание 4</p>
-        </div>
-        <div class="gallery-item">
-            <img src="assets/img/image5.jpg" alt="Описание 5">
-            <p>Описание 5</p>
-        </div>
-    </div>
-</div>
+<?php include_once('templates/gallery.php'); ?>
 
-</body>
-</html>
+<?php include_once('templates/footer.php'); ?>
