@@ -1,0 +1,36 @@
+.box {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(3, 50px);
+    grid-template-areas:
+        "name num"
+        "name num1"
+        "name1 name1";
+}
+
+.item1 {
+    background-color: pink;
+    grid-area: name;
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.item2 {
+    background-color: pink;
+    grid-area: name1;
+    font-size: 24px;
+}
+
+.item3 {
+    background-color: pink;
+    grid-area: num;
+    font-size: 30px;
+    text-align: end;
+}
+
+.item4 {
+    background-color: pink;
+    grid-area: num1;
+    font-size: 30px;
+    text-align: end;
+}

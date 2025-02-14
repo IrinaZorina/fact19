@@ -1,0 +1,331 @@
+.head {
+    display: flex;
+    width: 100%;
+}
+
+#menu ul {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    width: 100%;
+    flex-wrap: nowrap;
+
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 40px;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+body {
+    background-color: gray;
+
+}
+
+.dost {
+    text-align: center;
+    color: yellow;
+    width: 100%;
+}
+
+
+.photo1, .photo2, .photo3, .photo4 {
+    background-color: white;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.infoDost {
+    font-size: 20px;
+    text-align: center;
+}
+
+.dost1 {
+    text-align: center;
+    color: yellow;
+}
+
+
+.photo5, .photo6, .photo7, .photo8 {
+    background-color: white;
+    padding-top: 30px;
+    width: 800px;
+    height: 800px;
+    text-align: center;
+
+
+}
+
+.infoDost1 {
+    font-size: 25px;
+    text-align: center;
+}
+
+/*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*/
+
+.logo {
+    width: 10%;
+    height: auto;
+}
+
+.me {
+    width: 70%;
+    height: auto;
+}
+
+.mgn {
+    width: 500px;
+    height: 400px;
+}
+
+.chelyab {
+    width: 600px;
+    height: 500px;
+}
+
+/*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*/
+
+
+/*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*/
+.fio {
+    color: yellow;
+    text-align: center;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.about {
+    font-size: 30px;
+    width: 40%;
+    justify-content: left;
+    flex-wrap: nowrap;
+}
+
+.firstLes {
+    font-size: 30px;
+    width: 40%;
+    padding: 20px;
+    justify-content: right;
+    flex-wrap: nowrap;
+
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.box1 {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 900px);
+    grid-template-rows: repeat(2, 900px);
+    grid-gap: 30px;
+
+}
+
+/*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*/
+
+
+/*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*/
+
+
+@media screen and (max-width: 600px) {
+    .box1 {
+        grid-template-columns: repeat(1, 500px);
+        grid-template-rows: repeat(1, 500px);
+        padding-left: 450px;
+        
+    }
+
+    .photo5, .photo6, .photo7, .photo8 {
+        background-color: white;
+        padding-top: 30px;
+        width: 300px;
+        height: 300px;
+        text-align: center;
+    }
+
+    .chelyab {
+        width: 200px;
+        height: 100px;
+    }
+
+    .infoDost1 {
+        font-size: 14px;
+    }
+
+    .infoDost {
+        font-size: 14px;
+    }
+
+
+    .head {
+        flex-direction: column;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .photo1, .photo2, .photo3, .photo4 {
+        background-color: white;
+        width: 300px;
+        height: 300px;
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    .mgn {
+        width: 250px;
+        height: 150px;
+    }
+
+    .logo {
+        width: 240px;
+        height: 240px;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .box1 {
+        grid-template-columns: repeat(1, 500px);
+        grid-template-rows: repeat(1, 500px);
+        padding-left: 450px;
+    }
+
+    .photo5, .photo6, .photo7, .photo8 {
+        background-color: white;
+        padding-top: 30px;
+        width: 300px;
+        height: 300px;
+        text-align: center;
+    }
+
+    .chelyab {
+        width: 200px;
+        height: 100px;
+    }
+
+    .infoDost1 {
+        font-size: 14px;
+    }
+
+    .infoDost {
+        font-size: 14px;
+    }
+
+
+    .head {
+        flex-direction: column;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .photo1, .photo2, .photo3, .photo4 {
+        background-color: white;
+        width: 300px;
+        height: 300px;
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    .mgn {
+        width: 250px;
+        height: 150px;
+    }
+
+    .logo {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .box1 {
+        grid-template-columns: repeat(1, 900px);
+        grid-template-rows: repeat(1, 900px);
+        padding-left: 450px;
+
+    }
+
+    #menu ul {
+        flex-direction: column;
+        gap: 100px;
+        width: 100%;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+}
+
+
+/*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*//*Медиа запросы*/
+
+
+
