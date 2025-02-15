@@ -204,3 +204,65 @@ body {
         width: 100%;
     }
 }
+
+/* Ночная тема */
+body.night-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.night-theme .top-menu {
+    background-color: #1f2937;
+    box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+}
+
+body.night-theme .top-menu a {
+    color: #d1d5db;
+}
+
+body.night-theme .top-menu a:hover {
+    background-color: #374151;
+}
+
+body.night-theme .header-section {
+    background: linear-gradient(135deg, #2d3748 0%, #1f2937 100%);
+    border-bottom-color: #4b5563;
+}
+
+body.night-theme .header-info h1 {
+    color: #e5e7eb;
+}
+
+body.night-theme .header-text p {
+    color: #d1d5db;
+    background: rgba(31, 41, 55, 0.9);
+    box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+}
+
+body.night-theme .gallery {
+    background-color: #111827;
+}
+
+body.night-theme .gallery h2 {
+    color: #e5e7eb;
+}
+
+body.night-theme .gallery h2:after {
+    background: #60a5fa;
+}
+
+body.night-theme .gallery-item {
+    background: #1f2937;
+    box-shadow: 0 4px 6px rgba(255,255,255,0.05);
+}
+
+body.night-theme .gallery-item p {
+    color: #d1d5db;
+}
+
+/* Адаптивность для ночной темы */
+@media (max-width: 768px) {
+    body.night-theme .top-menu {
+        background-color: #1f2937;
+    }
+}
