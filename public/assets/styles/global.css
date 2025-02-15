@@ -1,0 +1,45 @@
+:root {
+	--layout-width: 1200px;
+	--font-family: "Fira Sans", sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: var(--font-family);
+	font-size: 2rem;
+	background-color: var(--color-background);
+	color: var(--color-secondary);
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-secondary);
+}
+
+a:hover {
+	color: var(--color-secondary-hover);
+	transition: all 0.2s;
+}
+
+@media screen and (max-width: 640px) {
+	html {
+		font-size: 50%;
+	}
+}
+
+
+
+

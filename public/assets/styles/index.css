@@ -1,0 +1,130 @@
+.section {
+	margin-bottom: 4rem;
+}
+
+.bio {
+	display: flex;
+	justify-content: space-between;
+	gap: 10rem;
+}
+
+.content__title {
+	text-align: center;
+	margin-bottom: 2rem;
+	color: var(--color-primary);
+}
+
+.content__title_hidden {
+	display: none;
+}
+
+.content-container {
+	display: flex;
+	justify-content: space-between;
+	gap: 5rem;
+}
+
+.content__about, .content_opinion {
+	flex: 1;
+}
+
+.city__title {
+	margin-bottom: 2rem;
+}
+
+.city__item {
+	background-color: var(--color-shadow);
+	text-align: center;
+	padding: 1rem;
+	transition: all 0.2s;
+	border-radius: 1rem;
+}
+
+.city__item:hover {
+	transform: scale(110%);
+	box-shadow: 0px 25px 4rem var(--color-shadow);
+	transition: all 0.3s ease-out;
+}
+
+.city__attractions, .city__museums {
+	margin-bottom: 4rem;
+}
+
+.attractions__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.attractions__item {
+	width: 22%;
+	margin-bottom: 2.5rem;
+}
+
+.attractions__item img {
+	width: 100%;
+	height: 24vh;
+	object-fit: cover;
+	margin-bottom: 1rem;
+}
+
+.attractions__item p {
+	text-align: center;
+}
+
+.museums__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.museums__item {
+	width: 48%;
+	margin-bottom: 4rem;
+}
+
+.museums__item img {
+	width: 100%;
+	height: 30vh;
+	object-fit: cover;
+	margin-bottom: 1rem;
+}
+
+.museums__item p {
+	text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+	.content-container {
+		flex-direction: column;
+	}
+
+	.attractions__item {
+		width: 48%;
+	}
+
+	.museums__item {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.bio {
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.aside {
+		text-align: center;
+	}
+
+	.aside__photo img {
+		width: 100%;
+	}
+
+	.attractions__item {
+		width: 100%;
+	}
+}
+
+

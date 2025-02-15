@@ -1,0 +1,10 @@
+.footer__container {
+	max-width: var(--layout-width);
+	margin: 0 auto;
+	padding: 4rem 2rem;
+}
+
+.footer {
+	box-shadow: 0px 0px 1.4rem var(--color-shadow);
+	flex-grow: 0;
+}

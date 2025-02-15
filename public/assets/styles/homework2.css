@@ -1,0 +1,119 @@
+.section {
+	margin-bottom: 4rem;
+}
+
+.title {
+	margin-bottom: 2rem;
+}
+
+/* Форма (Задание 1) */
+.form__group {
+	margin-bottom: 1.5rem;
+}
+
+.form__group label {
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+.form__group input, select, textarea {
+	width: 100%;
+	padding: 1rem;
+	border: 1px solid var(--color-border);
+	border-radius: 4px;
+}
+
+.form__fieldset {
+	margin-bottom: 1.5rem;
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+}
+
+.form__legend {
+	padding: 0 1rem;
+}
+
+.form__fieldset-group input {
+	margin: 1.5rem;
+}
+
+.form__fieldset-group label {
+	margin-right: 1.5rem;
+}
+
+.form__submit {
+	color: var(--color-background);
+	background: var(--color-primary);
+	border: none;
+	padding: 1rem 2rem;
+	border-radius: 8px;
+	transition: all 0.2s ease-out;
+	cursor: pointer;
+}
+
+.form__submit:hover {
+	transform: scale(110%);
+	background: var(--color-primary-hover);
+	transition: all 0.4s ease-out;
+}
+
+
+/* Таблица (Задание 2) */
+.table__content {
+	width: auto;
+	border-collapse: collapse;
+}
+
+.table__content, .table__data, .table__row {
+	border: 1px solid var(--color-border-invert);
+}
+
+.table__data img {
+	width: 22rem;
+	vertical-align: middle;
+}
+
+.image-table__image {
+	background-image: url("https://vet-centre.ru/wp-content/uploads/2024/08/batakskiy-shpic.jpg");
+	width: 30rem;
+	height: 30rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 12px;
+	transform: rotate(180deg);
+	filter: hue-rotate(240deg);
+	margin-bottom: 2rem;
+}
+
+.table-two__content {
+	width: auto;
+	border-collapse: collapse;
+}
+
+.table-two__row, .table-two__data {
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+.table-two__content {
+	border: 3px solid var(--color-primary);
+}
+
+.table-two__data {
+	padding: 1.5rem;
+}
+
+.table-two__data img {
+	width: 15rem;
+	vertical-align: middle;
+}
+
+.table-two__row:nth-child(2) {
+	background-color: blue;
+	color: #cccccc;
+}
+
+.table-two__row:nth-child(3) {
+	background-color: red;
+	color: #cccccc;
+}
