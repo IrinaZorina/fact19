@@ -1,0 +1,200 @@
+body {
+    background-color: white;
+}
+
+a {
+    color: black;
+    font-size: 30px;
+}
+
+header {
+    width: 100%;
+    height: 250px;
+}
+
+aside {
+    width: 30%;
+    height: 500px;
+    float: left
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logoimg {
+    float: left;
+    margin-top: 2px;
+    margin-right: 50px;
+}
+
+.logo {
+    width: 250px;
+    height: 250px;
+}
+
+.biogrid {
+    display: grid;
+
+    width: 100%;
+    heigth: 500px;
+    grid-template-areas:"f f f . b b b b b b b b"
+                        "f f f . p p p . . o o o"
+                        "f f f . p p p . . o o o"
+                        "f f f . p p p . . o o o";
+}
+
+.foto {
+
+    grid-area: f;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
+
+.bio {
+    background-image: url("../image/divbackgrndday.jpg");
+    background-size: cover;
+    border: medium cadetblue;
+    border-style: ridge;
+    border-width: thick;
+    grid-area: b;
+}
+
+.persinfo {
+    background-image: url("../image/divbackgrndday.jpg");
+    background-size: cover;
+    border: cadetblue;
+    border-style: ridge;
+    border-width: thick;
+    color: black;
+    text-align: justify-all;
+    font-size: large;
+
+    grid-area: p;
+}
+
+.feedback {
+    background-image: url("../image/divbackgrndday.jpg");
+    background-size: cover;
+    border: medium cadetblue;
+    border-style: ridge;
+    border-width: thick;
+    text-align: center;
+    color: black;
+    grid-area: o;
+}
+
+
+.yach {
+    text-align: right;
+}
+
+.tabl {
+    color: black;
+}
+
+td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.attract {
+    display: flex;
+    height: 300px;
+    justify-content: space-around;
+}
+
+.fontan, .kremlin, .sobor, .tsar {
+    text-align: center;
+    background-image: url("../image/bckgrattrday.jpg");
+    background-size: cover;
+    color: black;
+}
+
+.attract1 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+
+}
+
+.ierus, .prioksk, .zarajsk, .borodino {
+    text-align: center;
+    background-image: url("../image/bckgrattr1day.jpg");
+    background-size: cover;
+    color: black;
+    font-size: 30px;
+}
+@media (max-width: 1024px) {
+    .biogrid {
+        grid-template-areas:
+            "f f f b b b b b"
+            "f f f p p p o o"
+            "f f f p p p o o";
+    }
+    .header{
+        flex-direction: row;
+        height: auto;
+    }
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+    a{
+        font-size: 24px;
+    }
+}
+@media (max-width: 768px) {
+    .biogrid {
+    "b b b"
+    "f f f"
+    "p p p"
+    "o o o";
+        height: auto;
+    }
+    .attract, .attract1 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .fontan, .kremlin, .sobor, .tsar, .ierus, .prioksk, .zarajsk, .borodino {
+        width: 80%;
+    }
+}
+@media (max-width: 480px) {
+    .biogrid {
+        grid-template-areas:
+            "f"
+            "b"
+            "p"
+            "o";
+        padding: 10px;
+    }
+    .header {
+        padding: 5px;
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    a {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .persinfo, .feedback, .bio {
+        font-size: medium;
+    }
+}
+
+
