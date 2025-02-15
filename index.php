@@ -37,4 +37,4 @@
 <!-- Блок с изображениями и описаниями -->
 <?php include_once('templates/gallery.php'); ?>
 
-<?php include_once('templates/footer.php'); ?>
+<?php include 'templates/footer.php'; ?>
