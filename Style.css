@@ -1,0 +1,276 @@
+/* Дневная тема */
+.light-theme {
+    --background-color: white;
+    --text-color: black;
+}
+
+/* Ночная тема */
+.dark-theme {
+    --background-color: black;
+    --text-color: white;
+}
+
+/* Применяем переменные */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: 0.3s;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: 200px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 20px;
+    background-color: #f8f8f8;
+    color: #333;
+    align-items: center;
+}
+.titleheader{
+    flex-grow: 1;
+    text-align: center;
+}
+.workcontainer {
+    display: flex;
+    justify-content: flex-start;
+    width: 15%;
+}
+.work-list {
+    list-style: none; 
+    padding-left: 0;
+    text-align: left;
+    font-size: 15px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.Name, .AboutMe, .Review {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.Name {
+    background-image: url(image/me.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 400px;
+}
+.Crimea-container {
+    width: 100%; /* Ограничиваем контейнер по ширине */
+    overflow: hidden; /* Скрываем выходящие элементы */
+}
+
+.Crimea {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+.titlecrimea {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.Crimea-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Crimea-item {
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+}
+
+.Crimea-caption {
+    width: 250px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    background-color: white;
+    padding: 10px;
+}
+
+.fiolent {
+    background-image: url("image/Fiolent.jpg");
+}
+
+.hersones {
+    background-image: url("image/Hersones.jpg");
+}
+
+.ipetri {
+    background-image: url("image/Ipetri.jpg");
+}
+
+.sapun {
+    background-image: url("image/Sapun.jpg");
+}
+.city-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 40px; 
+    width: 80vw; 
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+
+.titlecity {
+    grid-column: span 2; 
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.city-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%; 
+    height: 500px;
+}
+
+
+.city-item {
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+
+.city-caption {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
+
+
+.sevastopol { background-image: url("image/sevastopol.webp"); }
+.simferopol { background-image: url("image/simferopol.webp"); }
+.yalta { background-image: url("image/yalta.webp"); }
+.balaklava { background-image: url("image/balaklava.webp"); }
+@media screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    .workcontainer {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .work-list {
+        text-align: center;
+    }
+
+    
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Name, .AboutMe, .Review {
+        max-width: 100%;
+    }
+
+    
+    
+        .Crimea {
+            grid-template-columns: repeat(2, 1fr); 
+        }
+    
+        .Crimea-item {
+            width: 100%; 
+            height: 350px; 
+            background-size: cover;
+        }
+        .Crimea-item {
+            width: 100%;
+            height: 300px; 
+            background-size: cover;
+        }
+    }
+
+
+
+@media screen and (max-width: 768px) {
+    
+    .titleheader {
+        font-size: 30px;
+    }
+
+    
+    .city-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .city-box {
+        height: auto;
+    }
+
+    .city-item {
+        height: 300px; /
+    }
+
+    
+    .Crimea {
+        grid-template-columns: 1fr; 
+        gap: 15px; 
+    }
+
+    .Crimea-item {
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
