@@ -1,0 +1,30 @@
+.element-container {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100px;
+    display: grid;
+    grid-template-areas: 
+        "symbol index"
+        "symbol mass"
+        "name name";
+        background-color: pink;
+}
+
+.symbol {
+    font-size: 36px;
+    grid-area: symbol;
+}
+
+.index {
+    grid-area: index;
+    margin-left: auto;
+}
+
+.mass {
+    grid-area: mass;
+    margin-left: auto;
+}
+
+.name {
+    grid-area: name;
+}

@@ -1,0 +1,11 @@
+h1, h2, h3, p, figcaption, li, a, .navigation-list-item-link {
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    background-color: #2E3F7F;
+}

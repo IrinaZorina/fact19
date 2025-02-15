@@ -1,0 +1,181 @@
+h1, h2, h3, p, figcaption, li, a {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0 auto 0 auto;
+    max-width: 1280px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+header {
+    background-color: royalblue;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.navigation-list-item-link {
+    color: white;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px black;
+}
+
+.navigation-list-item-link:hover {
+    color: #5199FF;
+}
+
+.navigation-list-item-link:active {
+    color: #052555; 
+}
+
+.navigation-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.hero, .hero-container-text {
+    display: flex;
+    gap: 20px;
+}
+
+.about-container, .review-container {
+    width: 50%;
+}
+
+h1 {
+    grid-area: name;
+    padding: 0;
+    margin: 0;
+    line-height: 21px;
+}
+
+section {
+    padding: 20px;
+}
+
+.container-about, .container-review {
+    width: 50%;
+}
+
+h1 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.about, .review{
+    color: gray;
+}
+
+.pets-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.pet, .mem {
+    padding: 20px;
+    margin: 0;
+    border: 1px solid #5199FF;
+    border-radius: 10px;
+}
+
+.pet {
+    width: 250px;
+}
+
+.pet-image {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    object-position: 50% 10%;
+}
+
+.memes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.mem {
+    width: 500px;
+}
+
+.mem-image {
+    max-width: 480px;
+    margin: auto;
+}
+
+@media (max-width: 800px) and (min-width: 400px) {
+    .hero-container-text, .hero-container{
+        display: block;
+    }
+
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .mem-image {
+        max-width: 340px;
+    }
+    .mem {
+        width: 340px;
+    }
+}
+
+@media (max-width: 400px) {
+    .navigation-list {
+        justify-content: center;
+    }
+
+    .hero, .hero-container, .hero-container-text{
+        display: block;
+    }
+
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    h1 {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .mem-image{
+        width: 240px;
+    }
+
+    .mem {
+        width: 240px;
+    }
+}
