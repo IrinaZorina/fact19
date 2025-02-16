@@ -1,3 +1,12 @@
+<?php
+        $Hour = date('H');
+        if ($Hour >= 8 && $Hour < 20) {
+            $Style = 'style.css';
+        } else {
+            $Style = 'noch.css';
+        }
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,12 +15,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Мой сайт</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <?php
-        if (8 > date("H") && date("H") >= 20) {
-            echo "<link rel=\"stylesheet\" href=\"assets/css/noch.css\">";
-        }
-    ?>
+    <link rel="stylesheet" href="<?php echo $Style; ?>">
+
 </head>
 <body>
 <header>
