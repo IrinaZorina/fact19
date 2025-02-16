@@ -1,9 +1,9 @@
 <?php
 $Hour = date('H');
 if ($Hour >= 8 && $Hour < 20) {
-    $Style = '/assets/css/style.css';
+    $smena = '/assets/css/style.css';
 } else {
-    $Style = '/assets/css/noch.css';
+    $smena = '/assets/css/noch.css';
 }
 ?>
 
@@ -16,7 +16,7 @@ if ($Hour >= 8 && $Hour < 20) {
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Мой сайт</title>
-    <link rel="stylesheet" href="<?= $Style ?>">
+    <link rel="stylesheet" href="<?= $smena ?>">
 
 </head>
 
