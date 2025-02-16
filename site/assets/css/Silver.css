@@ -1,0 +1,42 @@
+.element {
+    width: 100px;
+    height: 60px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #19a5dc;
+    position: relative;
+    padding: 5px;
+}
+
+.atomic-number {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.atomic-weight {
+    font-size: 16px;
+    position: absolute;
+    top: 25px;
+    left: 5px;
+}
+
+.symbol {
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.name {
+    font-size: 20px;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
