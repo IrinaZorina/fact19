@@ -1,0 +1,173 @@
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #601fc0;
+    color: #333;
+}
+header {
+    padding-top: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.glava {
+    display: flex;
+    flex-direction: column-reverse;
+    color: #ffffff;
+    padding: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+header button {
+    background-color: #c67203;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+header button:hover {
+    background-color: #555;
+}
+.photo-text-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.photo-text-block img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    flex-wrap: revert;
+
+}
+.item{
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(215, 17, 17, 0.5);
+}
+
+.photo-text-block .text {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    text-align: inherit;
+    font-size: 33px;
+    color: azure;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.day {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+
+.night {
+    background-color: #333;
+    color: #f9f9f9;
+}
+
+.nature {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.nature img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 70px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 10px solid #ffffff;
+}
+
+.city {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.city img {
+    width: 200%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 10px solid #ffffff;
+
+}
+
+@media (max-width: 768px) {
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .text {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .photo-text-block {
+        margin: 10px;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .text {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .photo-text-block {
+        margin: 5px;
+    }
+
+    .gallery img, .attractions img {
+        width: 45%;
+    }
+}
