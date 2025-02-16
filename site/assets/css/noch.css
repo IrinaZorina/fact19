@@ -1,0 +1,151 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #532195;
+}
+header {
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+.FIO {
+    display: flex;
+    flex-direction: column-reverse;
+    color: #ffffff;
+    padding: 10px;
+}
+header button {
+    background-color: #03c61a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.photo-text-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.photo-text-block img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    flex-wrap: revert;
+
+}
+.item{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.photo-text-block .text {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    text-align: inherit;
+    font-size: 33px;
+    color: azure;
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: white;
+}
+
+.priroda {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.priroda img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 30px;
+    border: 5px solid #060505;
+}
+
+.Ufa {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.Ufa img {
+    width: 200%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    border: 5px solid #0c0a0a;
+
+}
+footer {
+    background-color: #03c61a;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .text {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .photo-text-block {
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .text {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .photo-text-block {
+        margin: 5px;
+    }
+
+    .Ufa img, .priroda img {
+        width: 45%;
+    }
+}
