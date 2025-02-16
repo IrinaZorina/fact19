@@ -1,9 +1,9 @@
 <?php
 $Hour = date('H');
 if ($Hour >= 8 && $Hour < 20) {
-    $Style = '\assets\css\style.css';
+    $Style = '/assets/css/style.css';
 } else {
-    $Style = '\assets\css\noch.css';
+    $Style = '/assets/css/noch.css';
 }
 ?>
 
