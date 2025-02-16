@@ -1,0 +1,129 @@
+.light-theme {
+    background-color: white;
+    text-color: black;
+}
+.dark-theme {
+    background-color: black;
+    text-color: white;
+}
+body{
+    background-color: royalblue;
+}
+.ssylka1, .ssylka2{
+    padding: 10px;
+}
+.conteiner, .section, .info,.info2{
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.photo,.myphoto{
+    height: 700px;
+    width: 500px;
+}
+.info{
+    height: 500px;
+    width: 700px;
+    justify-content: space-around;
+}
+.section1{
+    height: 100px;
+    width: 850px;
+}
+.section2,.section3{
+    height: 300px;
+    width: 300px;
+}
+.section{
+    display: flex;
+    padding: 30px;
+    justify-content: space-around;
+}
+.dostoprim1,.dostoprim2,.dostoprim3,.dostoprim4,.section2,.section1,.section3,.dostoprim5,.dostoprim6,.dostoprim7,.dostoprim8{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.information,.information2{
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+}
+.dostoprim1,.dostoprim2,.dostoprim3,.dostoprim4{
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.dostoprim5,.dostoprim6,.dostoprim7,.dostoprim8{
+    height: 500px;
+    width: 700px;
+    background-color: white;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.bio{
+    text-align: justify;
+    font-family: "Times New Roman";
+    color: whitesmoke;
+}
+.name{
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-size: 35px;
+    font-weight: bold;
+    color: purple;
+}
+.mesta{
+    height: 200px;
+    width: 200px;
+}
+.chelyb{
+    height: 400px;
+    width: 600px;
+}
+.nazvanie{
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-size: 20px;
+    font-weight: bold;
+    color: purple;
+}
+.info2{
+    display: flex;
+    justify-content: space-around;
+    width: 700px;
+}
+@media screen and (min-width: 400px){
+
+    .photo,.myphoto{
+        height: 600px;
+        width: 400px;
+    }
+
+    .dostoprim1,.dostoprim2,.dostoprim3,.dostoprim4 {
+        height: 200px;
+        width: 200px;
+    }
+    .dostoprim5,.dostoprim6,.dostoprim7,.dostoprim8 {
+        height: 300px;
+        width: 400px;
+    }
+    .mesta{
+        height: 100px;
+        width: 100px;
+    }
+    .chelyb{
+        height: 200px;
+        width: 300px;
+    }
+
+}
