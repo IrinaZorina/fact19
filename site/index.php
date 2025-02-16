@@ -1,11 +1,12 @@
 <?php
 $Hour = date('H');
 if ($Hour >= 8 && $Hour < 20) {
-    $smena = '/assets/css/style.css';
+    $smena = 'assets/css/style.css';
 } else {
-    $smena = '/assets/css/noch.css';
+    $smena = 'assets/css/noch.css';
 }
 ?>
+
 
 <!doctype html>
 <html lang="en">
