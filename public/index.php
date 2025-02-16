@@ -105,7 +105,6 @@ if (date('H') >= 8 && date('H') < 20) {
                     </li>
                 </ul>
             </div>
-
         </section>
     </main>
     <footer class="footer">
