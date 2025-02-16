@@ -1,7 +1,9 @@
 <?php
+
 declare(strict_types = 1);
 
 $name = 'Блинов Владислав';
+
 if (date('H')>=8 && date('H')<20)
 {
 	$cssFile = 'assets/styles/color/light.css';

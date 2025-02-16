@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types = 1);
 
 if (date('H')>=8 && date('H')<20)
@@ -23,12 +24,12 @@ else
 	<link
 			href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 			rel="stylesheet">
-	<link rel="stylesheet" href="assets/styles/color/light.css">
+	<link rel="stylesheet" href="<?=$cssFile?>">
 	<link rel="stylesheet" href="assets/styles/global.css">
 	<link rel="stylesheet" href="assets/styles/header.css">
 	<link rel="stylesheet" href="assets/styles/homework3.css">
 	<link rel="stylesheet" href="assets/styles/footer.css">
-	<title>Блинов Владислав</title>
+	<title>Блинов Владислав ДЗ-3</title>
 </head>
 <body>
 <div class="root">

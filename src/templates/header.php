@@ -1,8 +1,6 @@
 <div class="header__container">
 	<a class="header__logo" href="index.php">
-		<img src="
-				<?=$logoFile?>
-" alt="logotype" width="120px"></a>
+		<img src="<?=$logoFile?>" alt="logotype" width="120px"></a>
 	<nav class="menu">
 		<ul class="menu__list">
 			<li class="menu__item"><a href="index.php">Главная</a></li>
