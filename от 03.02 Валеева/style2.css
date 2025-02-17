@@ -1,0 +1,110 @@
+body{
+    background-color: rgb(22, 34, 60);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+header{
+    color: #ffffff;
+    text-align: left;
+    padding: 45px;
+    font-size: 45px;
+}
+.initials{
+        text-align: center;
+        font-size: 25px;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 10px;
+}
+.p{
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 100%;
+    margin: 25px; 
+}
+.p img{
+    max-width: 100%;
+}
+.me{
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+    color: #ffffff;
+}
+.factcours{
+    text-align: center;
+    grid-column: 3;
+    grid-row: 1;
+    align-items: center;
+}
+.aboutme{
+    text-align: center;
+    padding: 20px;
+    margin: 25px;
+}
+.fact{
+    text-align: center;
+    padding: 20px;
+    margin: 25px;
+}
+.krasnoyarsk{
+    font-size: 35px;
+    text-align: center;
+    color: #ffffff;
+}
+.town{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333957;
+    height: 280px;
+    margin: 20px;
+    padding: 20px;
+}
+.towns{
+    display: flex;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.town img{
+    height: 180px;
+}
+
+.krai{
+    order: initial;
+    padding: 25px;
+    display: flex;
+}
+.img1, .img2, .img3, .img4{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333957;
+    /* height: 580px; */
+    margin: 20px;
+    padding: 20px;
+}
+.img1 img, .img2 img, .img3 img, .img4 img{
+    height: 390px;
+}
+
+.MneNado{
+    display: flex;
+    justify-content: space-between;
+}
+.Mne{
+    display: flex;
+    justify-content: space-between;
+}
+.adaptation{
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+}
+@media (max-width: 399px) {
+    
+}
