@@ -21,21 +21,12 @@ if ($hour >= 8 && $hour < 20) {
 </head>
 <body class="<?php echo $theme; ?>">
 
-    <header>
-<div class="containerHead">
-    <div>Тема 1</div>
-    <div>Тема 2</div>
-    <div>Тема 3</div>
-
-</div>
-
-            </tr>
-        </table>
-    </header>
-
+<?php
+require_once('pages/header.php');
+?>
     <div class="container">
         <div class="one">
-            <img src="Глазки-save.ico" alt="Image">
+            <img src="images/Глазки-save.ico" alt="Image">
         </div>
         <div class="two">
             <p>Меня зовут Борисин Вадим.</p>
@@ -49,24 +40,27 @@ if ($hour >= 8 && $hour < 20) {
     <main>
         <p style="text-align: center; font-size: 20px;">Достопримечательности города УФА</p>
         <div class="container1">
-            <div class="grid1"><img src="Глазки-save.ico" alt=""><p>первая картинка</p></div>
-            <div class="grid1"><img src="Глазки-save.ico" alt=""><p>вторая картинка</p></div>
-            <div class="grid1"><img src="Глазки-save.ico" alt=""><p>третья картинка</p></div>
-            <div class="grid1"><img src="Глазки-save.ico" alt=""><p>четвертая картинка</p></div>
+            <div class="grid1"><img src="images/Глазки-save.ico" alt=""><p>первая картинка</p></div>
+            <div class="grid1"><img src="images/Глазки-save.ico" alt=""><p>вторая картинка</p></div>
+            <div class="grid1"><img src="images/Глазки-save.ico" alt=""><p>третья картинка</p></div>
+            <div class="grid1"><img src="images/Глазки-save.ico" alt=""><p>четвертая картинка</p></div>
         </div>
 
         <p style="text-align: center; font-size: 20px;">Достопримечательности Республики Башкортостан</p>
 
 
 <div class="container2">
-    <div class="grid2" ><img src="Глазки-save.ico" alt=""><p>первая картинка</p></div>
-    <div class="grid2" ><img src="Глазки-save.ico" alt=""><p>вторая картинка</p></div>
-    <div class="grid2" ><img src="Глазки-save.ico" alt=""><p>третья картинка</p></div>
-    <div class="grid2" ><img src="Глазки-save.ico" alt=""><p>четвертая картинка</p></div>
+    <div class="grid2" ><img src="images/Глазки-save.ico" alt=""><p>первая картинка</p></div>
+    <div class="grid2" ><img src="images/Глазки-save.ico" alt=""><p>вторая картинка</p></div>
+    <div class="grid2" ><img src="images/Глазки-save.ico" alt=""><p>третья картинка</p></div>
+    <div class="grid2" ><img src="images/Глазки-save.ico" alt=""><p>четвертая картинка</p></div>
 
 </div>
 
 </main>
 
 </body>
+<?php
+require_once('pages/footer.php');
+?>
 </html>
