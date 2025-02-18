@@ -1,0 +1,109 @@
+.grid1 {
+  display: grid;
+  grid-template-columns: repeat(3, 330px);
+  grid-template-rows: repeat(2, 250px);
+  grid-template-areas:
+  "foto header header"
+  "foto text text2" ;
+}
+
+.div1 {
+  grid-area: foto;
+  background-image: url(../image/photo_2025-01-28_20-31-39.jpg);
+  height: 500px;
+  width: 330px;
+  background-size: cover;
+}
+
+.div2 {
+ margin: 80px 0px 30px 0px ;
+  white-space: wrap;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: left;
+}
+.div3 {
+  grid-area: text;
+  text-align: center;
+  text-align: top;
+}
+.div4 {
+  grid-area: text2;
+  text-align: center;
+}
+h1{
+  margin: 20px 0px 30px 50px ;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.image1, .image2, .image3, .image4 {
+  padding: 150px;
+  background-size: cover ;
+}
+.text1, .text2, .text3 {
+  text-align: center;
+}
+.text1 {
+  font-size: 170%;
+}
+.text2 {
+  font-size: 150%;
+}
+.text3 {
+  font-size: 200%;
+}
+.image1 {
+  background-image: url(../image/arka.jpg);
+}
+.image2 {
+  background-image: url(../image/galitskiy.jpg);
+}
+.image3 {
+  background-image: url(../image/rosha.jpg);
+}
+.image4 {
+  background-image: url(../image/zaporoshci.jpg);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: space-between;
+  align-items: stretch;
+} 
+.image5, .image6, .image7, .image8 {
+  padding: 200px;
+  background-size: cover;
+}
+.image5 {
+  background-image: url(../image/abray.jpg);
+}
+.image6 {
+  background-image: url(../image/more.jpg);
+}
+.image7 {
+  background-image: url(../image/olimp.jpg);
+}
+.image8 {
+  background-image: url(../image/roza.jpg);
+}
+.header {
+  margin: 0px 0px 25px 25px;
+}
+.header {
+  display: flex;
+  margin: 0px 0px 20px 20px;
+}
+.theme1, .theme2 {
+ margin: 00px 20px 0px 00px;
+}
+body {
+  background-color: #5f5f66;
+  color: #d7d7de;
+}

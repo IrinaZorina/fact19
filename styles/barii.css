@@ -1,0 +1,29 @@
+.grid {
+	display: grid;
+	width: 150px;
+	grid-template-areas: 
+	"element namber"
+	"element massa"
+	"name name";
+	background-color: #ff78a5;
+
+}
+.element {
+	font-size: 40px;
+	grid-area: element;
+	\margin: 0px 0px 0px 5px;
+}
+.namber {
+	grid-area: namber;
+	margin: 0px 15px 0px 0px;
+	text-align: right;
+}
+.massa {
+	grid-area: massa;
+	margin: 0px 15px 0px 0px;
+	text-align: right;
+}
+.name {
+	grid-area: name;
+	margin: 0px 0px 0px 5px;
+}
