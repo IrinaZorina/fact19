@@ -31,44 +31,18 @@
                     background-color:coral;
                     color:powderblue;
                 }
+                    .footer{
+                    background-image: linear-gradient(black, gray);
+                }
             </style>';
         }
     ?>
 </head>
 
 <body>
-    <header class="header"> 
-       <nav class="nav">
-            <div class="nav__logo">
-            <?php
-                $hour=date('H');
-                if($hour>=8 && $hour<20)
-                {
-                    echo '
-                        <img src="./assets/image/free-png.ru-451.png" class="nav_logo-img" alt="sun">
-                    ';
-            
-                }
-                else
-                {
-                    echo '<img src="./assets/image/free-png.ru-173.png" class="nav_logo-img" alt="moon">';
-                }
-        ?>      
-            </div>
-            <div class="nav__item">
-                <a href="./med.html" class="nav__link">Тема 1</a>
-            </div>
-            <div class="nav__item">
-                <a href="#" class="nav__link">Тема 2</a>
-            </div>
-            <div class="nav__item">
-                <a href="#" class="nav__link">Тема 3</a>
-            </div>
-       </nav>
-       <div class="header__line">
-       </div>
-      
-    </header> 
+   <?php
+        include "pages/header.php";
+   ?>
     <main class="main">
         <section class="main__about">
             <div class="main__container-img">
@@ -150,6 +124,9 @@
         </section>
        
     </main>
+    <?php
+    include "pages/footer.php";
+    ?>
 </body>
 </html>
 

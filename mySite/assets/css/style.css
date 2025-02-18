@@ -163,6 +163,20 @@ html, body{
     row-gap: 50px;
     padding-bottom: 50px;
 }
+/*Блок  footer*/
+.footer{
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(darkgray, burlywood);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    color: beige;
+}
+.footer__text{
+ font-size: 20px;
+}
 /*медиа запросы*/
 @media( max-width: 1200px){
     .main__place-region-grid{
@@ -194,5 +208,10 @@ html, body{
     }
     .nav_logo-img{
         width: 200px;
+    }
+    .footer{
+       flex-direction: column;
+       height: 260px;
+        gap: 20px;
     }
 }

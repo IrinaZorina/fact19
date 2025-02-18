@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    background-color:darkgray;  
+}
+.text{
+    font-size: 20px;
+}
+.title{
+    text-align: center;
+    font-size: 27px;
+}
+.container{
+    display: flex;
+    gap: 200px;
+    justify-content:center;
+    align-items: center;
+}
+.text_align_center{
+    text-align: center;
+}
