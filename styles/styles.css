@@ -3,8 +3,13 @@ h1, h2, h3, p, figcaption, li, a {
 }
 
 body {
-    margin: 0 auto 0 auto;
+    margin: 0;
+    padding: 0;
+}
+
+main, .footer, .navigation {
     max-width: 1280px;
+    margin: 0 auto 0 auto;
 }
 
 ul {
@@ -13,11 +18,10 @@ ul {
     list-style: none;
 }
 
-
 header {
     background-color: royalblue;
     padding: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .navigation-list-item-link {
@@ -112,6 +116,33 @@ h1 {
 .mem-image {
     max-width: 480px;
     margin: auto;
+}
+
+.tg-link::before {
+    content: "";
+    background-image: url("/images/tg_icon.svg");
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-size: 25px;
+    align-items: center;
+    margin: 0 auto 10px auto;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: #414042;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.tg-link, .copyright {
+    color: white;
 }
 
 @media (max-width: 800px) and (min-width: 400px) {

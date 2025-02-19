@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
-    <?php
-        if (8 > date("H") && date("H") >= 20) {
-            echo "<link rel=\"stylesheet\" href=\"styles/dark.css\">";
-        }
-    ?>
-</head>
-<body>
-    <header>
-        <nav class="navigation">
-            <ul class="navigation-list">
-                <li class="navigation-list-item">
-                    <a class="navigation-list-item-link" href="mendeleev/mendeleev.html">Тема 1</a>
-                </li>
-                <li class="navigation-list-item">
-                    <a class="navigation-list-item-link" href="">Тема 2</a>
-                </li>
-                <li class="navigation-list-item">
-                    <a class="navigation-list-item-link" href="">Тема 3</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<?php require_once "header.php"; ?>
 
     <main>
         <section class="hero">
@@ -90,5 +63,5 @@
             </div>
         </section>
     </main>
-    </body>
-</html>
+
+    <?php include_once "footer.php"; ?>
