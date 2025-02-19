@@ -1,33 +1,5 @@
-<?php
-$hour = date("H");
-//$hour = 21;// проверка времени
-if ($hour >= 8 && $hour < 20) {
-    $style = '/assets/css/Style.css'; // дневной стиль
-} else {
-    $style = '/assets/css/nightStyle.css'; // ночной стиль
-}
-?>
-<!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="<?= $style ?>">
-</head>
-<body>
-<header>
-    <div class="container-header">
-        <img src="assets/image/search.jpg"alt="search" width="150">
-        <div class="theme1">
-            <a href="mendeelev.html">Таблица Мендлеева </a>
-        </div>
-        <div class="theme2"> </div>
-        <div class="theme3"> </div>
-    </div>
-</header>
+<?php require_once'inc/header.php'?>
+
 <main>
     <div class="main">
         <div class="photo">
@@ -96,4 +68,5 @@ if ($hour >= 8 && $hour < 20) {
         </div>
     </div>
 </main>
-</body>
+
+<?php require_once  'inc/footer.php'?>

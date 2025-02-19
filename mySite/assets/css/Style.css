@@ -1,5 +1,5 @@
 html{
-    background-color: lightblue;
+    background-color: aliceblue;
 }
 img{
     max-width: 100%;
@@ -17,6 +17,16 @@ img{
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
+    position: relative;
+}
+.container-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
 }
 .container {
     display: flex;
@@ -56,10 +66,10 @@ img{
     justify-content: space-around;
     gap: 20px;
 }
-
 .mgn-photo1,.mgn-photo2,.mgn-photo3,.mgn-photo4{
     padding: 40px ;
     background-color: white;
+    border: 1px solid black;
 }
 .tyl,.palatka,.hram,.arena {
     text-align: center;
@@ -74,9 +84,20 @@ img{
     padding: 30px;
     background-color: white;
     text-align: center;
+    border: 1px solid black;
 }
 .theme1,.theme2,.theme3{
     font-size: 24px;
+}
+.theme1 {
+    position: absolute;
+    top: 50%;
+    left: 150px;
+}
+.theme2 {
+    position: absolute;
+    top: 50%;
+    left: 400px;
 }
 @media screen and (max-width:800px){
     .main{
