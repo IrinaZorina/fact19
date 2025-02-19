@@ -195,6 +195,35 @@ header {
 .simferopol { background-image: url("image/simferopol.webp"); }
 .yalta { background-image: url("image/yalta.webp"); }
 .balaklava { background-image: url("image/balaklava.webp"); }
+footer {
+    display: flex;
+    justify-content: center; /* Центрируем содержимое */
+    align-items: center; /* Центрируем по вертикали */
+    height: 300px; /* Или больше, если нужно */
+    background-color: #333; /* Темный фон для футера */
+    color: white; /* Белый текст */
+
+}
+.contacts {
+    display: flex;
+    flex-direction: column; /* Размещает контакты в колонку */
+    align-items: center; /* Центрирует по горизонтали */
+    justify-content: center; /* Центрирует по вертикали (если футер имеет фиксированную высоту) */
+    text-align: center;
+}
+.icons {
+    display: flex;
+    width: 200px;
+    height: 40px;
+    background-image: url(image/icons.webp);
+    background-size: contain;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
 @media screen and (max-width: 1024px) {
     header {
         flex-direction: column;
