@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +15,8 @@
     font-size: 80px;
     margin-bottom: 20px;
 }
-.topic1{
+
+.topic1 {
     text-align: left;
 }
 
@@ -28,6 +30,7 @@
     font-size: 16px;
     color: #777;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .about {
@@ -56,7 +59,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: black;
+    background-color: gray;
     color: white;
     line-height: 1.6;
 }
@@ -80,7 +83,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: darkslategray;
     color: white;
     padding: 20px;
     border-radius: 10px;
@@ -102,21 +105,20 @@ body {
     font-size: 18px;
     font-weight: bold;
     color: white;
-    background-color: black;
+    background-color: darkslategray;
 }
 
 .project-description {
     font-size: 14px;
     color: white;
     margin-top: 5px;
-    background-color: black;
+    background-color: darkslategray;
 }
 
 .arrow {
     font-size: 24px;
     color: #777;
 }
-
 
 
 .footer {
@@ -127,67 +129,101 @@ body {
     color: #fff;
     border-radius: 5px;
 }
-.box1{
+
+.box1 {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-evenly;
     gap: 20px;
 }
-.sight{
+
+.sight {
     text-align: center;
 }
-.box2{
+
+.box2 {
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(2, 500px);
     grid-template-rows:repeat(2, 500px);
     grid-gap: 30px;
 }
-.photo1{
+
+.photo1 {
     width: 300px;
     height: 300px;
     text-align: center;
     padding-top: 50px;
 }
-.photo2{
+
+.photo2 {
     width: 300px;
     height: 300px;
     text-align: center;
     padding-top: 50px;
 }
-.photo3{
+
+.photo3 {
     width: 300px;
     height: 300px;
     text-align: center;
     padding-top: 5px;
 }
-.photo4{
+
+.photo4 {
     width: 300px;
     height: 300px;
     text-align: center;
     padding-top: 5px;
 }
-.sight2{
+
+.sight2 {
     text-align: center;
 }
-@media (max-width: 480px){
-    .header h1{
+
+.one {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.avatar {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.about2 {
+    text-align: center;
+}
+
+.name {
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .header h1 {
         font-size: 18px;
     }
-    .description{
+
+    .description {
         font-size: 12px;
     }
-    .project-title{
+
+    .project-title {
         font-size: 16px;
     }
-    .project-description{
+
+    .project-description {
         font-size: 12px;
     }
-    .arrow{
+
+    .arrow {
         font-size: 16px;
     }
 }
+
 @media (max-width: 768px) {
     .container {
         padding: 15px;
