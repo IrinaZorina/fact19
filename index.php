@@ -1,44 +1,9 @@
 <?php
-$time = date("H");
-if ($time >= 8 && $time < 20) {
-    $tiptemy = '/assets/css/styleday.css';
-        $logo = '/assets/image/logoday.png';
-} else {
-    $tiptemy = '/assets/css/style.css';
-        $logo = '/assets/image/logo.png';
-}
+$title = "Главная";
+include_once 'header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=" <?= $tiptemy ?>">
-    <title>О себе</title>
-</head>
 <body>
-<header>
-    <div class="header">
-        <div class="logo">
-            <a href="index.html"><img src="<?=$logo ?>" alt="На главную"></a>
-
-        </div>
-        <div>
-            <br>
-            <a href="tema1.html">Тема 1</a>
-        </div>
-        <div>
-            <br>
-            <a href="tema2.html">Тема 2</a>
-        </div>
-        <div>
-            <br>
-            <a href="tema3.html">Тема 3</a>
-        </div>
-    </div>
-
-</header>
-<main>
+<main style="color= white;">
     <div class="biogrid">
         <div class="foto">
             <img src="assets/image/foto.jpeg" width="100%" height="100%" alt="Я">
@@ -123,5 +88,8 @@ if ($time >= 8 && $time < 20) {
 </main>
 
 </div>
+<?php
+include_once 'footer.php';
+    ?>
 </body>
 </html>

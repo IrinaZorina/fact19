@@ -131,6 +131,16 @@ td {
     color: white;
     font-size: 30px;
 }
+.footer1 {
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    border-top: 2px solid black;
+    padding-top: 20px;
+}
+.span {
+    color: white;
+}
 @media (max-width: 1024px) {
     .biogrid {
         grid-template-areas:
