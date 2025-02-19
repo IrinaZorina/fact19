@@ -1,0 +1,340 @@
+/* Главная страница */
+.section {
+    margin-bottom: 4rem;
+}
+
+.bio {
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+}
+
+.content__title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+.content__title_hidden {
+    display: none;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.content__about, .content_opinion {
+    flex: 1;
+}
+
+.city__title {
+    margin-bottom: 2rem;
+}
+
+.city__item {
+    background-color: var(--color-shadow);
+    text-align: center;
+    padding: 1rem;
+    transition: all 0.2s;
+    border-radius: 1rem;
+}
+
+.city__item:hover {
+    transform: scale(110%);
+    box-shadow: 0px 25px 4rem var(--color-shadow);
+    transition: all 0.3s ease-out;
+}
+
+.city__attractions, .city__museums {
+    margin-bottom: 4rem;
+}
+
+.attractions__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.attractions__item {
+    width: 22%;
+    margin-bottom: 2.5rem;
+}
+
+.attractions__item img {
+    width: 100%;
+    height: 24vh;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.attractions__item p {
+    text-align: center;
+}
+
+.museums__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.museums__item {
+    width: 48%;
+    margin-bottom: 4rem;
+}
+
+.museums__item img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.museums__item p {
+    text-align: center;
+}
+
+/* Homework2 */
+
+.content {
+    width: 100%;
+}
+
+.title {
+    margin-bottom: 2rem;
+}
+
+.form__group {
+    margin-bottom: 1.5rem;
+}
+
+.form__group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form__group input, select, textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+}
+
+.form__fieldset {
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+.form__legend {
+    padding: 0 1rem;
+}
+
+.form__fieldset-group input {
+    margin: 1.5rem;
+}
+
+.form__fieldset-group label {
+    margin-right: 1.5rem;
+}
+
+.form__submit {
+    color: var(--color-background);
+    background: var(--color-primary);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+.form__submit:hover {
+    transform: scale(110%);
+    background: var(--color-primary-hover);
+    transition: all 0.4s ease-out;
+}
+
+.table__content {
+    width: auto;
+    border-collapse: collapse;
+}
+
+.table__content, .table__data, .table__row {
+    border: 1px solid var(--color-border-invert);
+}
+
+.table__data img {
+    width: 22rem;
+    vertical-align: middle;
+}
+
+.image-table__image {
+    background-image: url("https://vet-centre.ru/wp-content/uploads/2024/08/batakskiy-shpic.jpg");
+    width: 30rem;
+    height: 30rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    transform: rotate(180deg);
+    filter: hue-rotate(240deg);
+    margin-bottom: 2rem;
+}
+
+.table-two__content {
+    width: auto;
+    border-collapse: collapse;
+}
+
+.table-two__row, .table-two__data {
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.table-two__content {
+    border: 3px solid var(--color-primary);
+}
+
+.table-two__data {
+    padding: 1.5rem;
+}
+
+.table-two__data img {
+    width: 15rem;
+    vertical-align: middle;
+}
+
+.table-two__row:nth-child(2) {
+    background-color: blue;
+    color: #cccccc;
+}
+
+.table-two__row:nth-child(3) {
+    background-color: red;
+    color: #cccccc;
+}
+
+/* Homework3 */
+.mendeleev-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mendeleev-element {
+    padding: 10px;
+    width: 25%;
+    border: solid 1px var(--color-border-invert);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.mendeleev-element__symbol {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.mendeleev-element__name {
+    flex: 100%;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.mendeleev-element__atomic-number, .mendeleev-element__weight {
+    text-align: right;
+}
+
+.mendeleev-element__atomic-number {
+    font-weight: bold;
+}
+
+.pink {
+    background-color: #FFB6C1;
+}
+
+.yellow {
+    background-color: #EFF70F;
+}
+
+.blue {
+    background-color: #87CEEB;
+}
+
+/* Homework4 */
+
+.task {
+    margin-bottom: 4rem;
+}
+
+.task__title {
+    margin-bottom: 2rem;
+}
+
+.task__answer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task__input {
+    margin-bottom: 2rem;
+}
+
+/* media */
+@media screen and (max-width: 1100px) {
+    .mendeleev-element__symbol {
+        font-size: 40px;
+    }
+
+    .mendeleev-element__name {
+        flex: 100%;
+        font-size: 25px;
+    }
+
+    .mendeleev__numbers {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .attractions__item {
+        width: 48%;
+    }
+
+    .museums__item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .bio {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .aside {
+        text-align: center;
+    }
+
+    .aside__photo img {
+        width: 100%;
+    }
+
+    .attractions__item {
+        width: 100%;
+    }
+
+    .mendeleev-element__symbol {
+        font-size: 20px;
+    }
+
+    .mendeleev-element__name {
+        flex: 100%;
+        font-size: 13px;
+    }
+}
+
+

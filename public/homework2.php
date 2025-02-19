@@ -1,37 +1,4 @@
-<?php
-
-declare(strict_types=1);
-
-if (date('H') >= 8 && date('H') < 20) {
-    $cssFile = 'assets/styles/color/light.css';
-    $logoFile = 'assets/img/factAcademy-logo_light.svg';
-} else {
-    $cssFile = 'assets/styles/color/dark.css';
-    $logoFile = 'assets/img/factAcademy-logo_dark.svg';
-}
-?>
-
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link
-            href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet">
-    <link rel="stylesheet" href="<?= $cssFile ?>">
-    <link rel="stylesheet" href="assets/styles/global.css">
-    <link rel="stylesheet" href="assets/styles/header.css">
-    <link rel="stylesheet" href="assets/styles/homework2.css">
-    <link rel="stylesheet" href="assets/styles/footer.css">
-    <title>Блинов Владислав - ДЗ_2</title>
-</head>
-<body>
-<header class="header">
-    <?php require '../src/templates/header.php'; ?>
-</header>
+<?php require __DIR__ . '../../src/templates/_header.php'; ?>
 <main class="main">
     <div class="content">
         <section class="section form">
@@ -141,9 +108,7 @@ if (date('H') >= 8 && date('H') < 20) {
         </section>
     </div>
 </main>
-<footer class="footer">
-    <?php require '../src/templates/footer.php'; ?>
-</footer>
+<?php require '../src/templates/_footer.php'; ?>
 <script src="assets/js/hamburger-menu.js"></script>
 </body>
 </html>
