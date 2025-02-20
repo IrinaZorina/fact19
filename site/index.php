@@ -1,33 +1,4 @@
-<?php
-$Vremya = date('H');
-if ($Vremya >= 8 && $Vremya < 20) {
-    $den_noch = 'assets/css/style.css';
-} else {
-    $den_noch = 'assets/css/noch.css';
-}
-?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="<?= $den_noch ?>">
-</head>
-<body>
-<header>
-    <a href="Table.html">
-        <button>Тема 1</button>
-    </a>
-    <a href="form.html">
-        <button>Тема 2</button>
-    </a>
-    <a href="Table.html">
-        <button>Тема 3</button>
-    </a>
-</header>
+<?php require_once 'inc/header.php' ?>
 <main>
     <div class="glava"><h1> Алмаз Фахертдинов</h1></div>
     <div class="photo-text-block">
@@ -80,8 +51,4 @@ if ($Vremya >= 8 && $Vremya < 20) {
         </div>
     </div>
 </main>
-<footer>
-    Всем права ущемлены :D
-</footer>
-</body>
-</html>
+<?php require_once 'inc/footer.php' ?>

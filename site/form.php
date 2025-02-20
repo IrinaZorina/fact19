@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Форма</title>
-    <link rel="stylesheet" href="assets/css/form.css">
-</head>
+<?php require_once 'inc/header.php'; ?>
 <body>
 <form  name="myform"></form>
 <label for="login">Имя пользователя:</label>
@@ -39,4 +33,4 @@
 <br>
 <button type="submit">Все, я справился с заполнением формы </button>
 </body>
-</html>
+<?php require_once 'inc/footer.php'; ?>
