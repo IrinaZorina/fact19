@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '../../init.php';
+
+require __DIR__ . '/../init.php';
 ?>
 
 <!doctype html>
@@ -34,6 +35,7 @@ require __DIR__ . '../../init.php';
                     <li class="menu__item"><a href="homework2.php">ДЗ от 31.01</a></li>
                     <li class="menu__item"><a href="homework3.php">ДЗ от 3.02</a></li>
                     <li class="menu__item"><a href="homework4.php">ДЗ от 17.02</a></li>
+                    <li class="menu__item"><a href="homework5.php">ДЗ от 20.02</a></li>
                 </ul>
                 <div class="menu__mobile">
                     <ul class="menu__list-mobile">
@@ -41,6 +43,7 @@ require __DIR__ . '../../init.php';
                         <li class="menu__item-mobile"><a href="homework2.php">ДЗ от 31.01</a></li>
                         <li class="menu__item-mobile"><a href="homework3.php">ДЗ от 3.02</a></li>
                         <li class="menu__item-mobile"><a href="homework4.php">ДЗ от 17.02</a></li>
+                        <li class="menu__item-mobile"><a href="homework5.php">ДЗ от 20.02</a></li>
                     </ul>
                     <button class="menu__mobile-button">
                         <img class="menu-icon" src="assets/img/burger-menu.svg">

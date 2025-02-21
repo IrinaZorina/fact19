@@ -275,6 +275,10 @@
     justify-content: space-between;
 }
 
+.task__answer {
+    color: var(--color-primary);
+}
+
 .task__input {
     margin-bottom: 2rem;
 }

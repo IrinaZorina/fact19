@@ -1,4 +1,4 @@
-<?php require __DIR__ . '../../src/templates/_header.php'; ?>
+<?php require '../src/templates/_header.php'; ?>
 <main class="main">
     <div class="mendeleev-container">
         <div class="mendeleev-element pink">
@@ -74,7 +74,7 @@
         <div class="mendeleev-element yellow">
             <div class="mendeleev-element__symbol"><a
                         href="https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B5%D0%BC%D0%BD%D0%B8%D0%B9"
-                        target="blank" title="Ссылка на Википедию">B</a></div>
+                        target="blank" title="Ссылка на Википедию">Si</a></div>
             <div class="mendeleev__numbers">
                 <div class="mendeleev-element__atomic-number">14</div>
                 <div class="mendeleev-element__weight">28,086</div>

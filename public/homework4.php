@@ -1,4 +1,4 @@
-<?php require __DIR__ . '../../src/templates/_header.php'; ?>
+<?php require '../src/templates/_header.php'; ?>
 <main class="main">
     <div class="section">
         <h1 class="title content__title">Слайд №25</h1>
