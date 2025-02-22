@@ -23,6 +23,9 @@
                 <li class="navigation-list-item">
                     <a class="navigation-list-item-link" href="cycles.php">Циклы</a>
                 </li>
+                <li class="navigation-list-item">
+                    <a class="navigation-list-item-link" href="arrays.php">Массивы</a>
+                </li>
             </ul>
         </nav>
     </header>

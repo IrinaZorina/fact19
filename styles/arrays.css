@@ -1,0 +1,22 @@
+td, table, th{
+    padding: 5px;
+    border-collapse: collapse;
+}
+
+
+tr:nth-child(2n) {
+    background-color: #E5F0FF;
+}
+
+td:not(:nth-child(1)){
+    border-left: 1px solid #E6E7E8;
+}
+
+blockquote {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    margin: 0;
+    border: 1px solid #FFD600;
+    background-color: #F4EDB2;
+    max-width: 700px;
+}
