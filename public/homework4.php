@@ -1,14 +1,16 @@
-<?php require '../src/templates/_header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/src/templates/_header.php'; ?>
 <main class="main">
     <div class="section">
         <h1 class="title content__title">Слайд №25</h1>
         <div class="task">
-            <h2 class="task__title">1. Выведите столбец чисел от 5 до 13.</h2>
-            <?php
-            for ($i = 5; $i <= 13; $i++) {
-                echo "<p>{$i}</p>";
-            }
-            ?>
+            <div class="task__answer">
+                <h2 class="task__title">1. Выведите столбец чисел от 5 до 13.</h2>
+                <?php
+                for ($i = 5; $i <= 13; $i++) {
+                    echo "<p>{$i}</p>";
+                }
+                ?>
+            </div>
         </div>
         <div class="task">
             <h2 class="task__title">2. Дано число $num=1000. Делите его на 2 столько раз, пока результат деления не
@@ -20,29 +22,33 @@
             <div class="task__answer-container">
                 <div>
                     <p>While:</p>
-                    <?php
-                    $number = 1000;
-                    $iter = 0;
-                    while ($number >= 50) {
-                        $number /= 2;
-                        $iter++;
-                    }
-                    echo "Получится число {$number} <br>";
-                    echo "Количество итераций {$iter} <br>";
-                    ?>
+                    <div class="task__answer">
+                        <?php
+                        $number = 1000;
+                        $iter = 0;
+                        while ($number >= 50) {
+                            $number /= 2;
+                            $iter++;
+                        }
+                        echo "Получится число {$number} <br>";
+                        echo "Количество итераций {$iter} <br>";
+                        ?>
+                    </div>
                 </div>
                 <div>
                     <p>For:</p>
-                    <?php
-                    $iter = 0;
-                    $number = 0;
-                    for ($i = 1000; $i >= 50; $i /= 2) {
-                        $iter++;
-                        $number = $i / 2;
-                    }
-                    echo "Получится число {$number} <br>";
-                    echo "Количество итераций {$iter} <br>";
-                    ?>
+                    <div class="task__answer">
+                        <?php
+                        $iter = 0;
+                        $number = 0;
+                        for ($i = 1000; $i >= 50; $i /= 2) {
+                            $iter++;
+                            $number = $i / 2;
+                        }
+                        echo "Получится число {$number} <br>";
+                        echo "Количество итераций {$iter} <br>";
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,19 +70,21 @@
                 <input class="task__input" type="text" id="value" name="value">
                 <button class="form__submit">Отправить</button>
             </form>
-            <?php
-            try {
-                if (isset($_GET['value']) && $_GET['value'] >= 0 && $_GET['value'] <= 10) {
-                    $value = $_GET['value'];
-                    $arr = range(0, 10 - $value);
-                    echo implode(', ', $arr);
-                } else {
-                    throw Exception();
+            <div class="task__answer">
+                <?php
+                try {
+                    if (isset($_GET['value']) && $_GET['value'] >= 0 && $_GET['value'] <= 10) {
+                        $value = htmlentities($_GET['value']);
+                        $arr = range(0, 10 - $value);
+                        echo implode(', ', $arr);
+                    } else {
+                        throw Exception();
+                    }
+                } catch (Throwable $e) {
+                    echo 'Введите число';
                 }
-            } catch (Throwable $e) {
-                echo 'Введите число';
-            }
-            ?>
+                ?>
+            </div>
         </div>
     </div>
 </main>

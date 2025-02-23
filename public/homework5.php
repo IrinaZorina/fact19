@@ -1,4 +1,4 @@
-<?php require '../src/templates/_header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/src/templates/_header.php'; ?>
 <main class="main">
     <div class="section">
         <h1 class="title content__title">Слайд №16</h1>
@@ -143,10 +143,18 @@
                     $product *= $max;
                 }
 
-                echo "Исходный массив:<br>";
-                foreach ($arr as $row) {
-                    echo implode(" ", $row) . "<br>";
+                echo "<h3>Массив:</h3>";
+                echo "<table border='1'>";
+
+
+                for ($i = 0; $i < 5; $i++) {
+                    echo "<tr>";
+                    for ($j = 0; $j < 6; $j++) {
+                        echo "<td>{$arr[$i][$j]}</td>";
+                    }
+                    echo "</tr>";
                 }
+                echo "</table>";
 
                 echo "<br>Максимальные элементы:<br>";
                 foreach ($maxArr as $index => $max) {
@@ -171,11 +179,15 @@
                     ["Дыня", "Маракуйя", "Персик"]
                 ];
 
-                echo "Массив:<br>";
-                foreach ($arr as $row) {
-                    echo implode(" ", $row) . "<br>";
+                echo "<h3>Массив:</h3>";
+                echo "<table border='1'>";
+                for ($i = 0; $i < count($arr); $i++) {
+                    echo "<tr>";
+                    for ($j = 0; $j < count($arr[$i]); $j++) {
+                        echo "<td>{$arr[$i][$j]}</td>";
+                    }
                 }
-                echo '<br>';
+                echo "</table>";
 
 
                 foreach ($arr as $row) {
@@ -198,30 +210,35 @@
 
                 $rowCount = mt_rand(2, 8);
                 $colCount = mt_rand(2, 8);
-                $array = [];
+                $arr = [];
 
                 for ($i = 0; $i < $rowCount; $i++) {
                     for ($j = 0; $j < $colCount; $j++) {
-                        $array[$i][$j] = rand(1, 100);
+                        $arr[$i][$j] = rand(1, 100);
                     }
                 }
 
-                echo "Массив:<br>";
-                foreach ($array as $row) {
-                    echo implode(" ", $row) . "<br>";
+                echo "<h3>Массив:</h3>";
+                echo "<table border='1'>";
+                for ($i = 0; $i < count($arr); $i++) {
+                    echo "<tr>";
+                    for ($j = 0; $j < count($arr[$i]); $j++) {
+                        echo "<td>{$arr[$i][$j]}</td>";
+                    }
                 }
+                echo "</table>";
 
                 $totalElements = 0;
                 $maxColumns = 0;
 
-                foreach ($array as $row) {
+                foreach ($arr as $row) {
                     $totalElements += count($row);
                     if (count($row) > $maxColumns) {
                         $maxColumns = count($row);
                     }
                 }
 
-                $rows = count($array);
+                $rows = count($arr);
 
                 echo "Общее количество элементов: $totalElements<br>";
                 echo "Количество строк: $rows<br>";

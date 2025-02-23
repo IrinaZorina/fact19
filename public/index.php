@@ -1,4 +1,5 @@
-<?php require '../src/templates/_header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/src/templates/_header.php'; ?>
+
 <main class="main">
     <section class="bio section">
         <aside class="aside">

@@ -1,4 +1,4 @@
-<?php require '../src/templates/_header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/src/templates/_header.php'; ?>
 <main class="main">
     <div class="mendeleev-container">
         <div class="mendeleev-element pink">
