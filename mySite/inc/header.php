@@ -29,6 +29,8 @@ if ($hour >= 8 && $hour < 20) {
         <div class="theme2">
             <a href="cikli.php"> Циклы </a>
         </div>
-        <div class="theme3"> </div>
+        <div class="theme3">
+            <a href="massive.php"> Массивы </a>
+        </div>
     </div>
 </header>
