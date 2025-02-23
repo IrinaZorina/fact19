@@ -23,9 +23,11 @@ if ($hour >= 8 && $hour < 20) {
         <nav id="menu">
             <ul>
                 <li><a href="/">Главная</a></li>
-                <li><a href="assets/homework/table.php">Менделеева</a></li>
-                <li><a href="inc/cycles.php">Циклы</a></li>
+                <li><a href="/cycles.php">Циклы</a></li>
+                <li><a href="/massive.php">Массивы</a></li>
             </ul>
         </nav>
     </div>
 </header>
+</body>
+</html>
