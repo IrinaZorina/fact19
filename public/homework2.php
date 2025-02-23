@@ -1,4 +1,4 @@
-<?php require '../src/templates/_header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/src/templates/_header.php'; ?>
 <main class="main">
     <div class="content">
         <section class="section form">
@@ -108,7 +108,7 @@
         </section>
     </div>
 </main>
-<?php require '../src/templates/_footer.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/src/templates/_footer.php'; ?>
 <script src="assets/js/hamburger-menu.js"></script>
 </body>
 </html>
