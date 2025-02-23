@@ -1,6 +1,6 @@
 <?php
 $hour = date("H");
-$hour = 21;
+//$hour = 21;
 if ($hour >= 8 && $hour < 20) {
     $style = '\assets\css\styleSite.css';
 } else {
@@ -42,10 +42,17 @@ if ($hour >= 8 && $hour < 20) {
                 </div>
                 <div class="arrow">→</div>
             </a>
-            <a href="cickli.php"
+            <a href="Cycles.php"
                target="_blank" class="project-link">
                 <div class="project-content">
                     <span class="project-title">Циклы</span>
+                    <span class="project-description">Просмотр</span>
+                </div>
+                <div class="arrow">→</div>
+                <a href="array.php"
+               target="_blank" class="project-link">
+                <div class="project-content">
+                    <span class="project-title">Массив</span>
                     <span class="project-description">Просмотр</span>
                 </div>
                 <div class="arrow">→</div>

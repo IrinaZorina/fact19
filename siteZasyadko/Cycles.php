@@ -27,13 +27,4 @@ $maxValue = 10 - $i;
 $numbers = range(0, $maxValue);
 echo implode(',', $numbers);
 ?>
-<?php //
-//$i=0;
-//for ($j=0;$j<=10-$i;$j++) {
-//    echo $j;
-//    if ($j<10-$i) {
-//        echo " ";
-//    }
-//}
-?>
 <?php require_once 'include/footer.php'; ?>
