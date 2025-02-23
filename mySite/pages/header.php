@@ -23,7 +23,7 @@
                 <a href="./pages/cycles.php" class="nav__link">Циклы</a>
             </div>
             <div class="nav__item">
-                <a href="#" class="nav__link">Тема 3</a>
+                <a href="/pages/array.php" class="nav__link">Массивы</a>
             </div>
        </nav>
        <div class="header__line">
