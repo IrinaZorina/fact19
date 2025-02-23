@@ -3,7 +3,7 @@
 
 <header class="containerHead">
     <a href="../pages/secondpage.php">Циклы</a>
-    <div>Тема 2</div>
+    <a href = "../pages/massiv.php">Массивы</a>
     <a href="../index.php">На главную страницу</a>
 </div>
     </header>
