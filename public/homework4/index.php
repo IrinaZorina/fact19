@@ -1,4 +1,4 @@
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/src/templates/_header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/../src/templates/_header.php'; ?>
 <main class="main">
     <div class="section">
         <h1 class="title content__title">Слайд №25</h1>
@@ -88,8 +88,8 @@
         </div>
     </div>
 </main>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/src/templates/_footer.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/../src/templates/_footer.php'; ?>
 </div>
-<script src="assets/js/hamburger-menu.js"></script>
+<script src="../assets/js/hamburger-menu.js"></script>
 </body>
 </html>

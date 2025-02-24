@@ -1,4 +1,4 @@
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/src/templates/_header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/../src/templates/_header.php'; ?>
 <main class="main">
     <div class="content">
         <section class="section form">
@@ -70,16 +70,16 @@
                 <tr class="table__row">
                     <td class="table__data" colspan="2">
                         ячейка 1
-                        <img src="assets/img/cat.jpg"></td>
+                        <img src="../assets/img/cat.jpg"></td>
                     <!--		<td class="table__data" >ячейка 2</td>-->
                 </tr>
                 <tr class="table__row">
                     <td class="table__data" rowspan="2">ячейка 3</td>
-                    <td class="table__data"><img src="assets/img/cat.jpg"></td>
+                    <td class="table__data"><img src="../assets/img/cat.jpg"></td>
                 </tr>
                 <tr class="table__row">
                     <!--		<td class="table__data" >ячейка 5</td>-->
-                    <td class="table__data"><img src="assets/img/cat.jpg"></td>
+                    <td class="table__data"><img src="../assets/img/cat.jpg"></td>
                 </tr>
             </table>
         </section>
@@ -90,17 +90,17 @@
                 <table class="table-two__content">
                     <tr class="table-two__row">
                         <td class="table-two__data">Птица</td>
-                        <td class="table-two__data"><img src="assets/img/bird.png" alt="Изображение птицы"
+                        <td class="table-two__data"><img src="../assets/img/bird.png" alt="Изображение птицы"
                                                          title="Птица"></td>
                     </tr>
                     <tr class="table-two__row">
                         <td colspan="2" class="table-two__data">Хомяк
-                            <img src="assets/img/hamster.png" alt="Изображение хомяка"
+                            <img src="../assets/img/hamster.png" alt="Изображение хомяка"
                                  title="Хомяк"></td>
                     </tr>
                     <tr class="table-two__row">
                         <td class="table-two__data">Божья коровка</td>
-                        <td class="table-two__data"><img src="assets/img/insect.png" alt="Изображение божьи коровки"
+                        <td class="table-two__data"><img src="../assets/img/insect.png" alt="Изображение божьи коровки"
                                                          title="Божья коровка"></td>
                     </tr>
                 </table>
@@ -108,7 +108,7 @@
         </section>
     </div>
 </main>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/src/templates/_footer.php'; ?>
-<script src="assets/js/hamburger-menu.js"></script>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/../src/templates/_footer.php'; ?>
+<script src="../assets/js/hamburger-menu.js"></script>
 </body>
 </html>
