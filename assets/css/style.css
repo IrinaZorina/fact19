@@ -132,10 +132,11 @@ td {
     font-size: 30px;
 }
 .footer1 {
+    color: white;
     display: flex;
     height: 100px;
     justify-content: space-between;
-    border-top: 2px solid black;
+    border-top: 2px solid gray;
     padding-top: 20px;
 }
 .span {

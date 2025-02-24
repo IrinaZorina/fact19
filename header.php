@@ -29,7 +29,7 @@ if ($time >= 8 && $time < 20) {
         </div>
         <div>
             <br>
-            <a href="tema2.html">Тема 2</a>
+            <a href="hw-array-php.php">Массивы PHP</a>
         </div>
         <div>
             <br>

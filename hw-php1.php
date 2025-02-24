@@ -41,7 +41,7 @@ if ($p < 10 - $i) {
 }
 echo $res;
 
+include_once('footer.php');
 
 ?>
-
 </body>
