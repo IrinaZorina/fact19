@@ -1,4 +1,27 @@
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/../src/templates/_header.php'; ?>
+<?php
+
+require $_SERVER['DOCUMENT_ROOT'] . '/../src/templates/_header.php';
+$aboutText = "Работаю моушн-дизайнером, делаю анимацию. Очень нравится изучать
+                    разработку, писать скрипты. Люблю прогулки, настольные игры, слушать музыку, играть в
+                    компьютерные
+                    игры.";
+$dotIndex = mb_strpos($aboutText, '.') + 1;
+$aboutTextPartOne = mb_substr($aboutText, 0, $dotIndex);
+$aboutTextPartTwo = mb_substr($aboutText, $dotIndex + 1, mb_strlen($aboutText));
+
+$opinionText = "Первое занятие очень понравилось, объяснили много сложного доступным языком.";
+$opinionTextArr = explode(" ", $opinionText);
+$opinionTextColored = [];
+
+foreach ($opinionTextArr as $key => $value) {
+    if ($key % 2 == 0) {
+        $opinionTextColored[] = '<span style="color: var(--color-primary)">' . "{$value}" . '</span>';
+    } else {
+        $opinionTextColored[] = '<span style="color: var(--color-secondary)">' . "{$value}" . '</span>';
+    }
+}
+$opinionTextColored = implode(" ", $opinionTextColored);
+?>
 <main class="main">
     <section class="bio section">
         <aside class="aside">
@@ -8,13 +31,13 @@
             <h1 class="content__title content__title_hidden">Страничка о себе</h1>
             <h2 class="content__title"><?= $name ?></h2>
             <div class="content-container">
-                <p class="paragraph content__about">Работаю моушн-дизайнером, делаю анимацию. Очень нравится изучать
-                    разработку, писать скрипты. Люблю прогулки, настольные игры, слушать музыку, играть в
-                    компьютерные
-                    игры.</p>
-                <p class="paragraph content_opinion">Первое занятие очень понравилось, объяснили много сложного
-                    доступным
-                    языком.</p>
+                <p class="paragraph content__about">
+                    <span class="paragraph_color-primary"><?= $aboutTextPartOne ?></span>
+                    <?= $aboutTextPartTwo ?>
+                </p>
+                <p class="paragraph content_opinion">
+                    <?= $opinionTextColored ?>
+                </p>
             </div>
         </div>
     </section>
@@ -71,7 +94,9 @@
         </div>
     </section>
 </main>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/../src/templates/_footer.php'; ?>
+<?php
+require $_SERVER['DOCUMENT_ROOT'] . '/../src/templates/_footer.php';
+?>
 </div>
 <script src="assets/js/hamburger-menu.js"></script>
 </body>
