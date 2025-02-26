@@ -8,6 +8,7 @@ if ($hour >= 8 && $hour < 20) {
 } else {
     $theme = 'dark-theme';
 }
+ob_start();
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -28,13 +29,36 @@ require_once('pages/header.php');
         <div class="one">
             <img src="images/Глазки-save.ico" alt="Image">
         </div>
-        <div class="two">
-            <p>Меня зовут Борисин Вадим.</p>
-            <p>Учусь на 3 курсе в колледже по специальности "Информационные системы и программирование". В процессе обучения изучил С#, C++, SQl, разметку XAML, начинаю изучать Java Script.</p>
+        <div class="two" style="color: blue;">
+            <?php
+            $str = '<p>Меня зовут Борисин Вадим.</p>
+            <p>Учусь на 3 курсе в колледже по
+            специальности "Информационные системы и 
+            программирование". В процессе обучения 
+            изучил С#, C++, SQl, 
+            разметку XAML, начинаю изучать Java Script.</p>';
+            echo $str;
+            ?>
         </div>
         <div class="three">
-            Первая лекция понравилась тем, что информация преподается очень понятно, много практики.
-        </div>
+        <?php
+            $str1 = "Первая лекция понравилась тем, что 
+            информация преподается очень понятно, много практики.";
+            $color1 = 'red';
+            $color2 = 'blue';
+            $res ='';
+            $arr = explode(" ", $str1);
+            for ($i = 0; $i < count($arr); $i++) {
+                $word = $arr[$i];
+                if ($i%2== 0) {
+                    $res .= '<span style="color: ' . $color1 . ';">' . htmlspecialchars($word) . ' </span>';
+            }
+            else{
+                $res .= '<span style="color: ' . $color2 . ';">' . htmlspecialchars($word) . ' </span>';
+            }
+        }
+        echo $res;
+            ?>        </div>
     </div>
 
     <main>
@@ -62,5 +86,34 @@ require_once('pages/header.php');
 </body>
 <?php
 require_once('pages/footer.php');
+
+$myFile = ob_get_clean();
+echo $myFile;
+$dom = new DOMDocument();
+@$dom->loadHTML($myFile);
+$text = $dom->textContent;
+$arr3 = preg_split('//u',$text);
+$count1 =0;
+echo $text;
+preg_match_all('/\p{L}+/u',$text, $arr4);
+$wordCount =count($arr4[0]);
+$glas = "eEyYuUiIoOaAуУеЕэЭоОаАыяЯиИюЮёЁ";
+for ($i = 0; $i < count($arr3); $i++) {
+    if(mb_strpos($glas,$arr3[$i],0,'UTF-8')!==false){
+        $count1++;
+        echo $arr3[$i];
+    }
+}
+    echo "<br> <br> ";
+    print_r($arr4);
+    echo "количество глансых букв на странице равно $count1 <br> количество слов на странице $wordCount";
+
+    echo "<br> <br> ";
+
+    $birthday = DateTime::createFromFormat("d.m.Y","07.10.2006");
+    $currentdate = new DateTime();
+    $interval = $currentdate ->diff($birthday);
+    $razniza = $interval->days;
+    echo $razniza . " дней";
 ?>
 </html>
