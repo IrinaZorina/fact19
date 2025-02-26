@@ -1,16 +1,3 @@
-.header {
-  background-color: green;
-  color: white;
-  padding: 10px;
-  font-size: 20px;
-}
-
-.header a {
-  color: white;
-  text-decoration: none;
-  margin-left: 15px;
-}
-
 h2 {
   margin-top: 20px;
 }
@@ -35,15 +22,6 @@ h2 {
   color: black;
 }
 
-.day-theme .header {
-  background-color: green;
-  color: white;
-}
-
-.day-theme .header a {
-  color: white;
-}
-
 .day-theme .periodic-table td {
   background-color: #f2f2f2;
   color: black;
@@ -51,15 +29,6 @@ h2 {
 
 .day-theme .periodic-table a {
   color: black;
-}
-
-.night-theme .header {
-  background-color: darkgreen;
-  color: white;
-}
-
-.night-theme .header a {
-  color: lightgray;
 }
 
 .night-theme .periodic-table td {
