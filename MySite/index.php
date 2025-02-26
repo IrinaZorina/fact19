@@ -94,21 +94,18 @@ $dom = new DOMDocument();
 $text = $dom->textContent;
 $arr3 = preg_split('//u',$text);
 $count1 =0;
-echo $text;
 preg_match_all('/\p{L}+/u',$text, $arr4);
 $wordCount =count($arr4[0]);
 $glas = "eEyYuUiIoOaAуУеЕэЭоОаАыяЯиИюЮёЁ";
 for ($i = 0; $i < count($arr3); $i++) {
     if(mb_strpos($glas,$arr3[$i],0,'UTF-8')!==false){
         $count1++;
-        echo $arr3[$i];
     }
 }
-    echo "<br> <br> ";
-    print_r($arr4);
-    echo "количество глансых букв на странице равно $count1 <br> количество слов на странице $wordCount";
+    echo "<br>";
+    echo "количество гласных букв на странице равно $count1 <br> количество слов на странице $wordCount";
 
-    echo "<br> <br> ";
+    echo "<br> ";
 
     $birthday = DateTime::createFromFormat("d.m.Y","07.10.2006");
     $currentdate = new DateTime();
