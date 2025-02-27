@@ -21,7 +21,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/../src/init.php';
     <link rel="stylesheet" href="/assets/styles/header.css">
     <link rel="stylesheet" href="/assets/styles/content.css">
     <link rel="stylesheet" href="/assets/styles/footer.css">
-    <title><?= $name ?></title>
+    <title>Блинов Владислав</title>
 </head>
 <body>
 <div class="root">

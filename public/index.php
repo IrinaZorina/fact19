@@ -1,26 +1,18 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . '/../src/templates/_header.php';
+
 $aboutText = "Работаю моушн-дизайнером, делаю анимацию. Очень нравится изучать
                     разработку, писать скрипты. Люблю прогулки, настольные игры, слушать музыку, играть в
                     компьютерные
                     игры.";
-$dotIndex = mb_strpos($aboutText, '.') + 1;
-$aboutTextPartOne = mb_substr($aboutText, 0, $dotIndex);
-$aboutTextPartTwo = mb_substr($aboutText, $dotIndex + 1, mb_strlen($aboutText));
+$aboutTextResult = getAboutText($aboutText);
 
 $opinionText = "Первое занятие очень понравилось, объяснили много сложного доступным языком.";
-$opinionTextArr = explode(" ", $opinionText);
-$opinionTextColored = [];
+$opinionTextResult = getOpinionText($opinionText);
 
-foreach ($opinionTextArr as $key => $value) {
-    if ($key % 2 == 0) {
-        $opinionTextColored[] = '<span style="color: var(--color-primary)">' . "{$value}" . '</span>';
-    } else {
-        $opinionTextColored[] = '<span style="color: var(--color-secondary)">' . "{$value}" . '</span>';
-    }
-}
-$opinionTextColored = implode(" ", $opinionTextColored);
+$bornDate = date('24-02-1996');
+$nowDate = date('d-m-Y');
 ?>
 <main class="main">
     <section class="bio section">
@@ -29,14 +21,14 @@ $opinionTextColored = implode(" ", $opinionTextColored);
         </aside>
         <div class="content">
             <h1 class="content__title content__title_hidden">Страничка о себе</h1>
-            <h2 class="content__title"><?= $name ?></h2>
+            <h2 class="content__title">Блинов Владислав</h2>
             <div class="content-container">
                 <p class="paragraph content__about">
-                    <span class="paragraph_color-primary"><?= $aboutTextPartOne ?></span>
-                    <?= $aboutTextPartTwo ?>
+                    <span class="paragraph_color-primary"><?= $aboutTextResult[0] ?></span>
+                    <?= $aboutTextResult[1] ?>
                 </p>
                 <p class="paragraph content_opinion">
-                    <?= $opinionTextColored ?>
+                    <?= $opinionTextResult ?>
                 </p>
             </div>
         </div>
@@ -92,6 +84,16 @@ $opinionTextColored = implode(" ", $opinionTextColored);
                 </li>
             </ul>
         </div>
+    </section>
+    <section class="section">
+        <h3 class="title">Статистика страницы</h3>
+        <p>На данной странице <?=
+            getPageWordCount(__FILE__);
+            ?> слов.</p>
+        <p>На данной странице <?=
+            getPageVowelsCount(__FILE__) ?> гласных.</p>
+        <p>Я родился <?= $bornDate ?>, сегодня <?= $nowDate ?>, живу уже <?= getDaysDiff($bornDate, $nowDate) ?>
+            дней!</p>
     </section>
 </main>
 <?php
