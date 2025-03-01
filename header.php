@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Евгений Крупнов</title>
-  <link rel="stylesheet" href="Style.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body class="<?php echo $theme; ?>">
@@ -15,6 +15,7 @@
         <li><strong>Мои работы</strong></li>
         <li><a href="element/element.php">Элемент таблицы Менделеева</a></li>
         <li><a href="homework/functions.php">Работа с циклами</a></li>
+        <li><a href="homework/arrays.php">Работа с массивами</a></li>
       </ul>
     </div>
     <h1 class="titleheader">Мой сайт</h1>
