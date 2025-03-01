@@ -1,6 +1,6 @@
 <?php
 $hour = date("H");
-//$hour = 21;
+//$hour = 10;
 if ($hour >= 8 && $hour < 20) {
     $style = '/assets/css/Style.css'; // дневной стиль
 } else {
