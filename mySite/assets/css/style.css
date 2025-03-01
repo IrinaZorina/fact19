@@ -177,6 +177,10 @@ html, body{
 .footer__text{
  font-size: 20px;
 }
+.text_answer{
+    text-align: center;
+    font-size:20px;
+}
 /*медиа запросы*/
 @media( max-width: 1200px){
     .main__place-region-grid{
