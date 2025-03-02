@@ -21,6 +21,7 @@ body {
     font-size: 30px;
     border-top: 1px solid black;
 }
+
 .dost {
     text-align: center;
     color: yellow;
@@ -66,6 +67,10 @@ h2 {
     color: black;
 }
 
+.strings {
+    color: black;
+    font-size: 24px;
+}
 
 .cycles {
     color: black;
@@ -76,6 +81,7 @@ h2 {
     color: black;
     font-size: 24px;
 }
+
 /*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*//*Картинки*/
 
 .logo {
@@ -125,6 +131,7 @@ h2 {
     flex-wrap: nowrap;
 
 }
+
 .fio {
     color: yellow;
     text-align: center;
@@ -200,7 +207,7 @@ h2 {
         grid-template-columns: repeat(1, 500px);
         grid-template-rows: repeat(1, 500px);
         padding-left: 450px;
-        
+
     }
 
     .photo5, .photo6, .photo7, .photo8 {

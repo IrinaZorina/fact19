@@ -32,10 +32,10 @@ body {
 }
 
 .end {
-     color: mintcream;
+    color: mintcream;
     font-size: 30px;
     border-top: 1px solid mintcream;
- }
+}
 
 .dost {
     text-align: center;
@@ -46,6 +46,10 @@ body {
 .dost1 {
     text-align: center;
     color: white;
+}
+
+.Date {
+    color: mintcream;
 }
 
 .photo1, .photo2, .photo3, .photo4 {
@@ -80,6 +84,10 @@ body {
     color: black;
 }
 
+.strings {
+    color: mintcream;
+    font-size: 24px;
+}
 
 .cycles {
     color: mintcream;
@@ -192,8 +200,6 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
 }
-
-
 
 
 /*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*//*Контейнеры*/

@@ -1,6 +1,5 @@
 <?php include 'inc/head.php' ?>
 
-
 <div class="main">
     <div class="photo">
         <img class="me" src="assets/image/me.jpg" alt="Фотка">
@@ -8,20 +7,42 @@
 
     <div class="container">
         <div class="fio">
-            <h1>Южаков Михаил Валерьевич</h1>
+            <?php
+            $fio = "<h1>Южаков Михаил Валерьевич</h1>";
+            echo $fio;
+            ?>
         </div>
         <div class="about">
-            Здравствуйте! Пару слов о себе. В 2019 году завершил обучение в многопрофильном колледже, по специальности
+            <?php
+            $about = 'Здравствуйте! Пару слов о себе. В 2019 году завершил обучение в многопрофильном колледже, по специальности
             программист.
             Спустя много лет, поработав в разных сферах, захотел вернуться к
             программированию,
             так как понял, что пора в жизни что то менять, а для этого нужно получать знания. На данный момент работаю в
             продажах.
-            В свободное от работы время, играю в баскетбол.
+            В свободное от работы время, играю в баскетбол.';
+            $string = explode(" ", $about);
+            $firstWord = "<span style='color: red'>   " . $string[0] . "</span>";
+            $about = str_replace($string[0], $firstWord, $about);
+            echo $about;
+            ?>
         </div>
 
         <div class="firstLes">
-            Первый урок прошел отлично, надеюсь в дальнейшем будет также, с первого раза сложно понять.
+            <?php
+            $firstLes = 'Первый урок прошел отлично, надеюсь в дальнейшем будет также, с первого раза сложно понять.';
+            $arrLes = explode(" ", $firstLes);
+            $style_text = "";
+            foreach ($arrLes as $index_word => $word) {
+                if (($index_word + 1) % 2 === 0) {
+                    $style_text .= "<span style='color: yellow;'>" . $word . " " . "</span>";
+                } else {
+                    $style_text .= "<span style='color: red;'>" . $word . " " . "</span>";
+                }
+            }
+            echo $style_text;
+
+            ?>
         </div>
     </div>
 </div>
@@ -29,6 +50,8 @@
 <br>
 
 <br>
+<?php
+$info = '
 <div class="box">
     <div class="dost">
     <h1> Достопримечательности нашего города</h1>
@@ -91,6 +114,29 @@
             ГЭС вырабатывала энергию для первого в России электрометаллургического завода, производившие ферросплавы.
             Это было передовое предприятие.</p>
     </div>
+</div>';
+echo $info;
+?>
+
+<div class="Date">
+    <?php
+    $full = $fio . $about . $firstLes . $info;
+    $res = strip_tags($full);
+    $words = preg_split('/\s+/', trim($res));
+    $wordCount = count($words);
+    echo 'Слов на странице: ' . $wordCount . "<br>";
+
+    $count = preg_match_all('/[аеёиоуэюяАЕЁИОУЭЮЯ]/u', $full);
+    echo "Количество гласных букв: " . $count . "<br>";
+
+    $birthday = DateTime::createFromFormat("d.m.Y", "20.03.1998");
+    $now = new DateTime('now');
+    $interval = $now->diff($birthday);
+    $diff = $interval->days;
+    echo "Я родился: " . $birthday->format("d.m.Y") . "<br>" .
+        "Сегодня: " . $now->format("d.m.Y") . "<br>" .
+        "Разница: " . $diff;
+    ?>
 </div>
 
 <?php include 'inc/footer.php'; ?>
