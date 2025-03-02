@@ -1,19 +1,20 @@
 <?php require_once 'templates/Header.php' ?>
-<style> 
-body {
-    color: white;
-}
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
+<style>
+    body {
+        color: white;
+    }
 
-.column {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-color: black;
-}
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .column {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-color: black;
+    }
 </style>
 <br>
 <h1> Задание со слайда №25</h1>
@@ -55,7 +56,7 @@ echo "</div>";
 ?>
 <br>
 <?php
-$i = mt_rand(1,10);
+$i = mt_rand(1, 10);
 
 $result = [];
 for ($j = 0; $j <= 10 - $i; $j++) {

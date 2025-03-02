@@ -28,7 +28,7 @@ if ($Hour >= 8 && $Hour < 20) {
         <a href="Cycles.php">
             <button>Циклы</button>
         </a>
-        <a href="">
-            <button>Ссылка 3</button>
+        <a href="Massiv.php">
+            <button>Массивы</button>
         </a>
     </header>
