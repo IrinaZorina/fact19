@@ -30,4 +30,7 @@ if ($Vremya >= 8 && $Vremya < 20) {
     <a href="Table.html">
         <button>Элемент "Менделеева"</button>
     </a>
+    <a href="Massiv.php">
+        <button>Массивы</button>
+    </a>
 </header>
