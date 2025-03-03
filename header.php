@@ -33,7 +33,7 @@ if ($time >= 8 && $time < 20) {
         </div>
         <div>
             <br>
-            <a href="tema3.html">Тема 3</a>
+            <a href="hw-php-rows.php">Работа со строками</a>
         </div>
     </div>
 
