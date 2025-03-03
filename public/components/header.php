@@ -4,7 +4,6 @@ $hour = date("H");
 $theme = ($hour >= 8 && $hour < 20) ? "day-theme" : "night-theme";
 ?>
 
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -24,6 +23,7 @@ $theme = ($hour >= 8 && $hour < 20) ? "day-theme" : "night-theme";
         <li><a href="index.php">Главная</a></li>
         <li><a href="table.php">Таблица</a></li>
         <li><a href="cycles.php">Циклы</a></li>
+        <li><a href="arrays.php">Массивы</a></li>
       </ul>
     </nav>
   </header>
