@@ -36,6 +36,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/../src/init.php';
                     <li class="menu__item"><a href="/homework3">ДЗ от 3.02</a></li>
                     <li class="menu__item"><a href="/homework4">ДЗ от 17.02</a></li>
                     <li class="menu__item"><a href="/homework5">ДЗ от 20.02</a></li>
+                    <li class="menu__item"><a href="/homework6">ДЗ от 03.03</a></li>
                 </ul>
                 <div class="menu__mobile">
                     <ul class="menu__list-mobile">
@@ -44,6 +45,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/../src/init.php';
                         <li class="menu__item-mobile"><a href="homework3.php">ДЗ от 3.02</a></li>
                         <li class="menu__item-mobile"><a href="homework4.php">ДЗ от 17.02</a></li>
                         <li class="menu__item-mobile"><a href="homework5.php">ДЗ от 20.02</a></li>
+                        <li class="menu__item-mobile"><a href="/homework6">ДЗ от 03.03</a></li>
                     </ul>
                     <button class="menu__mobile-button">
                         <img class="menu-icon" src="assets/img/burger-menu.svg">
