@@ -17,13 +17,8 @@ $students = [
     'info' => []
 ];
 
-
-
-$score_count = mt_rand(2, 15);
-        //заполнение массива рандомными значениями
-        foreach ($students as $subj => $values)
-            for ($i = 0; $i < $score_count; $i++)
-                array_push($students[$subj], mt_rand(2,5));
+$score_count = mt_rand(5, 30);
+RandArrayInt($students, 2, 5, $score_count);
 ?>
 
 <table>
@@ -73,12 +68,7 @@ $islands_averageTemp = [
     'Jamaica' => [], 
     'Haiti' => []
 ];
-
-//Заполнение массива
-foreach ($islands_averageTemp as $island_key => $islands)
-    for ($i = 0; $i < 12; $i++)
-        array_push($islands_averageTemp[$island_key], mt_rand(15,35));
-
+RandArrayInt($islands_averageTemp, 15, 35, 12);
 
 $islands_maxTemp = [
     'Jan' => 0,
@@ -135,39 +125,8 @@ foreach ($islands_maxTemp as $month => $value) {
 <?php
 echo "<h2>Задание 7</h2>";
 
-$matrix = [];
-$matrix_row = 5;
-$matrix_column = 6;
+$matrix = CreateRandomMatrix(5, 6, 0, 9);
 
-?>
-
-<table>
-    <thead>
-        <th></th>
-        <?php
-            for ($i = 0; $i < $matrix_column; $i++) {
-                echo "<th>" . $i + 1 . "</th>";
-            }
-        ?>
-    </thead>
-    <tbody>
-    <?php
-        //заполнение матрицы
-        for ($i = 0; $i < $matrix_row; $i++) {
-            echo "<tr><td><b>" . $i+1 . "</b></td>";
-            for ($j = 0; $j < $matrix_column; $j++) {
-                $matrix[$i][$j] = mt_rand(0, 9);
-                echo "<td>" . $matrix[$i][$j] . "</td>";
-            }
-            echo "</tr>";
-        }
-        ?>
-    </tbody>
-</table>
-
-
-
-<?php
 $result = 1;
 for ($i = 0; $i < count($matrix); $i++) {
     $max = 0;
@@ -183,14 +142,11 @@ echo "Result = $result";
 
 
 echo "<h2>Задание 8</h2>";
-
-$strings = [];
-
-$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
 //заполнение массива строками
 $rows = mt_rand(3, 10);    // количество строк
 $columns = mt_rand(3, 10); // количество столбцов
+
+$strings = RandArrayString($rows, $columns, 10);
 ?>
 
 <table>
@@ -207,11 +163,6 @@ $columns = mt_rand(3, 10); // количество столбцов
             echo "<tr>";
             echo "<td><b>" . $i + 1 . "</b></td>";
             for ($j = 0; $j < $columns; $j++) {
-                $str = "";
-                for ($k = 0; $k < 10; $k++) {
-                    $str .= $characters[mt_rand(0, strlen($characters) - 1)];
-                }
-                $strings[$i][$j] = $str;
                 echo "<td>" . $strings[$i][$j] . "</td>";
             }
             echo "</tr>";

@@ -3,58 +3,18 @@
 $about_text = "Родился в Магнитогорске. Закончил МГТУ им.Носова по специальности \"Прикладная информатика\". В данный момент работаю интернет-маркетологом в компании СантехУрал в Челябинске.";
 $review_text = "Нравится большое количество практики";
 
-
 // -- Задание 1 --
-// Окрашивание первого слова в тексте "обо мне" в красный цвет
-$new_about_text = explode(" ", $about_text, 2);
-$new_about_text[0] = "<span style=\"color: red;\">" . $new_about_text[0] . " </span>";
-$about_text = implode($new_about_text);
+FirstToRed($about_text); // Окрашивание первого слова в тексте "обо мне" в красный цвет
+WordColor($review_text); //Окрашивание каждого второго слова 
 
-//Окрашивание каждого второго слова 
-$new_review_text = explode(" ", $review_text);
-
-for ($i = 0; $i < count($new_review_text); $i++) {
-    if ($i % 2 == 0) $new_review_text[$i] = "<span style=\"color: gray;\">" . $new_review_text[$i] . " </span>";
-    else $new_review_text[$i] = "<span style=\"color: blue;\">" . $new_review_text[$i] . " </span>";
-}
-
-$review_text = implode($new_review_text);
-
-// -- Задание 2 + 3 -- Подсчет количества гласных букв на странице
-$vowels = ["а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я"];
-//$vowels = "аеёиоуыэюя"; // хранилище гласных букв
-$consonants = "";
-$content = trim(strip_tags(file_get_contents("index.php"))); //получение контента и удаление тегов
-$content = mb_strtolower($content);
-
-//подсчет слов
-echo "Количество слов на странице: " . str_word_count($content, 0, "АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя") . "<br>";
-
-
-$content = str_replace(" ", "", $content); //удаление пробелов
-$content = mb_str_split($content);
-
-$count = 0; //счетчик символов 
-
-//Сверяем каждый символ 
-foreach($content as $symb) {
-    foreach ($vowels as $vowel){
-        if ($symb == $vowel) {
-            $count++;
-            continue;
-        } 
-    }
-}
-
-echo "Количество гласных букв на странице $count<br>";
-
+// -- Задание 2 + 3 --
+$url = "index.php";
+echo "Количество слов на странице: " . WordPageCount($url) . "<br>";
+echo "Количество гласных букв на странице " . VowelsPageCount($url) . "<br>";
 
 // -- Задание 4 --
-
-$currentDay = time();
-$birthday = strtotime("1999-03-10");
 echo "День рождения 10.03.1999 <br>";
-echo "Дней прошло: " . round(($currentDay - $birthday) / (60 * 60 * 24));
+echo "Дней прошло: " . DaysGone("1999-03-10");
 
 ?>
     <main>

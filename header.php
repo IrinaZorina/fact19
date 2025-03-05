@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
     <?php
+        require_once "functions.php";
         if (8 > date("H") && date("H") >= 20) {
             echo "<link rel=\"stylesheet\" href=\"styles/dark.css\">";
         }
