@@ -7,41 +7,23 @@
 
     <div class="container">
         <div class="fio">
-            <?php
-            $fio = "<h1>Южаков Михаил Валерьевич</h1>";
-            echo $fio;
-            ?>
+            <h1>Южаков Михаил Валерьевич</h1>
         </div>
         <div class="about">
             <?php
-            $about = 'Здравствуйте! Пару слов о себе. В 2019 году завершил обучение в многопрофильном колледже, по специальности
+            echo about('Здравствуйте! Пару слов о себе. В 2019 году завершил обучение в многопрофильном колледже, по специальности
             программист.
             Спустя много лет, поработав в разных сферах, захотел вернуться к
             программированию,
             так как понял, что пора в жизни что то менять, а для этого нужно получать знания. На данный момент работаю в
             продажах.
-            В свободное от работы время, играю в баскетбол.';
-            $string = explode(" ", $about);
-            $firstWord = "<span style='color: red'>   " . $string[0] . "</span>";
-            $about = str_replace($string[0], $firstWord, $about);
-            echo $about;
+            В свободное от работы время, играю в баскетбол.');
             ?>
         </div>
 
         <div class="firstLes">
             <?php
-            $firstLes = 'Первый урок прошел отлично, надеюсь в дальнейшем будет также, с первого раза сложно понять.';
-            $arrLes = explode(" ", $firstLes);
-            $style_text = "";
-            foreach ($arrLes as $index_word => $word) {
-                if (($index_word + 1) % 2 === 0) {
-                    $style_text .= "<span style='color: yellow;'>" . $word . " " . "</span>";
-                } else {
-                    $style_text .= "<span style='color: red;'>" . $word . " " . "</span>";
-                }
-            }
-            echo $style_text;
-
+            echo lesson('Первый урок прошел отлично, надеюсь в дальнейшем будет также, с первого раза сложно понять.');
             ?>
         </div>
     </div>
@@ -50,11 +32,10 @@
 <br>
 
 <br>
-<?php
-$info = '
+
 <div class="box">
     <div class="dost">
-    <h1> Достопримечательности нашего города</h1>
+        <h1> Достопримечательности нашего города</h1>
     </div>
     <div class="photo1">
         <img class="mgn" src="assets/image/front.jpg" alt="Тыл-фронту">
@@ -114,28 +95,22 @@ $info = '
             ГЭС вырабатывала энергию для первого в России электрометаллургического завода, производившие ферросплавы.
             Это было передовое предприятие.</p>
     </div>
-</div>';
-echo $info;
-?>
+</div>
 
 <div class="Date">
+    <h1>Статистика страницы</h1>
     <?php
-    $full = $fio . $about . $firstLes . $info;
-    $res = strip_tags($full);
-    $words = preg_split('/\s+/', trim($res));
-    $wordCount = count($words);
-    echo 'Слов на странице: ' . $wordCount . "<br>";
+    echo "Количество слов на странице: ";
+    echo WordCount('index.php') . "<br>";
+    ?>
+    <?php
+    echo "Количество гласных букв на странице: ";
+    echo letterCount('index.php') . "<br>";
+    ?>
 
-    $count = preg_match_all('/[аеёиоуэюяАЕЁИОУЭЮЯ]/u', $full);
-    echo "Количество гласных букв: " . $count . "<br>";
 
-    $birthday = DateTime::createFromFormat("d.m.Y", "20.03.1998");
-    $now = new DateTime('now');
-    $interval = $now->diff($birthday);
-    $diff = $interval->days;
-    echo "Я родился: " . $birthday->format("d.m.Y") . "<br>" .
-        "Сегодня: " . $now->format("d.m.Y") . "<br>" .
-        "Разница: " . $diff;
+    <?php
+    echo diffTime('20.03.1998', '', '');
     ?>
 </div>
 

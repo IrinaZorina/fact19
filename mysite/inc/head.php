@@ -1,11 +1,5 @@
-<?php
-$hour = date("H");
-if ($hour >= 8 && $hour < 20) {
-    $style = '\assets\style\styles.css';
-} else {
-    $style = '\assets\style\nightTheme.css';
-}
-?>
+<?php require_once 'daynight.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +19,7 @@ if ($hour >= 8 && $hour < 20) {
                 <li><a href="/">Главная</a></li>
                 <li><a href="/cycles.php">Циклы</a></li>
                 <li><a href="/massive.php">Массивы</a></li>
+                <li><a href="/function.php">Функции</a></li>
             </ul>
         </nav>
     </div>

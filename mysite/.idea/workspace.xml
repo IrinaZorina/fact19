@@ -116,21 +116,14 @@
       <workItem from="1740763826029" duration="11061000" />
       <workItem from="1740939011028" duration="1034000" />
       <workItem from="1740940814464" duration="2000" />
+      <workItem from="1741107157204" duration="203000" />
+      <workItem from="1741108311949" duration="11780000" />
+      <workItem from="1741157395838" duration="1235000" />
+      <workItem from="1741197761864" duration="3861000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/massive.php</url>
-          <line>33</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
