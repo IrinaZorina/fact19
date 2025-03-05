@@ -1,79 +1,93 @@
-<?php require_once 'include/header.php'; ?>       <!--header-->
-<section class="about">
-    <p class="about2">О себе</p>
-    <div class="avatar">👨‍💻</div>
-    <div class="one"><img src="assets/image/2.png" width="500px" height="500px"></div>
-    <?php
-    $text_about = "Здравствуйте! Меня зовут Засядько Максим, мне 26 лет.Хочу поменять профессию.<br> Работал во множестве
-        сферах, мой интерес встал на этом так как часто увлекался пк и многим что связанно с ним.<br>
-        Я работаю в сфере продаж. Я менеджер по продажам. Хочу научиться программировать и
-        создавать что-то. Ещё мне нравится проводить время на корде и играть в Баскетбол";
-    $arr = explode(" ", $text_about);
-    $first = '<span style="color:red">' . $arr[0] . '</span>';
-    $text_about = str_replace($arr[0], $first, $text_about);
-    echo $text_about;
-    echo '<br>';
-    ?>
+<?php require_once 'include/header.php' ?>
+    <main>
+        <div class="main">
+            <div class="photo">
+                <img src="assets/image/2.png" width="500">
+            </div>
+            <div class="container">
+                <div class="about">
+                    <?php
+                 echo about("Здравстуйте , меня зовут Засядько Максим. Живу в городе Магнитогорск , сейчас хочу  получить новые знания. В свободное время занимаюсь баскетболом.") ;
+                    echo "<br>";
+                    diffTime('04.06.1998' , "" , "");
+                    ?>
 
-    <?php
-    $text_lesson = "С 1 урока был под впечатлением , все понравилось! ";
-    $arr_lesson = explode(" ", $text_lesson);
-    $style_text = "";
-    foreach ($arr_lesson as $index_word => $word) {
-        if (($index_word + 1) % 2 === 0) {
-            $style_text .= "<span style='color: #002aff;'>" . $word . " " . "</span>";
-        } else {
-            $style_text .= "<span style='color: #ff0000;'>" . $word . " " . "</span>";
-        }
-    }
-    echo $style_text;
-    echo '<br>';
-    ?>
+                </div>
+                <div class="name">
+                    <h1>Засядько Максим</h1>
+                </div>
+                <div class="lesson">
+                    <?php
+                    echo lesson("С 1 урока остались приятные впечатления,был доволен!");
+                    ?>
+                </div>
+            </div>
+        </div>
+        <?php
+        $html10 = '
+        <div class="mgn-text">
+            <h1> Достопримечательности города Магнитогорск </h1>
+        </div>
+        <div class="mgn-container">
+            <div class="mgn-photo1">
+                <div class="tyl">
+                    <p>Тыл-фронту</p>
+                </div>
+                <img src="assets/image/mgn1.png" alt="Тыл-фронту" width="350" height="250">
+            </div>
+            <div class="mgn-photo2">
+                <div class="monument">
+                    <p>Памятник</p>
+                </div>
+                <img src="assets/image/mgn2.png" alt="Памятник" width="350" height="250">
+            </div>
+            <div class="mgn-photo3">
+                <div class="watch">
+                    <p>Солнечные часы</p>
+                </div>
+                <img src="assets/image/mgn3.png" alt="watch" width="350" height="250">
+            </div>
+            <div class="mgn-photo4">
+                <div class="mountain">
+                    <p>Памятник 40-летию рудника горы Магнитной</p>
+                </div>
+                <img src="assets/image/mgn4.png" alt="mountain" width="350" height="250">
+            </div>
+        </div>
+        <div class="oblast-text">
+            <h1>Достопримечательности Челябинской области</h1>
+        </div>
+        <div class="oblast-container">
+            <div class="oblast-photo1">
+                <img src="assets/image/taganay.png" alt="taganay" width="920" height="550">
+                <p>Парк Таганай</p>
+            </div>
+            <div class="oblast-photo2">
+                <img src="assets/image/turgoyak.jpg" alt="turgoyak" width="920" height="550">
+                <p>Озеро Тургояк<p>
+            </div>
+            <div class="oblast-photo3">
+                <img src="assets/image/Sugomak.jpg"alt="sukomak" width="920" height="550">
+                <p>Сугомакская пещера</p>
+            </div>
+            
+            <div class="oblast-photo4">
+                <img src="assets/image/arkaym.jpg" alt="arkaym" width="920" height="550">
+                <p>Аркаим</p>
+            </div>
+        </div>';
+        echo $html10;
+        ?>
+        <div class="container-info">
+            <div class="strings">
+                <?php
+               echo WordsCount('index.php');
+                echo "<br>";
+                echo "Количество гласных букв на странице :";
+                echo letterCount('index.php');
+                ?>
+            </div>
+        </div>
 
-    <?php
-    $birthday = DateTime::createFromFormat("d.m.Y", "04.06.1998");
-    $now = new DateTime('now');
-    $interval = $now->diff($birthday);
-    $diff = $interval->days;
-    echo "Я родился: " . $birthday->format("d.m.Y") . "<br>" .
-        "Сегодня: " . $now->format("d.m.Y") . "<br>" .
-        "Разница: " . $diff;
-    ?>
-</section>
-<?php
-$nameAttractions = '<h2>Достопримечательности Магнитогорска </h2>';
-echo $nameAttractions;
-?>
-<div class="box1">
-    <img src="assets/image/mgn1.png" width="500px">
-    <img src="assets/image/mgn2.png" width="500px">
-    <img src="assets/image/mgn3.png" width="500px">
-    <img src="assets/image/mgn4.png" width="500px">
-</div>
-<h2 class="sight2">Достопримечательности Челябинской Области </h2>
-<div class="box2">
-    <div class="photo1">
-        <img src="assets/image/chel.png" width="500px" height="450">
-    </div>
-    <div class="photo2">
-        <img src="assets/image/chel2.png" width="500px" height="450" alt="«Метеоритное» озеро Сунгур">
-    </div>
-    <div class="photo3">
-        <img src="assets/image/chel3.png" width="500px" alt="«Марсианские» терриконы Копейска">
-    </div>
-    <div class="photo4">
-        <img src="assets/image/chel4.png" width="500px" height="375"
-             alt="Андреевский каменный карьер - рукотворный памятник природы">
-    </div>
-</div>
-<?php
-$fullText = $nameAttractions . $text_about . $text_lesson;
-$result = strip_tags($fullText);
-$words = preg_split('/\s+/', trim($result));
-$wordCount = count($words);
-echo "Общее количество слов на странице index.php: " . $wordCount;
-echo "<br>";
-$count = preg_match_all('/[аеёиоуэюяАЕЁИОУЭЮЯ]/u', $fullText);
-echo "Количество гласных букв: " . $count;
-?>
-<?php require_once 'include/footer.php'; ?>     <!--импортирование footer.-->
+    </main>
+<?php require_once 'include/footer.php' ?>

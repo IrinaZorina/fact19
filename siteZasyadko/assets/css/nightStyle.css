@@ -1,5 +1,6 @@
 html{
-    background-color: aliceblue;
+    background: grey;
+    color: white;
 }
 img{
     max-width: 100%;
@@ -50,7 +51,7 @@ img{
     flex-wrap: nowrap;
 }
 .name{
-    color: Black;
+    color: white;
     justify-content: center;
     width: 20%;
     height: 30%;
@@ -65,13 +66,15 @@ img{
     flex-wrap: nowrap;
     justify-content: space-around;
     gap: 20px;
+    color: white;
 }
+
 .mgn-photo1,.mgn-photo2,.mgn-photo3,.mgn-photo4{
     padding: 40px ;
-    background-color: white;
+    background-color: dimgray;
     border: 1px solid black;
 }
-.tyl,.monument,.watch,.mountain {
+.tyl,.palatka,.hram,.arena {
     text-align: center;
 }
 .oblast-container{
@@ -82,7 +85,7 @@ img{
 }
 .oblast-photo1,.oblast-photo2,.oblast-photo3,.oblast-photo4{
     padding: 30px;
-    background-color: white;
+    background-color: dimgray;
     text-align: center;
     border: 1px solid black;
 }
@@ -156,16 +159,14 @@ img{
         font-size: 8px;
     }
 }
-@media  screen and (max-width: 1200px) {
-    .about, .lesson {
+@media  screen and (max-width: 1200px){
+    .about,.lesson{
         font-size: 20px;
     }
-
-    .name {
+    .name{
         font-size: 9px;
     }
-
-    .theme1, .theme2, .theme3 {
+    .theme1,.theme2,.theme3{
         font-size: 15px;
     }
 }
