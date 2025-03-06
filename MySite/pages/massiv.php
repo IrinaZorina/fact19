@@ -1,13 +1,6 @@
 <?php
-date_default_timezone_set('Asia/Yekaterinburg'); 
-$hour = date('H'); 
-
-if ($hour >= 8 && $hour < 20) {
-    $theme = 'light-theme';
-} else {
-    $theme = 'dark-theme';
-}
-
+require ('../style/function.php');
+$theme = thema();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,45 +31,8 @@ $ucheba = [
     ["predmet" => "информатика", "student" => "Вася", "rating" => 5],
     ["predmet" => "информатика", "student" => "Иван", "rating" => 5],
 ];
-$sumM = 0;
-$sumF = 0;
-$sumI = 0;
-$sumH = 0;
-$countM = 0;
-$countF = 0;
-$countI = 0;
-$countH = 0;
 
-foreach( $ucheba as $key) {
-    switch( $key['predmet'] ) {
-        case 'математика':
-            $sumM += $key['rating'];
-            $countM++;
-            break;
-        case 'физика':
-            $sumF += $key['rating'];
-            $countF++;
-            break;
-        case 'информатика':
-            $sumI += $key['rating'];
-            $countI++;
-            break;
-        case 'химия':
-            $sumH += $key['rating'];
-            $countH++;
-            break;
-}
-}
-$SredM = $sumM/$countM; 
-$SredF = $sumF/$countF; 
-$SredI = $sumI/$countI; 
-$SredH = $sumH/$countH; 
-
-echo "Средняя оценка по математике: " . $SredM . "<br>";
-echo "Средняя оценка по физике: " . $SredF . "<br>";
-echo "Средняя оценка по информатике: " . $SredI . "<br>";
-echo "Средняя оценка по химии: " . $SredH . "<br>";
-
+ozenki($ucheba);
 
 $temp = [
     "Куба" => [
@@ -104,60 +60,29 @@ $temp = [
         "Апрель" => 25,
     ],
 ];
-
-$temp2 = [];
-foreach ($temp as $island => $months) {
-    $maxTemp = null;
-    $maxMonth = null;
-    foreach ($months as $month => $t) {
-        if ($maxTemp == null || $t > $maxTemp ){
-            $maxTemp = $t;
-            $maxMonth = $month;
-        }
-    }
-    $temp2[$island] =[
-        "месяц"=> $maxMonth,
-        "температура"=> $maxTemp,
-    ];
-}
-
-foreach ($temp2 as $island => $data) {
-    echo "Остров: " . $island .
-    ", Месяц с максимальной температурой: " 
-    . $data["месяц"] . ", Температура: " 
-    . $data["температура"] . "<br>";
-}
-
-echo "<br>";
-echo "<br>";
+ost($temp);
 
 $arr12;
-
-for ($i = 0; $i < 5; $i++) {
-    for ($j = 0; $j < 6; $j++) {
-$arr12[$i][$j] = rand(0,10);
-    }
-}
-print_r($arr12);
-
+$arr13 = newmass();
+print_r($arr13);
 echo "<br>";
 
+secmass($arr13);
+// $proiz = 1;
+// for ($i = 0; $i < 6; $i++) {
+//     $maxst = $arr12[0][$i];
+//     for ($j = 0; $j < 5; $j++) {
+//         if($maxst <= $arr12[$j][$i] && $i%2==1) {
+//             $maxst = $arr12[$j][$i];
+//         }
+//     }
+//     if($i%2==1){
+//         echo" максимальный элемент в столбце". $i . " = ". $maxst . "<br>";;
+//         $proiz*=$maxst;
+//     }
 
-$proiz = 1;
-for ($i = 0; $i < 6; $i++) {
-    $maxst = $arr12[0][$i];
-    for ($j = 0; $j < 5; $j++) {
-        if($maxst <= $arr12[$j][$i] && $i%2==1) {
-            $maxst = $arr12[$j][$i];
-        }
-    }
-    if($i%2==1){
-        echo" максимальный элемент в столбце". $i . " = ". $maxst . "<br>";;
-        $proiz*=$maxst;
-    }
-
-}
-echo " <br> произведение максимальных элементов каждого столбца равен " . $proiz;
+// }
+// echo " <br> произведение максимальных элементов каждого столбца равен " . $proiz;
 require('footer.php');
 ?>
 </body>

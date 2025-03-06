@@ -1,13 +1,6 @@
 <?php
-date_default_timezone_set('Asia/Yekaterinburg'); 
-$hour = date('H'); 
-
-if ($hour >= 8 && $hour < 20) {
-    $theme = 'light-theme';
-} else {
-    $theme = 'dark-theme';
-}
-
+require ('../style/function.php');
+$theme = thema();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,29 +14,19 @@ if ($hour >= 8 && $hour < 20) {
 
 <?php
 require('header.php');
+echo "задание 1 <br>";
 $a=5;
-while($a <= 13){
-    echo"$a <br>";
-    $a++;
-}
+cikl1($a);
 
 echo "<br>";
+echo "задание 2 <br>";
 $num=1000;
-$count = 0;
-while($num >=50){
-$count++;
-$num/=2;
-}
-echo "$count";
+cikl2($num);
+
 echo "<br>";
+echo "задание 3 <br>";
 $i=mt_rand(0,10);
-$max=$i;
-$ch = 0;
-echo "$i";
-echo "<br>";
-for($i1= $i; $ch <= 10-$max; $ch++){
-echo" $ch ";
-}
+cikl3($i);
 require('footer.php');
 ?>
 </body>

@@ -1,14 +1,6 @@
 <?php
-date_default_timezone_set('Asia/Yekaterinburg'); 
-$hour = date('H'); 
-
-
-if ($hour >= 8 && $hour < 20) {
-    $theme = 'light-theme';
-} else {
-    $theme = 'dark-theme';
-}
-ob_start();
+require ('style/function.php');
+$theme = thema();
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -23,6 +15,7 @@ ob_start();
 <body class="<?php echo $theme; ?>">
 
 <?php
+ob_start();
 require_once('pages/header.php');
 ?>
     <div class="container">
@@ -42,23 +35,12 @@ require_once('pages/header.php');
         </div>
         <div class="three">
         <?php
+
             $str1 = "Первая лекция понравилась тем, что 
             информация преподается очень понятно, много практики.";
-            $color1 = 'red';
-            $color2 = 'blue';
-            $res ='';
-            $arr = explode(" ", $str1);
-            for ($i = 0; $i < count($arr); $i++) {
-                $word = $arr[$i];
-                if ($i%2== 0) {
-                    $res .= '<span style="color: ' . $color1 . ';">' . htmlspecialchars($word) . ' </span>';
-            }
-            else{
-                $res .= '<span style="color: ' . $color2 . ';">' . htmlspecialchars($word) . ' </span>';
-            }
-        }
-        echo $res;
-            ?>        </div>
+            class3( $str1 );
+            ?>        
+        </div>
     </div>
 
     <main>
@@ -87,30 +69,15 @@ require_once('pages/header.php');
 <?php
 require_once('pages/footer.php');
 
+
+
 $myFile = ob_get_clean();
 echo $myFile;
-$dom = new DOMDocument();
-@$dom->loadHTML($myFile);
-$text = $dom->textContent;
-$arr3 = preg_split('//u',$text);
-$count1 =0;
-preg_match_all('/\p{L}+/u',$text, $arr4);
-$wordCount =count($arr4[0]);
-$glas = "eEyYuUiIoOaAуУеЕэЭоОаАыяЯиИюЮёЁ";
-for ($i = 0; $i < count($arr3); $i++) {
-    if(mb_strpos($glas,$arr3[$i],0,'UTF-8')!==false){
-        $count1++;
-    }
-}
-    echo "<br>";
-    echo "количество гласных букв на странице равно $count1 <br> количество слов на странице $wordCount";
+
+kolvo($myFile);
 
     echo "<br> ";
 
-    $birthday = DateTime::createFromFormat("d.m.Y","07.10.2006");
-    $currentdate = new DateTime();
-    $interval = $currentdate ->diff($birthday);
-    $razniza = $interval->days;
-    echo $razniza . " дней";
+    birth();
 ?>
 </html>
