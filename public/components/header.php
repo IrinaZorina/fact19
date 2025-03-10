@@ -1,8 +1,4 @@
-<?php
-$hour = date("H");
-
-$theme = ($hour >= 8 && $hour < 20) ? "day-theme" : "night-theme";
-?>
+<?php include 'functions.php'; ?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -15,7 +11,7 @@ $theme = ($hour >= 8 && $hour < 20) ? "day-theme" : "night-theme";
   <link rel="stylesheet" href="/styles/table.css?v=<?= time() ?>" />
 </head>
 
-<body class="<?php echo $theme; ?>">
+<body class="<?php echo changeTheme() ?>">
 
   <header class="header">
     <nav>

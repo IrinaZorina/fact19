@@ -1,14 +1,15 @@
 <?php include 'components/header.php'; ?>
+
+
 <main class="container">
   <img class="photo" src="https://i.postimg.cc/qM2bkr56/photo-2025-01-29-12-28-39.jpg" />
   <div class="info">
     <div class="name">Протасов Антон</div>
     <div class="about">
-      Мне 24 года, я фронтенд разработчик, люблю спорт, занимаюсь баскетболом и мма.
+      <span style="color: blueviolet">Мне 24 года,</span> я фронтенд разработчик, люблю спорт, занимаюсь баскетболом и мма.
     </div>
     <div class="feedback">
-      На первых занятиях, к сожалению, смог пробыть только первую половину, в целом всё
-      структурированно и понятно изложено было, только чуть добавил бы скорости
+      <?php echo highlightEvenOddWords("На первых занятиях, к сожалению, смог пробыть только первую половину, в целом всё структурированно и понятно изложено было, только чуть добавил бы скорости", "red", "green"); ?>
     </div>
   </div>
   <div class="sections-wrapper">
@@ -59,5 +60,14 @@
       </div>
     </section>
   </div>
+
+  <div class="statistics">
+    <p>Дата рождения: <?php echo date("d.m.Y", strtotime($birthDate)); ?></p>
+    <p>Текущая дата: <?php echo date("d.m.Y"); ?></p>
+    <p>Разница в днях: <?php echo $daysDifference; ?></p>
+    <p>Количество гласных на странице: <?php echo $totalVowels; ?></p>
+    <p>Количество слов на странице: <?php echo $totalWords; ?></p>
+  </div>
 </main>
+
 <?php include 'components/footer.php'; ?>
