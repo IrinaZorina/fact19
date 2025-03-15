@@ -26,6 +26,11 @@ a {
     color: mintcream;
 }
 
+.auth {
+    color: blueviolet;
+    border: white 1px solid;
+}
+
 body {
     background-color: black;
 
@@ -100,6 +105,16 @@ body {
 }
 
 .function {
+    color: mintcream;
+    font-size: 24px;
+}
+
+.getpost {
+    color: mintcream;
+    font-size: 24px;
+}
+
+.aut_reg {
     color: mintcream;
     font-size: 24px;
 }
