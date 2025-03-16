@@ -55,3 +55,9 @@ function getDaysDiff(string $date1, string $date2): int
     return (date_diff(date_create($date1), date_create($date2))->days);
 }
 
+function validateRequirement(string $str): bool
+{
+    return !empty($str);
+}
+
+
