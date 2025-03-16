@@ -1,0 +1,45 @@
+header {
+    background-color: royalblue;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation-list-item-link {
+    color: white;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px black;
+}
+
+.navigation-list-item-link:hover {
+    color: #5199FF;
+}
+
+.navigation-list-item-link:active {
+    color: #052555; 
+}
+
+.navigation-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.login {
+    text-decoration: none;
+    color: white;
+}
+
+.login::before {
+    content: url("/images/account.svg");
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 4px auto;
+}

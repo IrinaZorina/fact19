@@ -1,3 +1,7 @@
+table {
+    overflow-y: scroll;
+}
+
 td, table, th{
     padding: 5px;
     border-collapse: collapse;

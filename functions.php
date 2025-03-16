@@ -125,3 +125,17 @@ function CreateRandomMatrix(int $rows, int $columns, int $min_value, int $max_va
     if ($create_table) echo "</tbody></table>";
     return $matrix;
 }
+
+/**
+ * Выводит сообщение об ошибке с помощью тега <blockquote>
+ * 
+ * @param string $error_text сообщение об ошибке
+ */
+function TextError(string $error_text) {
+    echo "<style>";
+    include_once "styles/error.css";
+    echo "</style>";
+    echo "<blockquote>";
+    echo $error_text;
+    echo "</blockquote>";
+}

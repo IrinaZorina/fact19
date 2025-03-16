@@ -1,0 +1,9 @@
+blockquote {
+    line-height: 32px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #BCBEC0;
+    background-color: #FF6A61;
+    color: white;
+    font-size: 16px;
+}

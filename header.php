@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/header.css">
     <?php
         require_once "functions.php";
         if (8 > date("H") && date("H") >= 20) {
@@ -28,6 +29,7 @@
                     <a class="navigation-list-item-link" href="arrays.php">Массивы</a>
                 </li>
             </ul>
+            <a class="login" href="login.php">Авторизация</a>
         </nav>
     </header>
     <main>
