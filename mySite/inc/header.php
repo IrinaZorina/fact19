@@ -26,6 +26,13 @@
         </div>
         <div class="theme4">
             <a href="function.php"> Функции </a>
-        </div
+        </div>
+        <div class="theme5">
+            <a href="post.php"> Get/Post </a>
+        </div>
+        <div class="theme6">
+            <a href="authentication.php"> Авторизация </a>
+        </div>
+
     </div>
 </header>
