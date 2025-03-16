@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+session_start();
+
 include_once $_SERVER['DOCUMENT_ROOT'] . '/../src/functions.php';
 
 if (date('H') >= 8 && date('H') < 20) {

@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 require $_SERVER['DOCUMENT_ROOT'] . '/../src/init.php';
 ?>
 
@@ -30,14 +29,31 @@ require $_SERVER['DOCUMENT_ROOT'] . '/../src/init.php';
             <a class="header__logo" href="/">
                 <img src="/<?= $logoFile ?>" alt="logotype" width="120px"></a>
             <nav class="menu">
-                <ul class="menu__list">
-                    <li class="menu__item"><a href="/">Главная</a></li>
-                    <li class="menu__item"><a href="/homework2">ДЗ от 31.01</a></li>
-                    <li class="menu__item"><a href="/homework3">ДЗ от 3.02</a></li>
-                    <li class="menu__item"><a href="/homework4">ДЗ от 17.02</a></li>
-                    <li class="menu__item"><a href="/homework5">ДЗ от 20.02</a></li>
-                    <li class="menu__item"><a href="/homework6">ДЗ от 03.03</a></li>
-                </ul>
+                <div>
+                    <ul class="menu__list">
+                        <li class="menu__item"><a href="/">Главная</a></li>
+                        <li class="menu__item"><a href="/homework2">ДЗ от 31.01</a></li>
+                        <li class="menu__item"><a href="/homework3">ДЗ от 3.02</a></li>
+                        <li class="menu__item"><a href="/homework4">ДЗ от 17.02</a></li>
+                        <li class="menu__item"><a href="/homework5">ДЗ от 20.02</a></li>
+                        <li class="menu__item"><a href="/homework6">ДЗ от 03.03</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="auth">
+                        <?php
+                        if (isset($_SESSION['login'])):?>
+                            <p>Доброе пожаловать, <?= $_SESSION['login'] ?></p>
+                            <a class="form__submit" href="/logout">Выйти</a>
+                        <?php
+                        else:?>
+                            <a class="form__submit" href="/login">Войти</a>
+                            <a class="form__submit" href="/register">Регистрация</a>
+                        <?php
+                        endif;
+                        ?>
+                    </div>
+                </div>
                 <div class="menu__mobile">
                     <ul class="menu__list-mobile">
                         <li class="menu__item-mobile"><a href="index.html">Главная</a></li>
