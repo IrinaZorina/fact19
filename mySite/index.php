@@ -10,32 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <title>Мой сайт</title>
     <?php
+        include_once "./pages/function_index.php";
         $hour=date('H');
-        if($hour>=8 && $hour<20)
-        {
-            echo '<link rel="stylesheet" href="./assets/css/style.css">';
-    
-        }
-        else
-        {
-            echo '<link rel="stylesheet" href="./assets/css/style.css">
-            <style>
-                html, body{
-                    background-color:black;
-                    color: aliceblue;
-                }
-                .header__line{
-                    background-color:whitesmoke;
-                }
-                    .place-item{
-                    background-color:coral;
-                    color:powderblue;
-                }
-                    .footer{
-                    background-image: linear-gradient(black, gray);
-                }
-            </style>';
-        }
+       theme_page($hour);
+
         $str_about="Приветствую вас на своем сайте! Этот сайт создан для изучения веб-разработки на курсе ФАКТ Академии.
                         Я работаю в техподдержке крупной IT компании, и хочу повысить свои компетенции, чтобы попробовать себя в разработке.
                         В свободное время люблю заниматься спортом, слушать аудио книги и изучать что-то новое!";
@@ -47,53 +25,27 @@
 
 <?php
     // текст первой фразы окрашиваем в произвольный цвет
-    $end_str=mb_strpos($str_about,"!");
-    $str_about_clr=mb_substr($str_about,0,mb_strpos($str_about,"!")+1);
-    $str_about=str_replace($str_about_clr,'',$str_about);
-    $str_about_clr= '<span style="color: rgb('.mt_rand(0,255).','.mt_rand(0,255).','.mt_rand(0,255).')">'.$str_about_clr.'</span>';
-    $str_about=$str_about_clr.$str_about;
+    $str_about=rand_color($str_about);
     // окрашиваем слова в отзыве в разные цвета
-    $arr_str_course=explode(" ",$str_course);
-    $str_course="";
-    $str_clr1='<span style="color:black">';
-    $str_clr2='<span style="color:darkcyan">';
-    for($i=0;$i<count($arr_str_course);++$i)
-    {   
-        if($i%2==0)
-        {
-            $str_course.=$str_clr1.$arr_str_course[$i].'</span> ';
-        }
-        else
-        {
-            $str_course.=$str_clr2.$arr_str_course[$i].'</span> ';
-        }
-
-    }
+    world_color($str_course);
    
     // считаем количество гласных на странице
+  $str_other="Максим Филинков Достопримечательности города Саратова Набережная Космонавтов Саратовский мост Мемориал «Журавли» Проспект Кирова Достопримечательности Саратовской области Кумысная поляна Национальный парк «Хвалынский» Лютеранская кирха в селе Зоркино Водяная мельница в селе Лох";
     $str_text=strip_tags($str_about.$str_course);
-    $arr_char=["а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я","А","Е","Ё","И","О","У","Ы","Э","Ю","Я"];
-    $num_char=0;
-    for($i=0;$i<count($arr_char);++$i)
-    {
-        $num_char+=substr_count($str_text,$arr_char[$i]);
-    }
-    $str_gl='Количество гласных на странице равно '.$num_char;
+    $str_text.=$str_other;
+    $str_gl='Количество гласных на странице равно '.vowel_let($str_text);
     // считаем количество слов на странице
     $arr_text=explode(" ",$str_text);
     $num_words=count($arr_text);
-    $str_words='Количество слов на странице '.$num_words;
+    $str_words='Количество слов на странице '.num_worlds($str_text);
     // считаем время от рождения до текущей даты
     $date_now=date('d-m-Y');
     $str_date_now="Текущая дата ".$date_now;
     $str_born="Дата рождения 29-12-1985";
-    $d_now= new DateTime(date('Y-m-d'));
-    $d_born= new DateTime("1985-12-29");
-    $d_diff=date_diff($d_now,$d_born);
-    $str_diff="Разность во времени ".$d_diff->format('%a')." дней";
+    $str_diff="Разность во времени ".born_now()." дней";
 
     ?>
-     <span style="color: rgb(1,2 ,2)"></span>
+     <span style="color: rgb(1,2,2)"></span>
 <body>
    <?php
         include "pages/header.php";

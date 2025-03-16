@@ -1,0 +1,4 @@
+Login: max
+Password:ae73e34800a176503a0fd73d2ceb6c8c
+Login: fred
+Password:4c9e723727304a27874ed5f7b27995da
