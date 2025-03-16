@@ -10,12 +10,12 @@
 </head>
 <body>
 <header>
-    <nav class="navbar menu">
+    <nav class="navbar_menu">
         <div class="container">
             <ul class="navbar_list">
                 <li><a class="nav_p" href="../index.php"> ПОРТФОЛИО</a></li>
-                <li><a class="nav_p" href="../task1702.php"> ЦИКЛЫ</a></li>
-                <li><a class="nav_p" href="../task2002.php"> МАССИВЫ</a></li>
+                <li><a class="nav_p" href="../strings.php"> СТРОКИ</a></li>
+                <li><a class="nav_p" href="../functions.php"> ФУНКЦИИ</a></li>
             </ul>
         </div>
     </nav>

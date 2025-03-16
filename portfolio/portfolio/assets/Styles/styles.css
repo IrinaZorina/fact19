@@ -1,6 +1,12 @@
 header{
-    height: 40px;
+    height: 65px;
     text-align: center;
+    align-content: center;
+    background-color: azure;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
 }
 
 ul.navbar_list {
@@ -63,7 +69,10 @@ footer{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 40px;
+    background-color: azure;
+    bottom: 0;
+    z-index: 100;
 }
 
 .social{
@@ -73,8 +82,8 @@ footer{
     align-items: center;
     margin: 10px 0;
     flex-wrap: wrap;
+    padding: 0;
 }
-
 
 .social li{
     list-style: none;
@@ -90,7 +99,16 @@ footer{
 .resume{
     padding: 2em;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    position: relative;
+    top: 25px;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 10px;
+}
+
+.space{
+    height: 415px;
+    text-align: center;
+    align-content: center;
 }
 
 .main{
@@ -104,6 +122,8 @@ footer{
 .homework{
     display: flex;
     flex-flow: column wrap;
+    position: relative;
+    top: 25px;
     padding: 20px;
     margin: 20px;
     text-align: left;
