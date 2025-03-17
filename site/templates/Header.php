@@ -1,10 +1,14 @@
 <?php
-$Hour = date('H');
-if ($Hour >= 8 && $Hour < 20) {
-    $smena = 'assets/css/style.css';
-} else {
-    $smena = 'assets/css/noch.css';
+function getStylesheetByTime() {
+    $Hour = date('H');
+    if ($Hour >= 8 && $Hour < 20) {
+        return 'assets/css/style.css';
+    } else {
+        return 'assets/css/noch.css';
+    }
 }
+
+$smena = getStylesheetByTime();
 ?>
 
 <!doctype html>
@@ -17,7 +21,6 @@ if ($Hour >= 8 && $Hour < 20) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Мой сайт</title>
     <link rel="stylesheet" href="<?= $smena ?>">
-
 </head>
 
 <body>
@@ -30,5 +33,11 @@ if ($Hour >= 8 && $Hour < 20) {
         </a>
         <a href="Massiv.php">
             <button>Массивы</button>
+        </a>
+        <a href="Function.php">
+            <button>Функции</button>
+        </a>
+        <a href="index.php">
+            <button>На главную</button>
         </a>
     </header>

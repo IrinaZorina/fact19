@@ -5,12 +5,15 @@
         color: #FF5733;
         font-weight: bold;
     }
+
     .even-word {
         color: #33FF57;
     }
+
     .odd-word {
         color: #3357FF;
     }
+
     .date-form {
         margin-top: 20px;
         padding: 10px;
@@ -84,7 +87,8 @@
     </div>
 
     <?php
-    function countVowels($text) {
+    function countVowels($text)
+    {
         $vowels = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'];
         $count = 0;
         $text = mb_strtolower($text);
@@ -96,10 +100,11 @@
         return $count;
     }
 
-    function countWords($text) {
+    function countWords($text)
+    {
         $text = strip_tags($text);
         $words = preg_split('/\s+/', $text);
-        return count(array_filter($words, function($word) {
+        return count(array_filter($words, function ($word) {
             return !empty($word);
         }));
     }
@@ -137,5 +142,4 @@
     echo "</div>";
     ?>
 </main>
-
 <?php require_once 'templates/Footer.php' ?>
