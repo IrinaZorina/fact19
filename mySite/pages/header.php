@@ -92,7 +92,6 @@
             { 
                 if($arr[$i]->login===$log1)
                 {
-                    echo $arr[$i]->login.'<br>';
                     return true;
                 }
             }

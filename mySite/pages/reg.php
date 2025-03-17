@@ -36,7 +36,6 @@ if(isset($_POST["login_reg"]) && isset($_POST["pass_reg"]))
     $log=$_POST["login_reg"];
     $pass=$_POST["pass_reg"];
     $arr_user=arr_log_pass();
-    print_r($arr_user);
     if(check_user($arr_user,$log,0))
     {
         echo '<p class="text text_align_center"> Ошибка пользователь с таким логином существует! </p>';
