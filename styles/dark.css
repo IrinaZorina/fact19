@@ -9,3 +9,11 @@ body {
 header {
     background-color: #2E3F7F;
 }
+
+td, table, th{
+    color: white;
+}
+
+tr:nth-child(2n) td{
+    color: black;
+}

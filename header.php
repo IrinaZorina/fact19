@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/header.css">
     <?php
         require_once "functions.php";
-        if (8 > date("H") && date("H") >= 20) {
+        if ((8 > date("H") && date("H") >= 20) || (isset($_COOKIE['dark-theme']) && $_COOKIE['dark-theme'])) {
             echo "<link rel=\"stylesheet\" href=\"styles/dark.css\">";
         }
     ?>
@@ -29,7 +29,7 @@
                     <a class="navigation-list-item-link" href="arrays.php">Массивы</a>
                 </li>
             </ul>
-            <a class="login" href="login.php">Авторизация</a>
+            <a class="login" href="login.php"><?=isset($_SESSION['is_logined']) ? 'Кабинет' : 'Авторизация'?></a>
         </nav>
     </header>
     <main>

@@ -2,12 +2,18 @@
 require_once "header.php";
 require_once "functions.php";
 
+if(isset($_SESSION['is_logined']) && $_SESSION['is_logined']) header("Location: hello.php");
+
 $form_error = false;
 $password = md5("VladPassword");
 $get_name = isset($_REQUEST["name"]) ? $_REQUEST["name"] : NULL;
 $get_passord = isset($_REQUEST["pass"]) ? $_REQUEST["pass"] : NULL;
+
 if (isset($_REQUEST["name"]) && isset($_REQUEST["pass"])){
-    if ($get_name === "Vlad" && md5($get_passord) === $password) header("Location: hello.php");
+    if ($get_name === "Vlad" && md5($get_passord) === $password){
+        $_SESSION['is_logined'] = true;
+        header("Location: hello.php");
+    } 
     else $form_error = true;
 }
 
