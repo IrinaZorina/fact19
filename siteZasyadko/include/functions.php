@@ -45,3 +45,15 @@ function diffTime($birthday, $date_now, $diff)
     echo "Сегодня: " . $date_now->format("d.m.Y") . "<br>" . "Разница: ";
     return $diff;
 }
+function deleteSession()
+{
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    $_SESSION = [];
+    if (session_destroy()) {
+        return true;
+    } else {
+        return false;
+    }
+}
