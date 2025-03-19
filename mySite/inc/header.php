@@ -1,4 +1,11 @@
 <?php require_once 'DayNight.php' ?>
+<?php
+if (isset($_POST['color'])) {
+    setcookie('backgroundColor', $_POST['color'], time() + (30 * 24 * 60 * 60), '');
+}
+$bgColor = isset($_COOKIE['backgroundColor']) ? $_COOKIE['backgroundColor'] : "";
+?>
+
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -9,6 +16,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="<?= $style ?>">
 </head>
+<style>
+    body {
+        background-color: <?php echo $bgColor?>;
+    }
+</style>
 <body>
 <header>
     <div class="container-header">
@@ -32,6 +44,16 @@
         </div>
         <div class="theme6">
             <a href="authentication.php"> Авторизация </a>
+        </div>
+        <div class="theme7">
+            <form method="post">
+                <select name="color" size="3">
+                    <option value="#A9A9A9" <?php echo $bgColor == '#A9A9A9'? 'selected':'';?>>Темно-серый </option>
+                    <option value="#006400" <?php echo $bgColor == '#006400'? 'selected':'';?>>Темно-зеленый </option>
+                    <option value="#00BFFF" <?php echo $bgColor == '#00BFFF'? 'selected':'';?>>Голубой </option>
+                </select>
+                <input type="submit" value="Изменить">
+            </form>
         </div>
 
     </div>

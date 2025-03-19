@@ -1,7 +1,9 @@
 <?php require_once'inc/header.php'?>
 <?php
+session_start();
 if (!empty($_POST['password'])&& !empty($_POST['login'])) {
     if ($_POST['password'] == 'mypass123' && $_POST['login'] == 'admin') {
+        $_SESSION['login'] = 'Admin';
         header('location: welcome.php');
     }
 }
