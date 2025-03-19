@@ -27,8 +27,10 @@ a {
 }
 
 .auth {
+    font-size: 35px;
     color: blueviolet;
-    border: white 1px solid;
+    right: 100%;
+    width: auto;
 }
 
 body {
