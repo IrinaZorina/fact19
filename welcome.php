@@ -1,8 +1,8 @@
 <?php
-session_start(); // Запускаем сессию
+session_start();
 
 if (!isset($_SESSION['user'])) {
-    header("Location: authorization.php"); // Перенаправление, если пользователь не авторизован
+    header("Location: authorization.php");
     exit();
 }
 ?>
@@ -20,14 +20,12 @@ if (!isset($_SESSION['user'])) {
 </head>
 <body>
     <h1>Добро пожаловать, <?php echo htmlspecialchars($_SESSION['user']); ?>!</h1>
-    <p><a href="authorization.php?logout=1">Выйти</a></p>
+    <?php if (isset($_SESSION['last_visited_page'])): ?>
+        <p>Последняя посещённая страница: <?php echo htmlspecialchars($_SESSION['last_visited_page']); ?></p>
+    <?php else: ?>
+        <p>Вы ещё не посещали страницы Fact или Bitrix.</p>
+    <?php endif; ?>
+    <p><a href="fact.php">Перейти на Fact</a> | <a href="bitrix.php">Перейти на Bitrix</a></p>
+    <p><a href="logout.php">Выйти</a></p>
 </body>
 </html>
-
-<?php
-if (isset($_GET['logout'])) {
-    session_destroy(); // Уничтожаем сессию при выходе
-    header("Location: authorization.php");
-    exit();
-}
-?>
