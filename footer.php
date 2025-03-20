@@ -1,14 +1,10 @@
 <?php
-$time = date("H");
-if ($time >= 8 && $time < 20) {
-    $tiptemy = '/assets/css/styleday.css';
-} else {
-    $tiptemy = '/assets/css/style.css';
-}
+require_once 'functions.php';
+[$cssfunct, $logofunct]=themeSelect();
 ?>
 
     <footer>
-<link rel = "stylesheet" href = "<?= $tiptemy ?>">
+<link rel = "stylesheet" href = "<?= $cssfunct ?>">
 <div class="footer1" >
     <div class="copyright" >
         <p > (c) Константин Мосунов </p >

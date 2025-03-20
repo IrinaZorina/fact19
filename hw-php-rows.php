@@ -145,19 +145,10 @@ ob_start();
 </main>
 
 <?php
-// Получаем весь HTML-код страницы
 $pageContent = ob_get_clean();
-
-// Подсчитываем гласные буквы
 $vowelCount = countVowels($pageContent);
-
-// Подсчитываем количество слов
 $wordCount = countWords($pageContent);
-
-// Выводим содержимое страницы
 echo $pageContent;
-
-// Выводим количество гласных букв и слов
 echo "<div style='text-align: center; margin-top: 20px;'>
         Количество гласных букв на странице: $vowelCount<br>
         Количество слов на странице: $wordCount
