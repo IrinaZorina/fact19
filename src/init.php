@@ -6,10 +6,12 @@ session_start();
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/../src/functions.php';
 
-if (date('H') >= 8 && date('H') < 20) {
-    $cssFile = 'assets/styles/color/light.css';
-    $logoFile = 'assets/img/factAcademy-logo_light.svg';
-} else {
-    $cssFile = 'assets/styles/color/dark.css';
-    $logoFile = 'assets/img/factAcademy-logo_dark.svg';
+[$cssFile, $logoFile] = getTheme();
+$backgroundColor = getBackgroundColor();
+
+$lastPage = $_SESSION['last_page'] ?? 'пусто';
+
+if (isset($_SESSION['show_message'])) {
+    echo '<script>alert("Последняя страница: ' . $lastPage . '");</script>';
+    unset($_SESSION['show_message']);
 }

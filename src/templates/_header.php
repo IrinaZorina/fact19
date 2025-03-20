@@ -15,11 +15,16 @@ require $_SERVER['DOCUMENT_ROOT'] . '/../src/init.php';
     <link
             href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet">
-    <link rel="stylesheet" href="/<?= $cssFile ?>">
+    <link rel="stylesheet" href="/<?= htmlentities($cssFile) ?>">
     <link rel="stylesheet" href="/assets/styles/global.css">
     <link rel="stylesheet" href="/assets/styles/header.css">
     <link rel="stylesheet" href="/assets/styles/content.css">
     <link rel="stylesheet" href="/assets/styles/footer.css">
+    <style>
+        body {
+            background-color: <?= htmlentities($backgroundColor) ?>;
+        }
+    </style>
     <title>Блинов Владислав</title>
 </head>
 <body>
@@ -27,7 +32,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/../src/init.php';
     <header class="header">
         <div class="header__container">
             <a class="header__logo" href="/">
-                <img src="/<?= $logoFile ?>" alt="logotype" width="120px"></a>
+                <img src="/<?= htmlentities($logoFile) ?>" alt="logotype" width="120px"></a>
             <nav class="menu">
                 <div>
                     <ul class="menu__list">
@@ -43,7 +48,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/../src/init.php';
                     <div class="auth">
                         <?php
                         if (isset($_SESSION['login'])):?>
-                            <p>Доброе пожаловать, <?= $_SESSION['login'] ?></p>
+                            <p>Добро пожаловать, <?= $_SESSION['login'] ?></p>
                             <a class="form__submit" href="/logout">Выйти</a>
                         <?php
                         else:?>

@@ -143,6 +143,10 @@
     margin-right: 1.5rem;
 }
 
+.form__select-color {
+    background-color: var(--color-background);
+}
+
 .form__submit {
     color: var(--color-background);
     background: var(--color-primary);

@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-
+session_start();
 function getAboutText(string $aboutText): array
 {
     $dotIndex = mb_strpos($aboutText, '.') + 1;
@@ -60,4 +60,27 @@ function validateRequirement(string $str): bool
     return !empty($str);
 }
 
+function getTheme(): array
+{
+    if (date('H') >= 8 && date('H') < 20) {
+        $cssFile = 'assets/styles/color/light.css';
+        $logoFile = 'assets/img/factAcademy-logo_light.svg';
+    } else {
+        $cssFile = 'assets/styles/color/dark.css';
+        $logoFile = 'assets/img/factAcademy-logo_dark.svg';
+    }
 
+    return [$cssFile, $logoFile];
+}
+
+function getBackgroundColor(): string
+{
+    $backgroundColor = $_SESSION['background_color'] ?? 'var(--color-background)';
+
+    if (isset($_POST['background_color'])) {
+        $backgroundColor = $_POST['background_color'];
+        $_SESSION['background_color'] = $backgroundColor;
+    }
+
+    return $backgroundColor;
+}

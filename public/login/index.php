@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             [$login, $password] = explode(' ', $user);
             if ($login == $_POST['login'] && password_verify($_POST['password'], $password)) {
                 $_SESSION['login'] = $login;
+                $_SESSION['show_message'] = true;
                 header('Location: /');
                 exit;
             }
