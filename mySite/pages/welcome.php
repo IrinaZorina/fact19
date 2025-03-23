@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +21,13 @@
         if(check_user($arr_users,$log,$pass))
         {
            echo '<h3 class="title">Приветсвуем на сайте '.$log.'</h3>';
+           echo '<div class="block_get_post flex_row"> <a href="./fact.php" class="block_get_post__link">Факт</a>
+                    <a href="./bitrix.php" class="block_get_post__link">Битрикс</a> </div>';
            echo '<div class="block_get_post flex_row"> <a href="/index.php" class="block_get_post__link">На главную страницу</a> </div>';
+           if(isset($_SESSION["page"]))
+           {
+            echo '<h3 class="title">Последняя посещенная страница '.$_SESSION["page"].'</h3>';
+           }
         }
         else 
         {

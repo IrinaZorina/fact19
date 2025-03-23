@@ -1,4 +1,15 @@
-
+<?php
+    session_unset();
+    if(isset($_POST['color_page']))
+    {
+        setcookie("color_page",$_POST['color_page'],time()+3600*24*14);
+    }
+    $user_color_page='darkgray';
+    if(isset($_COOKIE["color_page"]))
+    {
+        $user_color_page=$_COOKIE["color_page"];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +22,7 @@
     <title>Мой сайт</title>
     <?php
         include_once "./pages/function_index.php";
+        $str_color_page='';
         $hour=date('H');
        theme_page($hour);
 
@@ -59,12 +71,12 @@
                 <h2 class="title-h2">Максим Филинков</h2>
                 <div class="main__text-list">
                     <p class="main__text-item">
-                    <?php echo $str_about;
-                    ?>
+                        <?php echo $str_about;
+                        ?>
                     </p>
                     <p class="main__text-item">
-                    <?php echo $str_course;
-                    ?>
+                        <?php echo $str_course;
+                        ?>
                     </p>
                 </div>
             </div>
@@ -127,6 +139,32 @@
                 </div>
             </div>
         </section>
+        <div class="block_get_post">
+        <h3 class="title">Выберите цвет фона</h3>
+        </div>
+        <form method="POST" id="form_index" action="index.php">
+            <div class="block_get_post">
+                <select name="color_page" id="" size="">
+                    <option value="rgb(156, 135, 135)">Красный оттенок серого</option>
+                    <option value="rgb(142, 148, 174)">Синий оттенок серого</option>
+                    <option value="rgb(135, 144, 124)">Зеленый оттенок серого</option>
+                </select>
+            </div>
+            <div class="block_get_post">
+                <button type="submit" form="form_index">Выбрать цвет</button>
+            </div>
+        </form>
+        <?php
+         if(isset($_POST['color_page']))
+         {
+             $user_color_page=$_POST['color_page'];
+         }
+    echo '<style>
+        html, body{
+            background-color:'.$user_color_page.';
+            }
+    </style>';
+    ?>
         <p class="text_answer"> 
             <?php
                     echo $str_gl.". ".$str_words.'. '.$str_born.'. '.$str_date_now.'. '.$str_diff.'.';
