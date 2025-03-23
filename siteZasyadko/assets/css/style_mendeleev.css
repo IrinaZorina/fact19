@@ -1,0 +1,41 @@
+.container{
+    display: grid;
+    background-color: palevioletred;
+    width: 180px;
+    height: 180px;
+    border: 1px solid black;
+}
+.symbol{
+    grid-area: symbol;
+    font-size: 40px;
+    font-weight: bold;
+}
+.name-lat{
+    grid-area: name-lat;
+    font-size: 20px;
+}
+.name{
+    grid-area: name;
+    font-size: 20px;
+}
+.number{
+    grid-area: number;
+    font-size: 25px;
+    justify-items: left;
+    justify-self: end;
+    justify-content: left;
+}
+.atomic-mass{
+    grid-area: atomic-mass;
+    font-size: 20px;
+    justify-items: left;
+    justify-self: end;
+    justify-content: left;;
+}
+.vodorod{
+    display: grid;
+    grid-template-areas:
+    "symbol atomic-mass atomic-mass"
+    "name-lat name-lat number"
+    "name name number ";
+}
