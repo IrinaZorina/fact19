@@ -105,6 +105,79 @@ footer{
     grid-gap: 10px;
 }
 
+.auth_div{
+    height: 705px;
+    padding: 4em;
+    position: relative;
+    top: 50%;
+    display: block;
+}
+
+.auth_block{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.auth_header, .auth_fail{
+    margin: 20px;
+    font-size: 27px;
+    line-height: 33px;
+    color: #333;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+
+.auth_fail{
+    margin-top: 20em;
+    text-align: center;
+}
+
+.auth_footer {
+    height: 45px;
+    padding-top: 17px;
+    position: relative;
+    text-align: center;
+}
+
+.login-btn{
+    background: azure;
+    color: #000;
+    display: inline-block;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 0 30px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 17px !important;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.login-inp {
+    display: block;
+    width: 100%;
+    height: 47px;
+    padding: 0 13px;
+    background: #fff;
+    border: 2px solid #c8ccd1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #333;
+    margin: 20px;
+    outline: 0;
+}
+
 .space{
     height: 415px;
     text-align: center;

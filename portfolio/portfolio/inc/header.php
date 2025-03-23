@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+    function timeOfDay()
+    {
+        return (date("H") >= 8 && date('H') < 20) ? '../assets/Styles/styles.css' : '../assets/Styles/styles_dark.css' ;
+    }
+?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +11,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Сарбаева Галия</title>
     <link rel="stylesheet"
-          href="<?= (date("H") >= 8 && date('H') < 20) ? 'assets/Styles/styles.css' : 'assets/Styles/styles_dark.css' ?>">
+          href="<?= timeOfDay()?>">
 </head>
 <body>
 <header>
@@ -14,8 +19,9 @@
         <div class="container">
             <ul class="navbar_list">
                 <li><a class="nav_p" href="../index.php"> ПОРТФОЛИО</a></li>
-                <li><a class="nav_p" href="../strings.php"> СТРОКИ</a></li>
-                <li><a class="nav_p" href="../functions.php"> ФУНКЦИИ</a></li>
+                <li><a class="nav_p" href="../get_post.php"> GET/POST</a></li>
+                <li><a class="nav_p" href="../auth/index.php"> Авторизация</a></li>
+                <!--<li><a class="nav_p" href="../session.php"> COOKIE/SESSION</a></li>-->
             </ul>
         </div>
     </nav>
