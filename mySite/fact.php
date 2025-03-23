@@ -4,4 +4,7 @@
 session_start();
 $_SESSION['last_visited_page'] = 'fact.php';  // Запоминаем текущую страницу
 ?>
+<p class="back">
+    <a href="welcome.php">Вернуться назад</a>
+</p>
 <?php require_once  'inc/footer.php'?>

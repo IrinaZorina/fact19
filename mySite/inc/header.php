@@ -1,7 +1,9 @@
 <?php require_once 'DayNight.php' ?>
 <?php
 if (isset($_POST['color'])) {
-    setcookie('backgroundColor', $_POST['color'], time() + (30 * 24 * 60 * 60), '');
+    setcookie('backgroundColor', $_POST['color'], time() + (30 * 24 * 60 * 60), '/');
+    header('Location: ' . $_SERVER['REQUEST_URI']);
+    exit;
 }
 $bgColor = isset($_COOKIE['backgroundColor']) ? $_COOKIE['backgroundColor'] : "";
 ?>
@@ -55,6 +57,9 @@ $bgColor = isset($_COOKIE['backgroundColor']) ? $_COOKIE['backgroundColor'] : ""
                 <input type="submit" value="Изменить">
             </form>
         </div>
+        <div class="theme8">
+            <a href="Files.php"> Файлы </a>
+        </div
 
     </div>
 </header>

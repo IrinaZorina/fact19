@@ -1,5 +1,7 @@
+body {
+    background-color:grey ;
+}
 html{
-    background: grey;
     color: white;
 }
 img{
@@ -89,7 +91,7 @@ img{
     text-align: center;
     border: 1px solid black;
 }
-.theme1,.theme2,.theme3 ,.theme4 ,.theme5 , .theme6 ,.theme7{
+.theme1,.theme2,.theme3 ,.theme4 ,.theme5 , .theme6 ,.theme8{
     font-size: 24px;
 }
 .theme1 {
@@ -128,6 +130,11 @@ img{
     position: absolute;
     top: 50%;
     left: 70%;
+}
+.theme8{
+    position: absolute;
+    top: 50%;
+    left: 1000px;
 }
 .fact , .bitrix , .last {
     text-align: center;
@@ -171,7 +178,7 @@ img{
     font-size: 18px;
     border: 1px solid black;
 }
-.bitrix , .fact1{
+.bitrix , .fact1 , .back , .files_work1 , .files_work2{
     text-align: center;
     font-size: 30px;
 }
