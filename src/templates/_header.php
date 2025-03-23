@@ -37,11 +37,19 @@ require $_SERVER['DOCUMENT_ROOT'] . '/../src/init.php';
                 <div>
                     <ul class="menu__list">
                         <li class="menu__item"><a href="/">Главная</a></li>
-                        <li class="menu__item"><a href="/homework2">ДЗ от 31.01</a></li>
-                        <li class="menu__item"><a href="/homework3">ДЗ от 3.02</a></li>
-                        <li class="menu__item"><a href="/homework4">ДЗ от 17.02</a></li>
-                        <li class="menu__item"><a href="/homework5">ДЗ от 20.02</a></li>
-                        <li class="menu__item"><a href="/homework6">ДЗ от 03.03</a></li>
+                        <li class="menu__item">
+                            <p class="nav-title">Список ДЗ</p>
+                            <ul class="menu__submenu">
+                                <li class="menu__item"><a href="/homework2">ДЗ от 31.01</a></li>
+                                <li class="menu__item"><a href="/homework3">ДЗ от 3.02</a></li>
+                                <li class="menu__item"><a href="/homework4">ДЗ от 17.02</a></li>
+                                <li class="menu__item"><a href="/homework5">ДЗ от 20.02</a></li>
+                                <li class="menu__item"><a href="/homework6">ДЗ от 03.03</a></li>
+                                <li class="menu__item"><a href="/homework7">ДЗ от 21.03</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu__item"><a href="/fact.php">Факт</a></li>
+                        <li class="menu__item"><a href="/bitrix.php">Битрикс</a></li>
                     </ul>
                 </div>
                 <div>
