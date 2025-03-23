@@ -4,10 +4,16 @@
 
         <?php
         session_start();
+        $login = (isset($_POST['login']));
+        $password = (isset($_POST['password']));
         if (!empty($_POST['password']) && !empty($_POST['login'])) {
             if ($_POST['password'] == 'qwerty' && $_POST['login'] == 'admin') {
                 $_SESSION['login'] = 'administrator';
                 header('location: welcome.php');
+                $hash = password_hash($password, PASSWORD_DEFAULT);
+                $_POST['password'] = $hash;
+            } else {
+                echo 'Неверный пароль или логин';
             }
         }
         ?>

@@ -157,5 +157,6 @@
 
         echo newStr('HTML, CSS, PHP, BITRIX');
         ?>
+
     </div>
 <?php include_once 'inc/footer.php'; ?>

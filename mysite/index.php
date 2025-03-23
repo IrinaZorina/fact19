@@ -99,10 +99,12 @@
 
 <div class="Date">
     <h1>Статистика страницы</h1>
+
     <?php
     echo "Количество слов на странице: ";
-    echo WordCount('index.php') . "<br>";
+    echo WordsCount('index.php') . "<br>";
     ?>
+
     <?php
     echo "Количество гласных букв на странице: ";
     echo letterCount('index.php') . "<br>";
