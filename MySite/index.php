@@ -9,7 +9,7 @@ $theme = thema();
     <meta name="keywords" content="php,html,css,bitrix">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 
 </head>
 <body class="<?php echo $theme; ?>">

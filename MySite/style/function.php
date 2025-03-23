@@ -4,7 +4,7 @@ function thema(){
 date_default_timezone_set('Asia/Yekaterinburg'); 
 $hour = date('H'); 
 
-if ($hour >= 8 && $hour < 20) {
+if ($hour >= 8 && $hour < 12) {
     $theme = 'light-theme';
 } else {
     $theme = 'dark-theme';
@@ -183,6 +183,16 @@ echo "<br>";
 echo "<br>";
 }
 
+
+function TextError(string $error_text) {
+    echo "<style>";
+    include_once "styles/error.css";
+    echo "</style>";
+    echo "<blockquote>";
+    echo $error_text;
+    echo "</blockquote>";
+}
+
 function newmass(){
 
     $arr12 =[];
@@ -194,6 +204,7 @@ $arr12[$i][$j] = rand(0,10);
 return $arr12;
 
 }
+
 function secmass($arr12){
     $proiz = 1;
 for ($i = 0; $i < 6; $i++) {

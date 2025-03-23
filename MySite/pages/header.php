@@ -1,4 +1,3 @@
-    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="../style/style.css">
 
 <header class="containerHead">
@@ -6,5 +5,6 @@
     <a href = "../pages/massiv.php">Массивы</a>
     <a href="../index.php">На главную страницу</a>
     <a href = "../pages/func.php">Функции</a>
+<a href="../pages/Registration.php">Регистрация</a>
 </div>
     </header>

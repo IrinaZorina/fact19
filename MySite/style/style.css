@@ -4,12 +4,14 @@
     flex-flow: row;
     column-gap: 15px;
     padding: 10px; 
+    
 }
 
 .light-theme {
     background-color: white;
     color: black;
 }
+
 .dark-theme {
     background-color: black;
     color: white;
