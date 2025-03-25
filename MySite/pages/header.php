@@ -6,5 +6,7 @@
     <a href="../index.php">На главную страницу</a>
     <a href = "../pages/func.php">Функции</a>
 <a href="../pages/Registration.php">Регистрация</a>
+<a href="../pages/files.php">Файлы</a>
+
 </div>
     </header>
