@@ -20,7 +20,7 @@
         <li><a href="table.php">Таблица</a></li>
         <li><a href="cycles.php">Циклы</a></li>
         <li><a href="arrays.php">Массивы</a></li>
-        <li><a href="register.php">Регистрация</a></li>
+        <li><a href="register.php">Регистрация/Авторизация</a></li>
       </ul>
     </nav>
   </header>

@@ -1,7 +1,11 @@
 <?php include 'components/header.php'; ?>
+<?php
+session_start();
+$lastPage = $_SESSION["last_page"] ?? "Неизвестно";
+$bgColor = $_SESSION["bg_color"] ?? "#ffffff";
+?>
 
-
-<main class="container">
+<main style="background-color: <?= htmlspecialchars($bgColor) ?>;" class="container">
   <img class="photo" src="https://i.postimg.cc/qM2bkr56/photo-2025-01-29-12-28-39.jpg" />
   <div class="info">
     <div class="name">Протасов Антон</div>
@@ -68,6 +72,10 @@
     <p>Количество гласных на странице: <?php echo $totalVowels; ?></p>
     <p>Количество слов на странице: <?php echo $totalWords; ?></p>
   </div>
+  <?php if (isset($_SESSION['user'])): ?>
+    <p>Вы вошли как <?= $_SESSION['user'] ?> </p>
+    <p>Последняя посещенная страница: <?= htmlspecialchars($lastPage) ?></p>
+  <?php endif; ?>
 </main>
 
 <?php include 'components/footer.php'; ?>

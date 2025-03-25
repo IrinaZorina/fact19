@@ -146,6 +146,10 @@ footer .social-icons img {
   color: #007bff;
 }
 
+.statistics {
+  display: flex;
+}
+
 @media (max-width: 1480px) {
   .block img {
     width: 180px;

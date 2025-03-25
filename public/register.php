@@ -4,7 +4,7 @@ session_start();
 ?>
 
 <main>
-  <h2>Регистрация</h2>
+  <h2>Авторизация/Регистрация</h2>
   <form action="process.php" method="POST">
     <label>Логин: <input type="text" name="username" required></label><br>
     <label>Пароль: <input type="password" name="password" required></label><br>
