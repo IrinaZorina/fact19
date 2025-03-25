@@ -14,20 +14,24 @@ require_once 'functions.php';
 <header>
     <div class="header">
         <div class="logo">
-            <a href="index.php"><img src="<?= htmlentities($logofunct) ?>" alt="На главную"></a>
+            <a href="/index.php"><img src="<?= htmlentities($logofunct) ?>" alt="На главную"></a>
 
         </div>
         <div>
             <br>
-            <a href="hw-php1.php">Домашняя Работа PHP</a>
+            <a href="/hw-php1.php">Домашняя Работа PHP</a>
         </div>
         <div>
             <br>
-            <a href="hw-array-php.php">Массивы PHP</a>
+            <a href="/hw-array-php.php">Массивы PHP</a>
         </div>
         <div>
             <br>
-            <a href="hw-php-rows.php">Работа со строками</a>
+            <a href="/hw-php-rows.php">Работа со строками</a>
+        </div>
+        <div>
+            <br>
+            <a href="/login/login.php">Авторизация</a>
         </div>
     </div>
 

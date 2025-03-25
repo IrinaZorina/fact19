@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "Главная";
 include_once 'header.php';
 ?>

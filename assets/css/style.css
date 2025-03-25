@@ -7,6 +7,45 @@ a {
     font-size: 30px;
 }
 
+.div_login {
+    max-width: 400px;
+    margin: 50px auto;
+
+    p {
+        color: white;
+    }
+
+    .error1 {
+        color: red !important;
+    }
+}
+
+.login_form {
+    margin-bottom: 15px;
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: white;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+    }
+}
+
+.div_profile {
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+.user_info {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
 header {
     width: 100%;
     height: 250px;
@@ -131,6 +170,7 @@ td {
     color: white;
     font-size: 30px;
 }
+
 .footer1 {
     color: white;
     display: flex;
@@ -139,9 +179,11 @@ td {
     border-top: 2px solid gray;
     padding-top: 20px;
 }
+
 .span {
     color: white;
 }
+
 @media (max-width: 1024px) {
     .biogrid {
         grid-template-areas:
@@ -149,34 +191,38 @@ td {
             "f f f p p p o o"
             "f f f p p p o o";
     }
-    .header{
+
+    .header {
         flex-direction: row;
         height: auto;
     }
+
     .logo {
         width: 150px;
         height: 150px;
     }
-    a{
+
+    a {
         font-size: 24px;
     }
 }
+
 @media (max-width: 768px) {
     .biogrid {
-    "b b b"
-    "f f f"
-    "p p p"
-    "o o o";
+    "b b b" "f f f" "p p p" "o o o";
         height: auto;
     }
+
     .attract, .attract1 {
         flex-direction: column;
         align-items: center;
     }
+
     .fontan, .kremlin, .sobor, .tsar, .ierus, .prioksk, .zarajsk, .borodino {
         width: 80%;
     }
 }
+
 @media (max-width: 480px) {
     .biogrid {
         grid-template-areas:
@@ -186,6 +232,7 @@ td {
             "o";
         padding: 10px;
     }
+
     .header {
         padding: 5px;
     }
@@ -205,6 +252,27 @@ td {
 
     .persinfo, .feedback, .bio {
         font-size: medium;
+    }
+
+    .div_login {
+        max-width: 400px;
+        margin: 50px auto;
+
+    }
+
+    .login_form {
+        margin-bottom: 15px;
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+        }
     }
 }
 
