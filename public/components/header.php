@@ -21,6 +21,8 @@
         <li><a href="cycles.php">Циклы</a></li>
         <li><a href="arrays.php">Массивы</a></li>
         <li><a href="register.php">Регистрация/Авторизация</a></li>
+        <li><a href="register_sql.php">Регистрация через БД</a></li>
+        <li><a href="auth_sql.php">Авторизация через БД</a></li>
       </ul>
     </nav>
   </header>
