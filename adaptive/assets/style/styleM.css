@@ -1,0 +1,35 @@
+.container{
+    background-color: #ffd53c;
+    border: 1px solid black;
+    padding: 2px;
+    width: 95px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.itemAs{
+    font-size: 30px;
+    font-weight: 600;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-items: start;
+}
+
+.itemM{
+    font-family: Tahoma;
+    font-size: 16px;
+    font-weight: 500;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.item33{
+    font-size: 15px;
+    font-family: Tahoma;
+    font-weight: 600;
+    text-align: right;
+}
