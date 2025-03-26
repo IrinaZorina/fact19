@@ -1,0 +1,35 @@
+<?php
+$link = '';
+if ($_POST) {
+    $selectedLab = $_POST['lab'];
+    $link = "mdk9.php?l=" . $selectedLab;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+<h1>Генерация ссылки на лабораторную работу</h1>
+
+<form method="post" action="">
+    <label for="lab">Выберите лабораторную работу:</label>
+    <select name="lab" id="lab" required>
+        <option value="1">Лаб1</option>
+        <option value="2">Лаб2</option>
+        <option value="3">Лаб3</option>
+        <option value="4">Лаб4</option>
+    </select>
+    <br><br>
+
+    <input type="submit" value="Сгенерировать ссылку">
+</form>
+
+<h2>Сгенерированная ссылка:</h2>
+<p><a href="<?php echo($link); ?>"><?php echo htmlspecialchars($link); ?></a></p>
+</body>
+</html>
