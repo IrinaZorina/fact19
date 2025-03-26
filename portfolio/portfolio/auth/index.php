@@ -1,4 +1,6 @@
-<?php require_once '../inc/header.php'?>
+<?php require_once '../inc/header.php';
+session_start();
+?>
 <div class="auth_div">
     <div class="auth_block">
         <div class="auth_header">Авторизация</div>
@@ -18,10 +20,14 @@
 
     if ($login == 'admin' && $hash == md5('admin')) {
         echo 'Авторизация прошла успешно!';
+        $_SESSION['auth'] = 'yes';
         header("Location: ../?login=yes");
         exit( );
     } elseif ($login == '') echo '';
-    else echo '<div class="auth_fail">Логин / Пароль неверный :(</div>';?>
+    else {
+        $_SESSION['auth'] = 'no';
+        echo '<div class="auth_fail">Логин / Пароль неверный :(</div>';
+    }?>
 </div>
 <?php require_once '../inc/footer.php' ?>
 

@@ -13,6 +13,13 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -24,6 +31,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/OSPanel/home/portfolio&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -68,6 +76,8 @@
       <workItem from="1742411154976" duration="493000" />
       <workItem from="1742484130260" duration="28000" />
       <workItem from="1742748811339" duration="23199000" />
+      <workItem from="1742802066408" duration="7028000" />
+      <workItem from="1742977723618" duration="29876000" />
     </task>
     <servers />
   </component>

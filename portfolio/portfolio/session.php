@@ -1,109 +1,124 @@
-<?php require_once 'inc/header.php'?>
-        <div class="homework">
-            <p style="text-align: center">Слайд 16</p>
-            <h3>6. Создать функцию, которая принимает строку. Вернуть количество слов в строке.</h3>
-            <div class="hw1">
-                <?php
-                function outArray($str) {
-                    $arr = explode(" ", $str);
-                    echo  '<br>Слов в предложении: '.count($arr);
+<?php require_once 'inc/header.php';
+session_start();
 
-                };
+if (isset($_POST['session_del']) == 1) {
+    session_destroy();
+}
 
-                echo $str= 'Создать функцию, которая принимает строку. Вернуть количество слов в строке.';
-                outArray($str);
-                ?>
-            </div>
-            <h3>7. *Написать функцию, которая рассчитывает последовательность чисел Фибоначчи.</h3>
-            <div class="hw2">
-                <?php
-                function fib($n) {
-                    return round((((1 + sqrt(5)) / 2) ** $n - ((1 - sqrt(5)) / 2) ** $n) / sqrt(5));
-                }
+if(isset($_POST['theme'])) {
+    if($_POST['theme'] == "dark") {
+        setcookie('theme', 0);
+    }else{
+        setcookie('theme', 1);
+    }
+    header("Refresh:0");
+}
 
-                $n = mt_rand(3,10);
-                echo $n.' число последовательности: '.fib(intval($n));
-                ?>
-            </div>
-            <p style="text-align: center"><br>Слайд 17</p>
-            <h3>1. Создайте функцию, которая принимает одномерный массив и возвращает массив, заполненный случайными числами.</h3>
-            <div class="hw3">
-                <?php
-                function rand_array($n, $arr) {
-                    echo 'Новый массив: <br>';
-                    for($i = 0; $i < $n; $i++) {
-                        echo $arr2[] = mt_rand(1,100).' ';
-                    }
-                }
+?>
+    <div class="homework">
+        <p style="text-align: center">Задачи на куки</p>
+        <h3>1. Пользователь заходит на страницу. Вам необходимо сохранить куки со значением name = "User". После
+            обновления страницы нам необходимо вывести на экран "Hello User" (Значение User берется из куки).</h3>
+        <div class="hw1">
+            <?php
+            setcookie('name', 'User', time() + 60);
+            $user = isset($_COOKIE['name']) ? $_COOKIE['name'] : '';
+            echo 'Hello, ' . $user . '!';
+            ?>
+        </div>
+        <h3>2. Создайте куки с логином посетителя и временем последнего захода. Куки должны хранится максимум 1 час.
+            Примечание: возможно понадобится форма для ввода логина.</h3>
+        <div class="hw2">
+            <form method="post" action="">
+                <label>Логин
+                    <input name="log" type="text">
+                </label>
+                <input type="submit">
+            </form>
+            <?php
+            setcookie('login', isset($_POST['log']) ? '<br>' . $_POST['log'] : '', time() + 3600);
+            echo isset($_COOKIE['login']) ? $_COOKIE['login'] : ' ';
+            ?>
+        </div>
+        <h3>3. Сделайте счетчик посещения сайта посетителем. Каждый раз, заходя на сайт, он должен видеть надпись: 'Вы
+            посетили наш сайт % раз!'.</h3>
+        <div class="hw3">
+            <?php
+            if (!isset($_COOKIE['counter'])) {
+                setcookie('count', 1);
+                $_COOKIE['count'] = 1;
+            } else {
+                setcookie('count', ++$_COOKIE['count']);
+            }
 
-                $n = mt_rand(5, 10);
-                echo 'Массив из '.$n.' элементов<br>';
-                for ($i = 0; $i < $n; $i++) {
-                    echo $arr2[] = mt_rand(1,100).' ';
-                }
-                echo '<br>';
-                rand_array($n, $arr2);
-                ?>
-            </div>
-            <h3>2. Дана строка «HTML, CSS, PHP, BITRIX». Написать функцию, которая определит количество слов строке.</h3>
-            <div class="hw4">
-                <?php
-                function countArray($str) {
-                    $arr = explode(" ", $str);
-                    echo  '<br>Слов в предложении: '.count($arr);
+            echo 'Вы посетили наш сайт ' . $_COOKIE['count'] . ' раз';
+            ?>
+        </div>
+        <p style="text-align: center"><br>Задачи на сессии</p>
+        <h3>1. Сделайте две страницы: index.php и hello.php. При заходе на index.php спросите с помощью формы имя
+            пользователя, запишите его в сессию. При заходе на hello.php поприветствуйте пользователя фразой "Привет,
+            Имя!".</h3>
+        <div class="hw4">
+            <form method="post" action="hello.php">
+                <label>Ваше имя
+                    <input name="name" type="text">
+                </label>
+                <input type="submit">
+            </form>
+            <?php
+            //$_SESSION['name'] = isset($_POST['name']) ? $_POST['name'] : 'null';
+            ?>
+        </div>
+        <h3>2. Запишите в сессию время захода пользователя на сайт. При обновлении страницы выводите сохраненное время
+            на экран.</h3>
+        <div class="hw5">
+            <?php
+            if (empty($_SESSION['date'])) {
+                $_SESSION['date'] = date_create();
+            }
+            echo isset($_SESSION['date']) ? date_format($_SESSION['date'], 'd.m.Y H:i:s') : 0;
+            ?>
+        </div>
+        <h3>3. Запишите в сессию время захода пользователя на сайт. При обновлении страницы выводите сколько секунд назад пользователь зашел на сайт.</h3>
+        <div class="hw6">
+            <?php
+            if (empty($_SESSION['time'])) {
+                $_SESSION['time'] = time();
+            }
+            echo time() - $_SESSION['time'] . ' секунд назад';
+            ?>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="hw8">
+            <h3>Страница <a class="nav_p" href="fact.php">ФАКТ</a></h3>
+            <h3>Страница <a class="nav_p" href="bitrix.php">БИТРИКС</a></h3>
+            <?php echo isset($_SESSION['page']) ? 'Страница '.$_SESSION['page'].' была посещена последней' : '';
+            ?>
+        </div>
+        <div class="hw9">
+            <h3>Выбрать тему</h3>
+            <form action="" method="post">
+                <select name="theme">
+                    <option value="dark">Темная</option>
+                    <option value="light">Светлая</option>
+                </select>
+                <input type="submit" value="Выбрать">
 
-                };
-
-                echo $str= 'HTML, CSS, PHP, BITRIX';
-                countArray($str);
-                ?>
-            </div>
-            <h3>3. Дана строка «HTML, CSS, PHP, BITRIX». Написать функцию, которая выведет в обратном порядке буквы («XIRTIB ,PHP … »).</h3>
-            <div class="hw5">
-                <?php
-                function reversArray($str) {
-                    $arr3 = str_split($str);
-                    $num = count($arr3);
-                    $newSTR = '';
-                    for($i = $num-1; $i >= 0; $i--) {
-                        $newSTR = $newSTR.$arr3[$i];
-                    }
-                    return  $newSTR;
-
-                };
-
-                echo $str= 'HTML, CSS, PHP, BITRIX';
-                echo '<br>Новая строка: <br>'.reversArray($str);
-                ?>
-            </div>
-            <h3>4. Дана строка «HTML, CSS, PHP, BITRIX». Написать функцию, которая выводит на экран длину строки.</h3>
-            <div class="hw6">
-                <?php
-                function lengthArray($str) {
-                    $arr3 = str_split($str);
-                    return  count($arr3);
-                }
-
-                echo $str= 'HTML, CSS, PHP, BITRIX';
-                echo '<br>Длина строки: '.lengthArray($str);
-                ?>
-            </div>
-            <h3>5. Дана строка «HTML, CSS, PHP, BITRIX». Написать функцию, которая выводит каждую букву на новую строку.</h3>
-            <div class="hw7">
-                <?php
-                function brArray($str) {
-                    echo '<br>Вывод строки: <br>';
-                    $arr3 = str_split($str);
-                    $num = count($arr3);
-                    for($i = 0; $i < $num; $i++) {
-                        echo '<br>'.$arr3[$i];
-                    }
-                };
-
-                echo $str= 'HTML, CSS, PHP, BITRIX';
-                brArray($str);
-                ?>
-            </div>
+            </form>
 
         </div>
-<?php require_once 'inc/footer.php'?>
+
+        <div class="hw7">
+            <br>
+            <br>
+            <br>
+            <form action="" method="post">
+                <input type="hidden" name="session_del" value="true">
+                <input type="submit" value="Удалить текущую сессию">
+            </form>
+        </div>
+
+    </div>
+<?php require_once 'inc/footer.php' ?>
