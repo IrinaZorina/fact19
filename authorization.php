@@ -1,43 +1,78 @@
 <?php
 session_start();
 
-// Инициализация массива пользователей из сессии, если он ещё не существует
-if (!isset($_SESSION['users'])) {
-    $_SESSION['users'] = [
-        'user1' => '5f4dcc3b5aa765d61d8327deb882cf99', // md5("password")
-        'user2' => 'e10adc3949ba59abbe56e057f20f883e', // md5("123456")
-    ];
-}
-$users = &$_SESSION['users'];
+// Настройки подключения к БД
+$hostname = "MySQL-8.2";
+$username = "Evgeniy_Krupnov";
+$password = "123";
+$dbname = "bd_Krupnov";
 
-// Проверка на регистрацию или авторизацию
+// Подключение к MySQL
+$conn = new mysqli($hostname, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Ошибка подключения: " . $conn->connect_error);
+}
+
+// Обработка регистрации
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['register'])) {
         $newLogin = trim($_POST['reg_login'] ?? '');
         $newPassword = trim($_POST['reg_password'] ?? '');
 
-        if (!empty($newLogin) && !empty($newPassword)) {
-            if (!isset($users[$newLogin])) {
-                $users[$newLogin] = md5($newPassword);
-                $_SESSION['message'] = "Регистрация успешна! Теперь вы можете войти.";
-            } else {
-                $_SESSION['message'] = "Этот логин уже занят.";
-            }
-        } else {
+        if (empty($newLogin) || empty($newPassword)) {
             $_SESSION['message'] = "Заполните все поля.";
+        } elseif (strlen($newLogin) < 3 || strlen($newPassword) < 6) {
+            $_SESSION['message'] = "Логин (от 3 символов) и пароль (от 6 символов) слишком короткие.";
+        } else {
+            // Проверка, что логин не занят
+            $stmt = $conn->prepare("SELECT id FROM user WHERE login = ?");
+            if (!$stmt) {
+                die("Ошибка подготовки запроса: " . $conn->error);
+            }
+            $stmt->bind_param("s", $newLogin);
+            $stmt->execute();
+            $stmt->store_result();
+
+            if ($stmt->num_rows > 0) {
+                $_SESSION['message'] = "Этот логин уже занят.";
+            } else {
+                // Хэширование пароля
+                $hashedPassword = password_hash($newPassword, PASSWORD_BCRYPT);
+
+                // Добавление пользователя в БД
+                $stmt = $conn->prepare("INSERT INTO user (login, password) VALUES (?, ?)");
+                $stmt->bind_param("ss", $newLogin, $hashedPassword);
+                if ($stmt->execute()) {
+                    $_SESSION['message'] = "Регистрация успешна! Теперь вы можете войти.";
+                } else {
+                    $_SESSION['message'] = "Ошибка при регистрации: " . $conn->error;
+                }
+            }
+            $stmt->close();
         }
+
+    // Обработка входа
     } elseif (isset($_POST['submit_login'])) {
         $login = trim($_POST['login'] ?? '');
         $password = trim($_POST['password'] ?? '');
-        $hashedPassword = md5($password);
 
-        if (isset($users[$login]) && $users[$login] === $hashedPassword) {
+        $stmt = $conn->prepare("SELECT id, password FROM user WHERE login = ?");
+        if (!$stmt) {
+            die("Ошибка подготовки запроса: " . $conn->error);
+        }
+        $stmt->bind_param("s", $login);
+        $stmt->execute();
+        $stmt->bind_result($id, $hashedPassword);
+        $stmt->fetch();
+
+        if ($id && password_verify($password, $hashedPassword)) {
             $_SESSION['user'] = $login;
             header("Location: welcome.php");
             exit();
         } else {
             $_SESSION['message'] = "Ошибка: неверный логин или пароль.";
         }
+        $stmt->close();
     }
 }
 ?>
@@ -46,50 +81,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Авторизация и регистрация</title>
+    <title>Авторизация</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .form-container { max-width: 400px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; }
-        h2 { color: #333; }
-        .message { color: red; margin-bottom: 10px; }
-        input, button { margin: 5px 0; padding: 5px; }
+        .message { color: red; margin: 10px 0; }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <?php
-        if (isset($_SESSION['message'])) {
-            echo "<div class='message'>" . htmlspecialchars($_SESSION['message']) . "</div>";
-            unset($_SESSION['message']);
-        }
-        ?>
+    <?php if (isset($_SESSION['message'])): ?>
+        <div class="message"><?= htmlspecialchars($_SESSION['message']) ?></div>
+        <?php unset($_SESSION['message']); ?>
+    <?php endif; ?>
 
-        <h2>Авторизация</h2>
-        <form method="post" action="authorization.php" autocomplete="off">
-            <p>
-                Логин: <input type="text" name="login" required autocomplete="off">
-            </p>
-            <p>
-                Пароль: <input type="password" name="password" required autocomplete="off">
-            </p>
-            <p>
-                <input type="submit" name="submit_login" value="Войти">
-            </p>
-        </form>
+    <h2>Авторизация</h2>
+    <form method="post">
+        <input type="text" name="login" placeholder="Логин" required>
+        <input type="password" name="password" placeholder="Пароль" required>
+        <button type="submit" name="submit_login">Войти</button>
+    </form>
 
-        <h2>Регистрация</h2>
-        <form method="post" action="authorization.php" autocomplete="off">
-            <p>
-                Логин: <input type="text" name="reg_login" required autocomplete="off">
-            </p>
-            <p>
-                Пароль: <input type="password" name="reg_password" required autocomplete="off">
-            </p>
-            <p>
-                <input type="submit" name="register" value="Зарегистрироваться">
-            </p>
-        </form>
-    </div>
+    <h2>Регистрация</h2>
+    <form method="post">
+        <input type="text" name="reg_login" placeholder="Логин" required>
+        <input type="password" name="reg_password" placeholder="Пароль" required>
+        <button type="submit" name="register">Зарегистрироваться</button>
+    </form>
+
+    <?php $conn->close(); ?>
 </body>
 </html>
