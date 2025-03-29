@@ -1,16 +1,27 @@
 <?php require_once'inc/header.php'?>
 <?php
 session_start();
-$login = (isset($_POST['login']));
-$password = (isset($_POST['password']));
-if (!empty($_POST['password'])&& !empty($_POST['login'])) {
-    if ($_POST['password'] == 'mypass123' && $_POST['login'] == 'admin') {
-        $_SESSION['login'] = 'Admin';
-        header('location: welcome.php');
-        $hash = password_hash($password, PASSWORD_DEFAULT);
-        $_POST['password'] = $hash;
+include 'inc/db_conn.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $user = $_POST['login'];
+    $pass = ($_POST['password']);
+    $sql = "SELECT * FROM user WHERE login = '$user' and password = '$pass'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if ($row) {
+            $hash = password_hash($pass, PASSWORD_DEFAULT);
+            $_SESSION['password'] = $hash;
+            $_SESSION['login'] = $user;
+            header('Location: welcome.php');
+        } else {
+            echo "Неверный пароль!";
+        }
+    } else {
+        echo "Пользователь не найден!";
     }
 }
+$conn->close();
 ?>
 <p class="form_text">Авторизация</p>
 <form class="form_aut" method="post">

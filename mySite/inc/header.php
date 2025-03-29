@@ -1,5 +1,6 @@
 <?php require_once 'DayNight.php' ?>
 <?php
+session_start();
 if (isset($_POST['color'])) {
     setcookie('backgroundColor', $_POST['color'], time() + (30 * 24 * 60 * 60), '/');
     header('Location: ' . $_SERVER['REQUEST_URI']);
@@ -29,6 +30,9 @@ $bgColor = isset($_COOKIE['backgroundColor']) ? $_COOKIE['backgroundColor'] : ""
         <a href="index.php">
             <img src="assets/image/search.png"alt="search" width="100">
         </a>
+        <div class="out">
+            <a href="loguot.php"> Выход </a>
+        </div>
         <div class="theme1">
             <a href="mendeelev.html">Таблица Мендлеева </a>
         </div>
@@ -44,9 +48,17 @@ $bgColor = isset($_COOKIE['backgroundColor']) ? $_COOKIE['backgroundColor'] : ""
         <div class="theme5">
             <a href="post.php"> Get/Post </a>
         </div>
+        <?php
+        if (isset($_SESSION['login'])) {
+        ?>
         <div class="theme6">
-            <a href="authentication.php"> Авторизация </a>
+            <p> Привет , <?= $_SESSION['login'] ?>  </p>
         </div>
+        <?php }else{?>
+        <div class="theme6">
+            <a href="authentication.php"> Авторизация  </a>
+        </div>
+        <?php }?>
         <div class="theme7">
             <form method="post">
                 <select name="color" size="3">
@@ -60,6 +72,5 @@ $bgColor = isset($_COOKIE['backgroundColor']) ? $_COOKIE['backgroundColor'] : ""
         <div class="theme8">
             <a href="Files.php"> Файлы </a>
         </div
-
     </div>
 </header>

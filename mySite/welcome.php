@@ -14,7 +14,8 @@ session_start();
         echo "Последняя посещенная страница: <a href='$lastPage'>$lastPage</a>";
     } else {
         echo "Вы не посещали другие страницы перед авторизацией.";
-    }?>
+    }
+    ?>
     <?php require_once  'inc/footer.php'?>
 </p>
 

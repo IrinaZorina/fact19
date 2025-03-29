@@ -91,7 +91,7 @@ img{
     text-align: center;
     border: 1px solid black;
 }
-.theme1,.theme2,.theme3 ,.theme4 ,.theme5 , .theme6 ,.theme8{
+.theme1,.theme2,.theme3 ,.theme4 ,.theme5 , .theme6 ,.theme8 ,.out{
     font-size: 24px;
 }
 .theme1 {
@@ -135,6 +135,11 @@ img{
     position: absolute;
     top: 50%;
     left: 1000px;
+}
+.out{
+    position: absolute;
+    top: 50%;
+    left: 93%;
 }
 .fact , .bitrix , .last {
     text-align: center;
