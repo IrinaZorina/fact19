@@ -9,15 +9,14 @@ $mysqli->set_charset("utf8"); // установить кодировку
 ?>
 <div class="auth_div">
     <div class="auth_block">
-        <div class="auth_header">Авторизация</div>
+        <div class="auth_header">Зарегистрироваться</div>
         <form name="form_auth" method="post" target="_top" action="">
 
             <input class="login-inp" type="text" name="USER_LOGIN" placeholder="Логин" value="">
             <input class="login-inp" type="password" name="USER_PASSWORD" placeholder="Пароль">
 
             <div class="auth_footer ">
-                <input type="submit" value="Войти" class="login-btn"> <a class="login-btn" href="registration.php">
-                    Регистрация</a>
+                <input type="submit" value="Регистрация" class="login-btn"><a class="login-btn" href="index.php">Авторизация</a>
             </div>
         </form>
         <?php
@@ -25,20 +24,18 @@ $mysqli->set_charset("utf8"); // установить кодировку
         $password = isset($_POST['USER_PASSWORD']) ? trim($_POST['USER_PASSWORD']) : '';
         $hash = md5($password);
 
-        if ($login && $hash) {
-            $result = $mysqli->query("SELECT * FROM users WHERE login = '$login'  and password = '$hash'");
 
+        if ($login && $hash) {
+            //проверить наличие логина
+            $result = $mysqli->query("SELECT id FROM users WHERE login='$login'");
             $row = $result->fetch_all(MYSQLI_ASSOC);
             if ($row) {
-                echo 'Авторизация прошла успешно!';
-                $_SESSION['auth'] = 'yes';
-                header("Location: ../?login=yes");
-                exit();
-            } /*elseif ($login == '') echo '';*/
+                echo "<div class='auth_fail'>Логин '$login' уже занят.</div>";
+            }
+            //такого логина нет
             else {
-                $_SESSION['auth'] = 'no';
-                //header("Location: ../?login=no");
-                echo '<div class="auth_fail">Логин / Пароль неверный :(</div>';
+                $mysqli->query("INSERT INTO users   (login, password) VALUES ('$login', '$hash')");
+                echo "<div class='auth_fail'> Вы зарегистрированы!</div>";
             }
         }
         ?>

@@ -1,8 +1,12 @@
 <?php
     function timeOfDay()
     {
-        return ((date("H") >= 8 && date('H') < 22) || (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 1)) ? '../assets/Styles/styles.css' : '../assets/Styles/styles_dark.css' ;
-
+            if (isset($_COOKIE['theme'])){
+                return ($_COOKIE['theme'] == 1) ? '../assets/Styles/styles.css' : '../assets/Styles/styles_dark.css' ;
+            }
+            else{
+                return ((date("H") >= 8 && date('H') < 22)) ? '../assets/Styles/styles.css' : '../assets/Styles/styles_dark.css' ;
+            }
     }
 ?><!doctype html>
 <html lang="en">
