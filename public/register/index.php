@@ -3,37 +3,42 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = [];
 
+    $login = htmlentities(trim($_POST['login']));
+    $password = htmlentities(trim($_POST['password']));
+    $password_confirm = htmlentities(trim($_POST['password_confirm']));
+
+    if (!$connection) {
+        $errors['login'] = 'Ошибка подключения к БД!';
+    }
+
     // Валидация данных
-    foreach ($_POST as $key => $value) {
-        if (!validateRequirement($value)) {
-            $errors[$key] = 'Нужно ввести данные!';
+    if (empty($login)) $errors['login'] = 'Введите логин!';
+    if (empty($password)) $errors['password'] = 'Введите пароль!';
+    if ($password !== $password_confirm) {
+        $errors['password'] = $errors['password_confirm'] = 'Пароли не совпадают!';
+    }
+
+    // Проверяем, есть ли пользователь
+    $query = "SELECT login FROM users WHERE login = '{$login}' LIMIT 1";
+    $found = mysqli_query($connection, $query);
+    if (mysqli_fetch_array($found)) {
+        $errors['login'] = 'Такой пользователь уже есть!';
+    }
+
+    // Сохраняем данные в БД
+    if (empty($errors)) {
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $query = "INSERT INTO users (login, password) VALUES ('{$login}', '{$password}');";
+        if (mysqli_query($connection, $query)) {
+            $_SESSION['login'] = $login;
+            header('Location: /');
+            exit;
+        } else {
+            $errors['login'] = 'Ошибка регистрации!';
         }
     }
-
-    if ($_POST['password'] != $_POST['password_confirm']) {
-        $errors['password'] = 'Пароли должны совпадать!';
-        $errors['password_confirm'] = 'Пароли должны совпадать!';
-    }
-
-    // Сохраняем данные в файл
-    if (empty($errors)) {
-        $login = htmlentities($_POST['login']);
-        $password = password_hash(
-            htmlentities(
-                $_POST['password']),
-            PASSWORD_DEFAULT);
-
-        file_put_contents(
-            $_SERVER['DOCUMENT_ROOT'] . '/users.txt',
-            "{$login} {$password}\n",
-            FILE_APPEND
-        );
-
-        $_SESSION['login'] = $login;
-        header('Location: /');
-        exit;
-    }
 }
+mysqli_close($connection);
 
 ?>
 <main class="main">

@@ -11,7 +11,9 @@ $backgroundColor = getBackgroundColor();
 
 $lastPage = $_SESSION['last_page'] ?? 'пусто';
 
-if (isset($_SESSION['show_message'])) {
+if (isset($_SESSION['show_message']) && $lastPage != 'пусто') {
     echo '<script>alert("Последняя страница: ' . $lastPage . '");</script>';
     unset($_SESSION['show_message']);
 }
+
+$connection = mysqli_connect('MySQL-8.2', 'root', '', 'blinov');

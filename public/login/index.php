@@ -1,34 +1,36 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/../src/templates/_header.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $login = htmlentities(trim($_POST['login']));
+    $password = htmlentities(trim($_POST['password']));
     $errors = [];
 
-    // Валидация данных
-    foreach ($_POST as $key => $value) {
-        if (!validateRequirement($value)) {
-            $errors[$key] = 'Нужно ввести данные!';
-        }
+    if (!$connection) {
+        $errors['login'] = 'Ошибка подключения к БД!!';
     }
+
+    // Валидация данных
+    if (empty($login)) $errors['login'] = 'Введите логин!';
+    if (empty($password)) $errors['password'] = 'Введите пароль!';
 
     // Пытаемся войти
     if (empty($errors)) {
-        $users = file(
-            $_SERVER['DOCUMENT_ROOT'] . '/users.txt',
-            FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $query = "SELECT login, password FROM users WHERE login = '{$login}' LIMIT 1";
+        $result = mysqli_query($connection, $query);
 
-        foreach ($users as $user) {
-            [$login, $password] = explode(' ', $user);
-            if ($login == $_POST['login'] && password_verify($_POST['password'], $password)) {
-                $_SESSION['login'] = $login;
-                $_SESSION['show_message'] = true;
-                header('Location: /');
-                exit;
-            }
+        $userDB = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+        if ($userDB && password_verify($password, $userDB['password'])) {
+            $_SESSION['login'] = $userDB['login'];
+            $_SESSION['show_message'] = true;
+            header('Location: /');
+            exit;
         }
 
         $errors['login'] = 'Неправильно введен логин или пароль';
     }
 }
+mysqli_close($connection);
 
 ?>
 <main class="main">
