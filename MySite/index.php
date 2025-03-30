@@ -1,83 +1,53 @@
 <?php
-require ('style/function.php');
-$theme = thema();
+session_start();
+$hostname = "MySQL-8.2";
+$username = "Vad";
+$password = "zapret";
+$dbname = "db_Borisin";
+if($_SERVER['REQUEST_METHOD']=='POST'){
+$name = $_POST['Log'];
+$pass = $_POST['Passw'];
+//корректный логин и пароль: Вадим    Борисин
+// Илья    Ефремов
+if(!empty($name) && !empty($pass)){
+$mysqli = new mysqli($hostname,$username, $password, $dbname);
+$mysqli->set_charset('utf8');
+$res = $mysqli->query("SELECT * FROM user WHERE name = '$name' and password ='$pass'");
+if($res->num_rows>0){
+    $zap = $res->fetch_assoc();
+if($zap){
+$hashPass = password_hash($pass,PASSWORD_DEFAULT);
+$_SESSION['Passw'] = $hashPass;
+$_SESSION['Log'] = $name;
+require_once 'pages/header.php';
+echo "добро пожаловать";
+}
+else{
+    echo "введен некорректный пароль";
+    
+}
+}
+else{
+    echo "данного пользователя не существует";
+}
+}
+else{
+    echo "Заполните пустые поля";
+}
+}
 ?>
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="php,html,css,bitrix">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../style/style.css">
 
-</head>
-<body class="<?php echo $theme; ?>">
-
-<?php
-ob_start();
-require_once('pages/header.php');
-?>
-    <div class="container">
-        <div class="one">
-            <img src="images/Глазки-save.ico" alt="Image">
-        </div>
-        <div class="two" style="color: blue;">
-            <?php
-            $str = '<p>Меня зовут Борисин Вадим.</p>
-            <p>Учусь на 3 курсе в колледже по
-            специальности "Информационные системы и 
-            программирование". В процессе обучения 
-            изучил С#, C++, SQl, 
-            разметку XAML, начинаю изучать Java Script.</p>';
-            echo $str;
-            ?>
-        </div>
-        <div class="three">
-        <?php
-
-            $str1 = "Первая лекция понравилась тем, что 
-            информация преподается очень понятно, много практики.";
-            class3( $str1 );
-            ?>        
-        </div>
-    </div>
-
-    <main>
-        <p style="text-align: center; font-size: 20px;">Достопримечательности города УФА</p>
-        <div class="container1">
-            <div class="grid1"><img src="images/Глазки-save.ico" alt=""><p>первая картинка</p></div>
-            <div class="grid1"><img src="images/Глазки-save.ico" alt=""><p>вторая картинка</p></div>
-            <div class="grid1"><img src="images/Глазки-save.ico" alt=""><p>третья картинка</p></div>
-            <div class="grid1"><img src="images/Глазки-save.ico" alt=""><p>четвертая картинка</p></div>
-        </div>
-
-        <p style="text-align: center; font-size: 20px;">Достопримечательности Республики Башкортостан</p>
-
-
-<div class="container2">
-    <div class="grid2" ><img src="images/Глазки-save.ico" alt=""><p>первая картинка</p></div>
-    <div class="grid2" ><img src="images/Глазки-save.ico" alt=""><p>вторая картинка</p></div>
-    <div class="grid2" ><img src="images/Глазки-save.ico" alt=""><p>третья картинка</p></div>
-    <div class="grid2" ><img src="images/Глазки-save.ico" alt=""><p>четвертая картинка</p></div>
-
-</div>
-
-</main>
-
-</body>
-<?php
-require_once('pages/footer.php');
-
-
-
-$myFile = ob_get_clean();
-echo $myFile;
-
-kolvo($myFile);
-
-    echo "<br> ";
-
-    birth();
-?>
-</html>
+<form method="post"><style><?include "style/form.css"?></style>
+    <h2>Авторизация</h2>
+    <p>
+        <label for="name">Имя:</label>
+        <input type="text" name="Log"  required />
+    </p>
+    <p>
+        <label for="pass">Пароль:</label>
+        <input type="password" name="Passw"  required />
+    </p>
+    <button type="submit">
+        Авторизоваться
+    </button>
+</form>
