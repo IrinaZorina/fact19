@@ -1,12 +1,19 @@
 <?php
-function themeSelect(): array
-{
-    if (date('H') >= 8 && date('H') < 20) {
-        $cssfunct = '/assets/css/styleday.css';
-        $logofunct = '/assets/image/logoday.png';
-    } else {
-        $cssfunct = '/assets/css/style.css';
-        $logofunct = '/assets/image/logo.png';
+require_once 'login/config.php';
+
+function themeSelect() {
+    if (strpos($_SERVER['REQUEST_URI'], '/login/profile.php') !== false) {
+        if (isset($_SESSION['user'])) {
+            $theme = getUserTheme($_SESSION['user']);
+            return $theme == 'day'
+                ? ['/assets/css/styleday.css', '/assets/image/logoday.png']
+                : ['/assets/css/style.css', '/assets/image/logo.png'];
+        }
     }
-    return [$cssfunct, $logofunct];
+    $hour = date('H');
+    if ($hour >= 8 && $hour < 20) {
+        return ['/assets/css/styleday.css', '/assets/image/logoday.png'];
+    } else {
+        return ['/assets/css/style.css', '/assets/image/logo.png'];
+    }
 }

@@ -56,3 +56,44 @@ function getUserData($username)
     }
     return null;
 }
+function saveUserColor($username, $color) {
+    $users = getUsers();
+    foreach ($users as &$user) {
+        if ($user['username'] === $username) {
+            $user['bg_color'] = $color;
+            saveUsers($users);
+            return true;
+        }
+    }
+    return false;
+}
+
+function getUserColor($username) {
+    $users = getUsers();
+    foreach ($users as $user) {
+        if ($user['username'] === $username) {
+            return $user['bg_color'] ?? '#000000'; // По умолчанию черный
+        }
+    }
+    return '#000000';
+}
+function getUserTheme($username) {
+    $users = getUsers();
+    foreach ($users as $user) {
+        if ($user['username'] === $username) {
+            return ($user['bg_color'] ?? '#000000') === '#ffffff' ? 'day' : 'night';
+        }
+    }
+    return 'night';
+}
+function saveUserTheme($username, $theme) {
+    $users = getUsers();
+    foreach ($users as &$user) {
+        if ($user['username'] === $username) {
+            $user['theme'] = $theme;
+            saveUsers($users);
+            return true;
+        }
+    }
+    return false;
+}

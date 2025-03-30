@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'config.php';
-$title= 'Авторизация пользователя';
+$title = 'Авторизация пользователя';
 include_once '../header.php';
 
 $error = '';
@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Все поля обязательны для заполнения!';
     } elseif (verifyUser($username, $password)) {
         $_SESSION['user'] = $username;
+        $_SESSION['profile_bg_color'] = getUserColor($username);
+        $_SESSION['theme'] = getUserTheme($username);
         header('Location: profile.php');
         exit;
     } else {
