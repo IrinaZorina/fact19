@@ -1,4 +1,5 @@
 <?php
+session_start();
 $Vremya = date('H');
 if ($Vremya >= 8 && $Vremya < 20) {
     $den_noch = 'assets/css/style.css';
@@ -15,6 +16,12 @@ if ($Vremya >= 8 && $Vremya < 20) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="<?= $den_noch ?>">
+    <style>
+    body {
+    background-color: <?php echo isset($_SESSION['bg_color']) ? $_SESSION['bg_color'] : '#ffffff'; ?>;
+    transition: background-color 0.5s ease;
+    }
+    </style>
 </head>
 <body>
 <header>
@@ -42,4 +49,27 @@ if ($Vremya >= 8 && $Vremya < 20) {
     <a href="Files2.php">
         <button>Файлы Дубли</button>
     </a>
+    <a href="logout.php">
+        <button>Выход</button>
+    </a>
+    <form method="POST" action="set_color.php" style="display: inline;">
+        <select name="color" onchange="this.form.submit()">
+            <option value="">Выберите цвет</option>
+            <option value="#BC8F8F" <?= (isset($_SESSION['bg_color']) && $_SESSION['bg_color'] == '#BC8F8F') ? 'selected' : '' ?>>
+                Розовый
+            </option>
+            <option value="#00FFFF" <?= (isset($_SESSION['bg_color']) && $_SESSION['bg_color'] == '#00FFFF') ? 'selected' : '' ?>>
+                Аква
+            </option>
+            <option value="#FFE4C4" <?= (isset($_SESSION['bg_color']) && $_SESSION['bg_color'] == '#FFE4C4') ? 'selected' : '' ?>>
+                Бисквит
+            </option>
+            <option value="#48D1CC" <?= (isset($_SESSION['bg_color']) && $_SESSION['bg_color'] == '#48D1CC') ? 'selected' : '' ?>>
+                Синий
+            </option>
+            <option value="#FFFF00" <?= (isset($_SESSION['bg_color']) && $_SESSION['bg_color'] == '#FFFF00') ? 'selected' : '' ?>>
+                Жёлтый
+            </option>
+        </select>
+    </form>
 </header>

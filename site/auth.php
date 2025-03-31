@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['username'])) {
-    header("Location: welcome.php");
+    header("Location: Welcome.php");
     exit();
 }
 
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     if (!empty($username) && !empty($password)) {
         if (isset($users[$username]) && password_verify($password, $users[$username])) {
             $_SESSION['username'] = $username;
-            header("Location: welcome.php");
+            header("Location: Welcome.php");
             exit();
         } else {
             echo "<p>Неверный логин или пароль!</p>";
