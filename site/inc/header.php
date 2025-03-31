@@ -18,7 +18,7 @@ if ($Vremya >= 8 && $Vremya < 20) {
 </head>
 <body>
 <header>
-    <a href="../index.php">
+    <a href="index.php">
         <button>Главня</button>
     </a>
     <a href="Cycles.php">
@@ -32,5 +32,8 @@ if ($Vremya >= 8 && $Vremya < 20) {
     </a>
     <a href="Massiv.php">
         <button>Массивы</button>
+    </a>
+    <a href="Function.php">
+        <button>Функции</button>
     </a>
 </header>
