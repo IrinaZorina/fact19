@@ -1,5 +1,8 @@
 <?php
-function getStylesheetByTime() {
+session_start();
+
+function getStylesheetByTime()
+{
     $Hour = date('H');
     if ($Hour >= 8 && $Hour < 20) {
         return 'assets/css/style.css';
@@ -21,6 +24,12 @@ $smena = getStylesheetByTime();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Мой сайт</title>
     <link rel="stylesheet" href="<?= $smena ?>">
+    <style>
+        body {
+            background-color: <?php echo isset($_SESSION['bg_color']) ? $_SESSION['bg_color'] : '#ffffff'; ?>;
+            transition: background-color 0.5s ease;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,7 +46,24 @@ $smena = getStylesheetByTime();
         <a href="Function.php">
             <button>Функции</button>
         </a>
-        <a href="index.php">
-            <button>На главную</button>
+        <a href="Files1.php">
+            <button>Файл общий</button>
         </a>
+        <a href="Files2.php">
+            <button>Файл дублей</button>
+        </a>
+        <a href="logout.php">
+            <button>Выйти</button>
+        </a>
+
+        <form method="POST" action="set_color.php" style="display: inline;">
+            <select name="color" onchange="this.form.submit()">
+                <option value="">Выберите цвет</option>
+                <option value="#ffffff" <?= (isset($_SESSION['bg_color']) && $_SESSION['bg_color'] == '#ffffff') ? 'selected' : '' ?>>Белый</option>
+                <option value="#CD5C5C" <?= (isset($_SESSION['bg_color']) && $_SESSION['bg_color'] == '#CD5C5C') ? 'selected' : '' ?>>Красный</option>
+                <option value="#808000" <?= (isset($_SESSION['bg_color']) && $_SESSION['bg_color'] == '#808000') ? 'selected' : '' ?>>Зеленый</option>
+                <option value="#48D1CC" <?= (isset($_SESSION['bg_color']) && $_SESSION['bg_color'] == '#48D1CC') ? 'selected' : '' ?>>Синий</option>
+                <option value="#8A2BE2" <?= (isset($_SESSION['bg_color']) && $_SESSION['bg_color'] == '#8A2BE2') ? 'selected' : '' ?>>Фиолетовый</option>
+            </select>
+        </form>
     </header>
