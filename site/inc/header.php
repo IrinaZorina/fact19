@@ -36,4 +36,10 @@ if ($Vremya >= 8 && $Vremya < 20) {
     <a href="Function.php">
         <button>Функции</button>
     </a>
+    <a href="Files.php">
+        <button>Файлы Оригинал</button>
+    </a>
+    <a href="Files2.php">
+        <button>Файлы Дубли</button>
+    </a>
 </header>
