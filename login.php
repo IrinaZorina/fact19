@@ -1,30 +1,21 @@
 <?php
 require_once "header.php";
 require_once "functions.php";
+include "classes/Auth.php";
 
-if(isset($_SESSION['is_logined']) && $_SESSION['is_logined']) header("Location: hello.php");
+if(isset($_SESSION['user_id'])) header("Location: hello.php");
 
 $form_error = false;
 
-$name = isset($_REQUEST["name"]) ? trim($_REQUEST["name"]) : NULL;
-$user_password = isset($_REQUEST["pass"]) ? trim($_REQUEST['pass']) : NULL;
-
-
-if ($name != NULL && $user_password != NULL){
-    require_once "db.php";
-
-    $sql = "SELECT * FROM users WHERE name=?";
-
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$name]);
-    $user = $stmt->fetch();
-
-    if ($user && password_verify($user_password, $user['password'])){
-        $_SESSION['is_logined'] = true;
+if (isset($_REQUEST["name"]) && isset($_REQUEST["pass"])) {
+    $login = new Auth(trim($_REQUEST["name"]), trim($_REQUEST['pass']));
+    
+    if($login->Login()) {
         header("Location: hello.php");
         exit;
+    } else {
+        $form_error = true;
     }
-    else $form_error = true;
 }
 
 ?>

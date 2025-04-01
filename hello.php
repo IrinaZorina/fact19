@@ -16,8 +16,9 @@
 
 <? include_once "header.php"; ?>
 
-<h1>Добро пожаловать!</h1>
+<h1>Добро пожаловать, <?=$_SESSION['user_name']?>!</h1>
 <p>Вы авторизованы</p>
+<p>Ваш user_id = <?= $_SESSION['user_id']?></p>
 <?php 
     if(isset($_COOKIE['last-url']))
         echo "<p> В последний раз вы были на странице: " . $_COOKIE['last-url'] . "</p>";
