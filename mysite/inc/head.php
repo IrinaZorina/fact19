@@ -45,8 +45,21 @@ $bgColor = isset($_COOKIE['background']) ? $_COOKIE['background'] : "";
             <input type="submit" name="reset" value="Вернуть прежний">
         </form>
     </div>
-    <div class="auth">
-        <a href="/auth.php"> Авторизация </a>
+    <div class="auth_cont">
+    <?php
+    if (isset($_SESSION['login'])) {
+        ?>
+        <div class="auth">
+            <p> Привет , <?= $_SESSION['login'] ?>  </p>
+        </div>
+    <?php }else{?>
+        <div class="auth">
+            <a href="/aut.php"> Авторизация  </a>
+        </div>
+    <?php }?>
+    <div class="logout">
+        <a href="/logout.php"> Выход </a>
+    </div>
     </div>
     <div class="head">
         <img class="logo" src="/assets/image/logo.jpg" alt="Лого">
