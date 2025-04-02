@@ -1,36 +1,13 @@
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/../src/templates/_header.php';
+<?php
+
+use Classes\User;
+
+require $_SERVER['DOCUMENT_ROOT'] . '/../src/templates/_header.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $login = htmlentities(trim($_POST['login']));
-    $password = htmlentities(trim($_POST['password']));
-    $errors = [];
-
-    if (!$connection) {
-        $errors['login'] = 'Ошибка подключения к БД!!';
-    }
-
-    // Валидация данных
-    if (empty($login)) $errors['login'] = 'Введите логин!';
-    if (empty($password)) $errors['password'] = 'Введите пароль!';
-
-    // Пытаемся войти
-    if (empty($errors)) {
-        $query = "SELECT login, password FROM users WHERE login = '{$login}' LIMIT 1";
-        $result = mysqli_query($connection, $query);
-
-        $userDB = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-        if ($userDB && password_verify($password, $userDB['password'])) {
-            $_SESSION['login'] = $userDB['login'];
-            $_SESSION['show_message'] = true;
-            header('Location: /');
-            exit;
-        }
-
-        $errors['login'] = 'Неправильно введен логин или пароль';
-    }
+    $user = new User($_POST["login"], $_POST["password"]);
+    $errors = $user->login();
 }
-mysqli_close($connection);
 
 ?>
 <main class="main">

@@ -32,7 +32,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/../src/init.php';
     <header class="header">
         <div class="header__container">
             <a class="header__logo" href="/">
-                <img src="/<?= htmlentities($logoFile) ?>" alt="logotype" width="120px"></a>
+                <img src="/<?= htmlentities($logoFile) ?>" alt="logotype" width="120"></a>
             <nav class="menu">
                 <div>
                     <ul class="menu__list">
@@ -77,8 +77,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/../src/init.php';
                         <li class="menu__item-mobile"><a href="/homework6">ДЗ от 03.03</a></li>
                     </ul>
                     <button class="menu__mobile-button">
-                        <img class="menu-icon" src="assets/img/burger-menu.svg">
-                        <img class="close-icon" src="assets/img/Krest.svg">
+                        <img class="menu-icon" src="assets/img/burger-menu.svg" alt="меню">
+                        <img class="close-icon" src="assets/img/Krest.svg" alt="закрыть меню">
                     </button>
                 </div>
             </nav>

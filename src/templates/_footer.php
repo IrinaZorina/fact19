@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="footer__container">
-        <span>Блинов &copy 2025</span>
+        <span>Блинов &copy; 2025</span>
         <form method="POST">
             <div class="form__group">
                 <select class="form__select-color" style="background-color: <?= $backgroundColor ?>"

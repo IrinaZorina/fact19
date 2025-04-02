@@ -17,7 +17,7 @@ $nowDate = date('d-m-Y');
 <main class="main">
     <section class="bio section">
         <aside class="aside">
-            <div class="aside__photo"><img src="assets/img/Photo.jpg" alt="photo" width="220px"></div>
+            <div class="aside__photo"><img src="assets/img/Photo.jpg" alt="photo" width="220"></div>
         </aside>
         <div class="content">
             <h1 class="content__title content__title_hidden">Страничка о себе</h1>
