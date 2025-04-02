@@ -136,7 +136,6 @@ footer{
 }
 
 .auth_fail{
-    margin-top: 20em;
     text-align: center;
 }
 
@@ -145,6 +144,7 @@ footer{
     padding-top: 17px;
     position: relative;
     text-align: center;
+    margin: 20px;
 }
 
 .login-btn{
@@ -165,6 +165,7 @@ footer{
     font-size: 17px !important;
     -webkit-appearance: none;
     appearance: none;
+    margin: 0 5px;
 }
 
 .login-inp {
