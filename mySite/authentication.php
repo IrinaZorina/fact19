@@ -1,27 +1,14 @@
 <?php require_once'inc/header.php'?>
 <?php
 session_start();
-include 'inc/db_conn.php';
+include "Class.php";
+$db = new Database('MySQL-8.2', 'Ivan', 'defuses9diAbl', 'db_goryachikh');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $_POST['login'];
-    $pass = ($_POST['password']);
-    $sql = "SELECT * FROM user WHERE login = '$user' and password = '$pass'";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if ($row) {
-            $hash = password_hash($pass, PASSWORD_DEFAULT);
-            $_SESSION['password'] = $hash;
-            $_SESSION['login'] = $user;
-            header('Location: welcome.php');
-        } else {
-            echo "Неверный пароль!";
-        }
-    } else {
-        echo "Пользователь не найден!";
-    }
+    $pass = $_POST['password'];
+    $user = new User($db, $user, $pass);
+    $user->authenticate();
 }
-$conn->close();
 ?>
 <p class="form_text">Авторизация</p>
 <form class="form_aut" method="post">
