@@ -1,44 +1,11 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/../src/templates/_header.php';
 
+use Classes\User;
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $errors = [];
-
-    $login = htmlentities(trim($_POST['login']));
-    $password = htmlentities(trim($_POST['password']));
-    $password_confirm = htmlentities(trim($_POST['password_confirm']));
-
-    if (!$connection) {
-        $errors['login'] = 'Ошибка подключения к БД!';
-    }
-
-    // Валидация данных
-    if (empty($login)) $errors['login'] = 'Введите логин!';
-    if (empty($password)) $errors['password'] = 'Введите пароль!';
-    if ($password !== $password_confirm) {
-        $errors['password'] = $errors['password_confirm'] = 'Пароли не совпадают!';
-    }
-
-    // Проверяем, есть ли пользователь
-    $query = "SELECT login FROM users WHERE login = '{$login}' LIMIT 1";
-    $found = mysqli_query($connection, $query);
-    if (mysqli_fetch_array($found)) {
-        $errors['login'] = 'Такой пользователь уже есть!';
-    }
-
-    // Сохраняем данные в БД
-    if (empty($errors)) {
-        $password = password_hash($password, PASSWORD_DEFAULT);
-        $query = "INSERT INTO users (login, password) VALUES ('{$login}', '{$password}');";
-        if (mysqli_query($connection, $query)) {
-            $_SESSION['login'] = $login;
-            header('Location: /');
-            exit;
-        } else {
-            $errors['login'] = 'Ошибка регистрации!';
-        }
-    }
+    $user = new User($_POST['login'], $_POST['password'], $_POST['password_confirm']);
+    $errors = $user->register();
 }
-mysqli_close($connection);
 
 ?>
 <main class="main">

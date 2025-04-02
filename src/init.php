@@ -5,6 +5,7 @@ declare(strict_types=1);
 session_start();
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/../src/functions.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/../src/Classes/User.php';
 
 [$cssFile, $logoFile] = getTheme();
 $backgroundColor = getBackgroundColor();
@@ -16,4 +17,3 @@ if (isset($_SESSION['show_message']) && $lastPage != 'пусто') {
     unset($_SESSION['show_message']);
 }
 
-$connection = mysqli_connect('MySQL-8.2', 'root', '', 'blinov');
