@@ -1,18 +1,27 @@
 <?php
+include_once ("Class.php");
 session_start();
 $hostname = "MySQL-8.2";
 $username = "Vad";
 $password = "zapret";
 $dbname = "db_Borisin";
 if($_SERVER['REQUEST_METHOD']=='POST'){
-$name = $_POST['Log'];
-$pass = $_POST['Passw'];
+    $name = trim($_POST['Log'] ?? '');
+    $pass = trim($_POST['Passw'] ?? '');
+    
+    try {
+        $auth = new Auth($name, $pass);
+        // Дальнейшая обработка...
+    } catch (TypeError $e) {
+        // Обработка ошибки неверного типа данных
+        die("Ошибка: неверные данные для авторизации");
+    }
 //корректный логин и пароль: Вадим    Борисин
 // Илья    Ефремов
-if(!empty($name) && !empty($pass)){
+if(!empty($auth->login) && !empty($auth->password)){
 $mysqli = new mysqli($hostname,$username, $password, $dbname);
 $mysqli->set_charset('utf8');
-$res = $mysqli->query("SELECT * FROM user WHERE name = '$name' and password ='$pass'");
+$res = $mysqli->query("SELECT * FROM user WHERE name = '$auth->login' and password ='$auth->password'");
 if($res->num_rows>0){
     $zap = $res->fetch_assoc();
 if($zap){
