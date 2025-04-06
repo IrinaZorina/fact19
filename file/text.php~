@@ -1,0 +1,115 @@
+<?php
+echo '<h1>Зaдание 1</h1>';
+
+$file = 'hello.txt';
+
+$text = "Hello, world! I'm Name";
+
+if (file_put_contents($file, $text) !== false) {
+    echo "Файл '$file' успешно создан и записан.";
+} else {
+    echo "Произошла ошибка при создании файла '$file'.";
+}
+
+echo '<h1>Зaдание 2</h1>';
+
+$folderName = 'test';
+
+// Проверяем, существует ли папка
+if (!is_dir($folderName)) {
+    // Создаем папку
+    if (mkdir($folderName, 0777, true)) {
+        echo "Папка '$folderName' успешно создана.";
+    } else {
+        echo "Не удалось создать папку '$folderName'.";
+    }
+} else {
+    echo "Папка '$folderName' уже существует.";
+}
+
+echo '<h1>Зaдание 3</h1>';
+
+$filePath = 'file.txt';
+
+if (file_exists($filePath)) {
+    $fileContent = file_get_contents($filePath);
+
+    $lines = explode("\n", $fileContent);
+
+    $name = '';
+    $surname = '';
+
+    foreach ($lines as $line) {
+        $line = trim($line);
+
+        if (strpos($line, 'Имя:') === 0) {
+            $name = substr($line, strlen('Имя:'));
+        } elseif (strpos($line, 'Фамилия:') === 0) {
+            $surname = substr($line, strlen('Фамилия:'));
+        }
+    }
+
+    echo "Имя: " . trim($name) . "<br>";
+    echo "Фамилия: " . trim($surname) . "<br>";
+} else {
+    echo "Файл не найден.";
+}
+
+echo '<h1>Зaдание 4</h1>';
+
+
+$file1Path = 'file1.txt';
+$file2Path = 'file2.txt';
+$outputFilePath = 'file3.txt';
+
+function readSentencesFromFile($filePath)
+{
+    if (!file_exists($filePath)) {
+        return [];
+    }
+
+    $content = file_get_contents($filePath);
+
+    $sentences = preg_split('/(?<=[.!?])s+/', $content);
+
+    return array_map('trim', $sentences);
+}
+
+$sentencesFromFile1 = readSentencesFromFile($file1Path);
+$sentencesFromFile2 = readSentencesFromFile($file2Path);
+
+$uniqueSentences = array_unique(array_merge($sentencesFromFile1, $sentencesFromFile2));
+
+file_put_contents($outputFilePath, implode("\n", $uniqueSentences));
+
+echo "Уникальные предложения были записаны в файл: $outputFilePath";
+
+echo '<h1>Зaдание 5</h1>';
+
+$file1 = 'file1.txt';
+$file2 = 'file2.txt';
+$outputFile = 'file4.txt';
+
+$sentences1 = file($file1, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$sentences2 = file($file2, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+$sentenceCount = [];
+
+foreach ($sentences1 as $sentence) {
+    $sentence = trim($sentence);
+    if (!empty($sentence)) {
+        $sentenceCount[$sentence] = 1;
+    }
+}
+$repeatedSentences = [];
+foreach ($sentences2 as $sentence) {
+    $sentence = trim($sentence);
+    if (isset($sentenceCount[$sentence])) {
+        $repeatedSentences[$sentence] = 1;
+    }
+}
+
+file_put_contents($outputFile, implode(PHP_EOL, array_keys($repeatedSentences)));
+
+echo "Повторяющиеся предложения записаны в $outputFile.\n";
+?>
