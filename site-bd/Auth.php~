@@ -1,0 +1,38 @@
+<?php
+class Auth {
+private $conn;
+
+public function __construct($db) {
+$this->conn = $db;
+}
+
+public function login($login, $password) {
+$passwordHash = md5($password);
+$query = "SELECT * FROM users WHERE login = :login AND password = :password LIMIT 1";
+
+$stmt = $this->conn->prepare($query);
+$stmt->bindParam(':login', $login);
+$stmt->bindParam(':password', $passwordHash);
+
+if ($stmt->execute()) {
+if ($stmt->rowCount() > 0) {
+return true;
+}
+}
+return false;
+}
+
+public function register($login, $password) {
+$passwordHash = password_hash($password, PASSWORD_BCRYPT);
+$query = "INSERT INTO users (login, password) VALUES (:login, :password)";
+
+$stmt = $this->conn->prepare($query);
+$stmt->bindParam(':login', $login);
+$stmt->bindParam(':password', $passwordHash);
+
+if ($stmt->execute()) {
+return true;
+}
+return false; 
+}
+}
