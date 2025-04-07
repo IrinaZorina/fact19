@@ -5,44 +5,25 @@ $hostname = "MySQL-8.2";
 $username = "Vad";
 $password = "zapret";
 $dbname = "db_Borisin";
+
 if($_SERVER['REQUEST_METHOD']=='POST'){
     $name = trim($_POST['Log'] ?? '');
     $pass = trim($_POST['Passw'] ?? '');
-    
+
     try {
-        $auth = new Auth($name, $pass);
-        // Дальнейшая обработка...
+        $auth = new Auth($name, $pass, $hostname, $username, $password, $dbname); // Передаем параметры БД
+        $auth->authenticate(); // Вызываем метод авторизации
     } catch (TypeError $e) {
-        // Обработка ошибки неверного типа данных
         die("Ошибка: неверные данные для авторизации");
     }
-//корректный логин и пароль: Вадим    Борисин
-// Илья    Ефремов
-if(!empty($auth->login) && !empty($auth->password)){
-$mysqli = new mysqli($hostname,$username, $password, $dbname);
-$mysqli->set_charset('utf8');
-$res = $mysqli->query("SELECT * FROM user WHERE name = '$auth->login' and password ='$auth->password'");
-if($res->num_rows>0){
-    $zap = $res->fetch_assoc();
-if($zap){
-$hashPass = password_hash($pass,PASSWORD_DEFAULT);
-$_SESSION['Passw'] = $hashPass;
-$_SESSION['Log'] = $name;
-require_once 'pages/header.php';
-echo "добро пожаловать";
-}
-else{
-    echo "введен некорректный пароль";
-    
-}
-}
-else{
-    echo "данного пользователя не существует";
-}
-}
-else{
-    echo "Заполните пустые поля";
-}
+
+    if($auth->isLoggedIn){
+        $_SESSION['Log'] = $name;
+        require_once 'pages/header.php';
+        echo "добро пожаловать";
+    } else {
+        echo $auth->errorMessage; // Выводим сообщение об ошибке из класса
+    }
 }
 ?>
 
