@@ -1,19 +1,16 @@
 <?php
 session_start();
 
-// Настройки подключения к БД
+require_once 'UserAuth.php';
+
 $hostname = "MySQL-8.2";
 $username = "Evgeniy_Krupnov";
 $password = "123";
 $dbname = "bd_Krupnov";
 
-// Подключение к MySQL
-$conn = new mysqli($hostname, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Ошибка подключения: " . $conn->connect_error);
-}
+$userAuth = new UserAuth($hostname, $username, $password, $dbname);
 
-// Обработка регистрации
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['register'])) {
         $newLogin = trim($_POST['reg_login'] ?? '');
@@ -24,11 +21,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } elseif (strlen($newLogin) < 3 || strlen($newPassword) < 6) {
             $_SESSION['message'] = "Логин (от 3 символов) и пароль (от 6 символов) слишком короткие.";
         } else {
-            // Проверка, что логин не занят
-            $stmt = $conn->prepare("SELECT id FROM user WHERE login = ?");
-            if (!$stmt) {
-                die("Ошибка подготовки запроса: " . $conn->error);
+            
+            $conn = new mysqli($hostname, $username, $password, $dbname);
+            if ($conn->connect_error) {
+                die("Ошибка подключения: " . $conn->connect_error);
             }
+
+            $stmt = $conn->prepare("SELECT id FROM user WHERE login = ?");
             $stmt->bind_param("s", $newLogin);
             $stmt->execute();
             $stmt->store_result();
@@ -36,10 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($stmt->num_rows > 0) {
                 $_SESSION['message'] = "Этот логин уже занят.";
             } else {
-                // Хэширование пароля
                 $hashedPassword = password_hash($newPassword, PASSWORD_BCRYPT);
-
-                // Добавление пользователя в БД
                 $stmt = $conn->prepare("INSERT INTO user (login, password) VALUES (?, ?)");
                 $stmt->bind_param("ss", $newLogin, $hashedPassword);
                 if ($stmt->execute()) {
@@ -49,30 +45,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
             }
             $stmt->close();
+            $conn->close();
         }
 
-    // Обработка входа
     } elseif (isset($_POST['submit_login'])) {
         $login = trim($_POST['login'] ?? '');
         $password = trim($_POST['password'] ?? '');
 
-        $stmt = $conn->prepare("SELECT id, password FROM user WHERE login = ?");
-        if (!$stmt) {
-            die("Ошибка подготовки запроса: " . $conn->error);
-        }
-        $stmt->bind_param("s", $login);
-        $stmt->execute();
-        $stmt->bind_result($id, $hashedPassword);
-        $stmt->fetch();
+      
+        $userAuth->setCredentials($login, $password);
 
-        if ($id && password_verify($password, $hashedPassword)) {
+       
+        $result = $userAuth->authenticate();
+
+        if ($result === true) {
             $_SESSION['user'] = $login;
             header("Location: welcome.php");
             exit();
         } else {
-            $_SESSION['message'] = "Ошибка: неверный логин или пароль.";
+            $_SESSION['message'] = "Ошибка: " . $result;
         }
-        $stmt->close();
     }
 }
 ?>
@@ -105,7 +97,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="password" name="reg_password" placeholder="Пароль" required>
         <button type="submit" name="register">Зарегистрироваться</button>
     </form>
-
-    <?php $conn->close(); ?>
 </body>
 </html>
